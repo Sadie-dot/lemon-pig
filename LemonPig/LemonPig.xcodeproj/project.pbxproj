@@ -698,7 +698,7 @@
 			path = Pacifico;
 			sourceTree = "<group>";
 		};
-		3BAE478D2FEC9F9D005204B5 /* Fonts2 */ = {
+		3BAE478D2FEC9F9D005204B5 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
 				3BAE47732FEC9F9D005204B5 /* Geist (1) */,
@@ -727,7 +727,7 @@
 				3BAE478B2FEC9F9D005204B5 /* GeistMono-VariableFont_wght.ttf */,
 				3BAE478C2FEC9F9D005204B5 /* Pacifico-Regular.ttf */,
 			);
-			path = Fonts2;
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		AA006001 = {
@@ -741,7 +741,7 @@
 		AA006002 /* LemonPig */ = {
 			isa = PBXGroup;
 			children = (
-				3BAE478D2FEC9F9D005204B5 /* Fonts2 */,
+				3BAE478D2FEC9F9D005204B5 /* Fonts */,
 				AA002001 /* LemonPigApp.swift */,
 				AA002002 /* ContentView.swift */,
 				AA006004 /* Models */,
