@@ -2,13 +2,11 @@ name = "lemonpig-identify"
 main = "src/index.js"
 compatibility_date = "2026-01-01"
 
-# Per-IP daily rate cap. Create the namespace once with:
-#   npx wrangler kv namespace create RATE_KV
-# then paste the printed id below and uncomment. The Worker runs without it
-# (the cap is simply skipped), so you can deploy first and add this later.
-# [[kv_namespaces]]
-# binding = "RATE_KV"
-# id = "PASTE_NAMESPACE_ID_HERE"
+# Per-IP daily rate cap (DAILY_CAP scans/IP/day). Namespace created via
+# `npx wrangler kv namespace create RATE_KV`.
+[[kv_namespaces]]
+binding = "RATE_KV"
+id = "a7132a01107d46a0adfdaf7f69ee1d14"
 
 [vars]
 DAILY_CAP = "40"
