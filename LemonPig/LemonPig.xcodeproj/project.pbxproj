@@ -1,0 +1,1644 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3BADC2AB2FF059CD0036D8C3 /* File.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3BADC2AA2FF059CD0036D8C3 /* File.txt */; };
+		3BAE478E2FEC9F9D005204B5 /* GeistMono-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3BAE477E2FEC9F9D005204B5 /* GeistMono-ExtraLight.ttf */; };
+		3BAE478F2FEC9F9D005204B5 /* GeistMono-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3BAE477A2FEC9F9D005204B5 /* GeistMono-Bold.ttf */; };
+		3BAE47902FEC9F9D005204B5 /* Geist-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3BAE47642FEC9F9D005204B5 /* Geist-ExtraLight.ttf */; };
+		3BAE47912FEC9F9D005204B5 /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3BAE47742FEC9F9D005204B5 /* OFL.txt */; };
+		3BAE47922FEC9F9D005204B5 /* Geist-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3BAE476E2FEC9F9D005204B5 /* Geist-Thin.ttf */; };
+		3BAE47932FEC9F9D005204B5 /* Geist-Italic-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3BAE47762FEC9F9D005204B5 /* Geist-Italic-VariableFont_wght.ttf */; };
+		3BAE47942FEC9F9D005204B5 /* Geist-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3BAE47772FEC9F9D005204B5 /* Geist-VariableFont_wght.ttf */; };
+		3BAE47952FEC9F9D005204B5 /* Geist-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3BAE47672FEC9F9D005204B5 /* Geist-Light.ttf */; };
+		3BAE47962FEC9F9D005204B5 /* GeistMono-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3BAE477C2FEC9F9D005204B5 /* GeistMono-ExtraBold.ttf */; };
+		3BAE47972FEC9F9D005204B5 /* GeistMono-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3BAE47782FEC9F9D005204B5 /* GeistMono-Black.ttf */; };
+		3BAE47982FEC9F9D005204B5 /* Geist-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3BAE47602FEC9F9D005204B5 /* Geist-Bold.ttf */; };
+		3BAE47992FEC9F9D005204B5 /* GeistMono-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3BAE47882FEC9F9D005204B5 /* GeistMono-SemiBoldItalic.ttf */; };
+		3BAE479A2FEC9F9D005204B5 /* GeistMono-ExtraLightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3BAE477F2FEC9F9D005204B5 /* GeistMono-ExtraLightItalic.ttf */; };
+		3BAE479B2FEC9F9D005204B5 /* Geist-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3BAE47682FEC9F9D005204B5 /* Geist-LightItalic.ttf */; };
+		3BAE479C2FEC9F9D005204B5 /* Geist-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3BAE475F2FEC9F9D005204B5 /* Geist-BlackItalic.ttf */; };
+		3BAE479D2FEC9F9D005204B5 /* Geist-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3BAE47612FEC9F9D005204B5 /* Geist-BoldItalic.ttf */; };
+		3BAE479E2FEC9F9D005204B5 /* Geist-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3BAE476D2FEC9F9D005204B5 /* Geist-SemiBoldItalic.ttf */; };
+		3BAE479F2FEC9F9D005204B5 /* GeistMono-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3BAE478B2FEC9F9D005204B5 /* GeistMono-VariableFont_wght.ttf */; };
+		3BAE47A02FEC9F9D005204B5 /* Geist-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3BAE476A2FEC9F9D005204B5 /* Geist-MediumItalic.ttf */; };
+		3BAE47A12FEC9F9D005204B5 /* Pacifico-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3BAE478C2FEC9F9D005204B5 /* Pacifico-Regular.ttf */; };
+		3BAE47A22FEC9F9D005204B5 /* GeistMono-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3BAE47802FEC9F9D005204B5 /* GeistMono-Italic.ttf */; };
+		3BAE47A32FEC9F9D005204B5 /* GeistMono-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3BAE47832FEC9F9D005204B5 /* GeistMono-LightItalic.ttf */; };
+		3BAE47A42FEC9F9D005204B5 /* Geist-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3BAE47632FEC9F9D005204B5 /* Geist-ExtraBoldItalic.ttf */; };
+		3BAE47A52FEC9F9D005204B5 /* Geist-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3BAE47622FEC9F9D005204B5 /* Geist-ExtraBold.ttf */; };
+		3BAE47A62FEC9F9D005204B5 /* GeistMono-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3BAE477D2FEC9F9D005204B5 /* GeistMono-ExtraBoldItalic.ttf */; };
+		3BAE47A72FEC9F9D005204B5 /* GeistMono-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3BAE47822FEC9F9D005204B5 /* GeistMono-Light.ttf */; };
+		3BAE47A82FEC9F9D005204B5 /* GeistMono-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3BAE47892FEC9F9D005204B5 /* GeistMono-Thin.ttf */; };
+		3BAE47A92FEC9F9D005204B5 /* Geist-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3BAE476B2FEC9F9D005204B5 /* Geist-Regular.ttf */; };
+		3BAE47AA2FEC9F9D005204B5 /* GeistMono-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3BAE47852FEC9F9D005204B5 /* GeistMono-MediumItalic.ttf */; };
+		3BAE47AB2FEC9F9D005204B5 /* GeistMono-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3BAE47792FEC9F9D005204B5 /* GeistMono-BlackItalic.ttf */; };
+		3BAE47AC2FEC9F9D005204B5 /* Geist-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3BAE476F2FEC9F9D005204B5 /* Geist-ThinItalic.ttf */; };
+		3BAE47AD2FEC9F9D005204B5 /* GeistMono-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3BAE47872FEC9F9D005204B5 /* GeistMono-SemiBold.ttf */; };
+		3BAE47AE2FEC9F9D005204B5 /* GeistMono-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3BAE47842FEC9F9D005204B5 /* GeistMono-Medium.ttf */; };
+		3BAE47AF2FEC9F9D005204B5 /* Geist-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3BAE47662FEC9F9D005204B5 /* Geist-Italic.ttf */; };
+		3BAE47B12FEC9F9D005204B5 /* Geist-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3BAE47692FEC9F9D005204B5 /* Geist-Medium.ttf */; };
+		3BAE47B22FEC9F9D005204B5 /* Geist-ExtraLightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3BAE47652FEC9F9D005204B5 /* Geist-ExtraLightItalic.ttf */; };
+		3BAE47B32FEC9F9D005204B5 /* Geist-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3BAE476C2FEC9F9D005204B5 /* Geist-SemiBold.ttf */; };
+		3BAE47B42FEC9F9D005204B5 /* GeistMono-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3BAE478A2FEC9F9D005204B5 /* GeistMono-ThinItalic.ttf */; };
+		3BAE47B52FEC9F9D005204B5 /* Geist-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3BAE475E2FEC9F9D005204B5 /* Geist-Black.ttf */; };
+		3BAE47B62FEC9F9D005204B5 /* GeistMono-Italic-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3BAE47812FEC9F9D005204B5 /* GeistMono-Italic-VariableFont_wght.ttf */; };
+		3BAE47B72FEC9F9D005204B5 /* GeistMono-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3BAE477B2FEC9F9D005204B5 /* GeistMono-BoldItalic.ttf */; };
+		3BAE47B82FEC9F9D005204B5 /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3BAE47722FEC9F9D005204B5 /* README.txt */; };
+		3BAE47B92FEC9F9D005204B5 /* GeistMono-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3BAE47862FEC9F9D005204B5 /* GeistMono-Regular.ttf */; };
+		AA001001 /* LemonPigApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA002001 /* LemonPigApp.swift */; };
+		AA001002 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA002002 /* ContentView.swift */; };
+		AA001003 /* AppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA002003 /* AppRouter.swift */; };
+		AA001004 /* FruitData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA002004 /* FruitData.swift */; };
+		AA001005 /* FlavorData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA002005 /* FlavorData.swift */; };
+		AF001001 /* FruitIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF002001 /* FruitIdentifier.swift */; };
+		AA001101 /* CatalogSweetSour.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA002101 /* CatalogSweetSour.swift */; };
+		AA001102 /* CatalogTropicalTart.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA002102 /* CatalogTropicalTart.swift */; };
+		AA001103 /* CatalogSweetCreamy.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA002103 /* CatalogSweetCreamy.swift */; };
+		AA001104 /* CatalogCitrusy.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA002104 /* CatalogCitrusy.swift */; };
+		AA001105 /* PhotoCredits.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA002105 /* PhotoCredits.swift */; };
+		AA001006 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA002006 /* HomeView.swift */; };
+		AA001007 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA002007 /* CameraView.swift */; };
+		AA001008 /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA002008 /* ResultView.swift */; };
+		AA001009 /* RecipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA002009 /* RecipeView.swift */; };
+		AA00100A /* TasteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA00200A /* TasteView.swift */; };
+		AA00100B /* NoMatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA00200B /* NoMatchView.swift */; };
+		AA00100C /* DesignTokens.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA00200C /* DesignTokens.swift */; };
+		AA00100D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA00200D /* Assets.xcassets */; };
+		AA00100E /* lemons-bg.png in Resources */ = {isa = PBXBuildFile; fileRef = AA00200E /* lemons-bg.png */; };
+		AA00100F /* tamarind-bg.png in Resources */ = {isa = PBXBuildFile; fileRef = AA00200F /* tamarind-bg.png */; };
+		AA001010 /* mascot-line-cut.png in Resources */ = {isa = PBXBuildFile; fileRef = AA002010 /* mascot-line-cut.png */; };
+		AA001011 /* mascot-line-navy.png in Resources */ = {isa = PBXBuildFile; fileRef = AA002011 /* mascot-line-navy.png */; };
+		AA001012 /* mascot-line.png in Resources */ = {isa = PBXBuildFile; fileRef = AA002012 /* mascot-line.png */; };
+		AA001013 /* pig-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = AA002013 /* pig-icon.png */; };
+		AA001014 /* recipe-chutney.png in Resources */ = {isa = PBXBuildFile; fileRef = AA002014 /* recipe-chutney.png */; };
+		AA001015 /* recipe-padthai.png in Resources */ = {isa = PBXBuildFile; fileRef = AA002015 /* recipe-padthai.png */; };
+		AA001016 /* recipe-ribs.png in Resources */ = {isa = PBXBuildFile; fileRef = AA002016 /* recipe-ribs.png */; };
+		AA001017 /* recipe-agua.png in Resources */ = {isa = PBXBuildFile; fileRef = AA002017 /* recipe-agua.png */; };
+		AA001018 /* recipe-toyomansi.png in Resources */ = {isa = PBXBuildFile; fileRef = AA002018 /* recipe-toyomansi.png */; };
+		AA001019 /* recipe-calamansi-ade.png in Resources */ = {isa = PBXBuildFile; fileRef = AA002019 /* recipe-calamansi-ade.png */; };
+		AA00101A /* recipe-calamansi-bars.png in Resources */ = {isa = PBXBuildFile; fileRef = AA00201A /* recipe-calamansi-bars.png */; };
+		AA00101B /* recipe-calamansi-marinade.png in Resources */ = {isa = PBXBuildFile; fileRef = AA00201B /* recipe-calamansi-marinade.png */; };
+		AA00101C /* fruit-calamansi.png in Resources */ = {isa = PBXBuildFile; fileRef = AA00201C /* fruit-calamansi.png */; };
+		AA00101D /* fruit-green-mango.png in Resources */ = {isa = PBXBuildFile; fileRef = AA00201D /* fruit-green-mango.png */; };
+		AA00101E /* fruit-kiwi.png in Resources */ = {isa = PBXBuildFile; fileRef = AA00201E /* fruit-kiwi.png */; };
+		AA00101F /* fruit-passion-fruit.png in Resources */ = {isa = PBXBuildFile; fileRef = AA00201F /* fruit-passion-fruit.png */; };
+		AA001020 /* fruit-pomegranate.png in Resources */ = {isa = PBXBuildFile; fileRef = AA002020 /* fruit-pomegranate.png */; };
+		AC001001 /* recipe-aam-panna.png in Resources */ = {isa = PBXBuildFile; fileRef = AC002001 /* recipe-aam-panna.png */; };
+		AC001002 /* recipe-apple-crisp.png in Resources */ = {isa = PBXBuildFile; fileRef = AC002002 /* recipe-apple-crisp.png */; };
+		AC001003 /* recipe-apple-waldorf.png in Resources */ = {isa = PBXBuildFile; fileRef = AC002003 /* recipe-apple-waldorf.png */; };
+		AC001004 /* recipe-applesauce.png in Resources */ = {isa = PBXBuildFile; fileRef = AC002004 /* recipe-applesauce.png */; };
+		AC001005 /* recipe-avocado-citrus-salad.png in Resources */ = {isa = PBXBuildFile; fileRef = AC002005 /* recipe-avocado-citrus-salad.png */; };
+		AC001006 /* recipe-avocado-mousse.png in Resources */ = {isa = PBXBuildFile; fileRef = AC002006 /* recipe-avocado-mousse.png */; };
+		AC001007 /* recipe-banana-bread.png in Resources */ = {isa = PBXBuildFile; fileRef = AC002007 /* recipe-banana-bread.png */; };
+		AC001008 /* recipe-banana-nice-cream.png in Resources */ = {isa = PBXBuildFile; fileRef = AC002008 /* recipe-banana-nice-cream.png */; };
+		AC001009 /* recipe-bananas-caramelized.png in Resources */ = {isa = PBXBuildFile; fileRef = AC002009 /* recipe-bananas-caramelized.png */; };
+		AC001010 /* recipe-candied-orange.png in Resources */ = {isa = PBXBuildFile; fileRef = AC002010 /* recipe-candied-orange.png */; };
+		AC001011 /* recipe-cherimoya-nice-cream.png in Resources */ = {isa = PBXBuildFile; fileRef = AC002011 /* recipe-cherimoya-nice-cream.png */; };
+		AC001012 /* recipe-cherimoya-salad.png in Resources */ = {isa = PBXBuildFile; fileRef = AC002012 /* recipe-cherimoya-salad.png */; };
+		AC001013 /* recipe-cherimoya-smoothie.png in Resources */ = {isa = PBXBuildFile; fileRef = AC002013 /* recipe-cherimoya-smoothie.png */; };
+		AC001014 /* recipe-cherry-clafoutis.png in Resources */ = {isa = PBXBuildFile; fileRef = AC002014 /* recipe-cherry-clafoutis.png */; };
+		AC001015 /* recipe-cherry-compote.png in Resources */ = {isa = PBXBuildFile; fileRef = AC002015 /* recipe-cherry-compote.png */; };
+		AC001016 /* recipe-cherry-soda.png in Resources */ = {isa = PBXBuildFile; fileRef = AC002016 /* recipe-cherry-soda.png */; };
+		AC001017 /* recipe-choco-mandarins.png in Resources */ = {isa = PBXBuildFile; fileRef = AC002017 /* recipe-choco-mandarins.png */; };
+		AC001018 /* recipe-cranberry-muffins.png in Resources */ = {isa = PBXBuildFile; fileRef = AC002018 /* recipe-cranberry-muffins.png */; };
+		AC001019 /* recipe-cranberry-relish.png in Resources */ = {isa = PBXBuildFile; fileRef = AC002019 /* recipe-cranberry-relish.png */; };
+		AC001020 /* recipe-cranberry-spritzer.png in Resources */ = {isa = PBXBuildFile; fileRef = AC002020 /* recipe-cranberry-spritzer.png */; };
+		AC001021 /* recipe-date-balls.png in Resources */ = {isa = PBXBuildFile; fileRef = AC002021 /* recipe-date-balls.png */; };
+		AC001022 /* recipe-date-porridge.png in Resources */ = {isa = PBXBuildFile; fileRef = AC002022 /* recipe-date-porridge.png */; };
+		AC001023 /* recipe-dates-stuffed.png in Resources */ = {isa = PBXBuildFile; fileRef = AC002023 /* recipe-dates-stuffed.png */; };
+		AC001024 /* recipe-dragon-chia.png in Resources */ = {isa = PBXBuildFile; fileRef = AC002024 /* recipe-dragon-chia.png */; };
+		AC001025 /* recipe-dragon-lemonade.png in Resources */ = {isa = PBXBuildFile; fileRef = AC002025 /* recipe-dragon-lemonade.png */; };
+		AC001026 /* recipe-dragon-salsa.png in Resources */ = {isa = PBXBuildFile; fileRef = AC002026 /* recipe-dragon-salsa.png */; };
+		AC001027 /* recipe-fig-jam.png in Resources */ = {isa = PBXBuildFile; fileRef = AC002027 /* recipe-fig-jam.png */; };
+		AC001028 /* recipe-fig-salad.png in Resources */ = {isa = PBXBuildFile; fileRef = AC002028 /* recipe-fig-salad.png */; };
+		AC001029 /* recipe-figs-roasted.png in Resources */ = {isa = PBXBuildFile; fileRef = AC002029 /* recipe-figs-roasted.png */; };
+		AC001030 /* recipe-gooseberry-chutney.png in Resources */ = {isa = PBXBuildFile; fileRef = AC002030 /* recipe-gooseberry-chutney.png */; };
+		AC001031 /* recipe-gooseberry-crumble.png in Resources */ = {isa = PBXBuildFile; fileRef = AC002031 /* recipe-gooseberry-crumble.png */; };
+		AC001032 /* recipe-gooseberry-jam.png in Resources */ = {isa = PBXBuildFile; fileRef = AC002032 /* recipe-gooseberry-jam.png */; };
+		AC001033 /* recipe-grape-chicken-salad.png in Resources */ = {isa = PBXBuildFile; fileRef = AC002033 /* recipe-grape-chicken-salad.png */; };
+		AC001034 /* recipe-grape-granita.png in Resources */ = {isa = PBXBuildFile; fileRef = AC002034 /* recipe-grape-granita.png */; };
+		AC001035 /* recipe-grapefruit-avocado.png in Resources */ = {isa = PBXBuildFile; fileRef = AC002035 /* recipe-grapefruit-avocado.png */; };
+		AC001036 /* recipe-grapefruit-marmalade.png in Resources */ = {isa = PBXBuildFile; fileRef = AC002036 /* recipe-grapefruit-marmalade.png */; };
+		AC001037 /* recipe-grapefruit-sparkler.png in Resources */ = {isa = PBXBuildFile; fileRef = AC002037 /* recipe-grapefruit-sparkler.png */; };
+		AC001038 /* recipe-grapes-roasted.png in Resources */ = {isa = PBXBuildFile; fileRef = AC002038 /* recipe-grapes-roasted.png */; };
+		AC001039 /* recipe-green-mango-chutney.png in Resources */ = {isa = PBXBuildFile; fileRef = AC002039 /* recipe-green-mango-chutney.png */; };
+		AC001040 /* recipe-green-mango-slaw.png in Resources */ = {isa = PBXBuildFile; fileRef = AC002040 /* recipe-green-mango-slaw.png */; };
+		AC001041 /* recipe-guacamole.png in Resources */ = {isa = PBXBuildFile; fileRef = AC002041 /* recipe-guacamole.png */; };
+		AC001042 /* recipe-guava-agua.png in Resources */ = {isa = PBXBuildFile; fileRef = AC002042 /* recipe-guava-agua.png */; };
+		AC001043 /* recipe-guava-glaze.png in Resources */ = {isa = PBXBuildFile; fileRef = AC002043 /* recipe-guava-glaze.png */; };
+		AC001044 /* recipe-guava-pastelitos.png in Resources */ = {isa = PBXBuildFile; fileRef = AC002044 /* recipe-guava-pastelitos.png */; };
+		AC001045 /* recipe-kiwi-parfait.png in Resources */ = {isa = PBXBuildFile; fileRef = AC002045 /* recipe-kiwi-parfait.png */; };
+		AC001046 /* recipe-kiwi-pavlova.png in Resources */ = {isa = PBXBuildFile; fileRef = AC002046 /* recipe-kiwi-pavlova.png */; };
+		AC001047 /* recipe-kiwi-smoothie.png in Resources */ = {isa = PBXBuildFile; fileRef = AC002047 /* recipe-kiwi-smoothie.png */; };
+		AC001048 /* recipe-lemon-chicken.png in Resources */ = {isa = PBXBuildFile; fileRef = AC002048 /* recipe-lemon-chicken.png */; };
+		AC001049 /* recipe-lemonade.png in Resources */ = {isa = PBXBuildFile; fileRef = AC002049 /* recipe-lemonade.png */; };
+		AC001050 /* recipe-lime-rice.png in Resources */ = {isa = PBXBuildFile; fileRef = AC002050 /* recipe-lime-rice.png */; };
+		AC001051 /* recipe-limeade.png in Resources */ = {isa = PBXBuildFile; fileRef = AC002051 /* recipe-limeade.png */; };
+		AC001052 /* recipe-lychee-iced-tea.png in Resources */ = {isa = PBXBuildFile; fileRef = AC002052 /* recipe-lychee-iced-tea.png */; };
+		AC001053 /* recipe-lychee-panna-cotta.png in Resources */ = {isa = PBXBuildFile; fileRef = AC002053 /* recipe-lychee-panna-cotta.png */; };
+		AC001054 /* recipe-lychee-salad.png in Resources */ = {isa = PBXBuildFile; fileRef = AC002054 /* recipe-lychee-salad.png */; };
+		AC001055 /* recipe-mamey-bowl.png in Resources */ = {isa = PBXBuildFile; fileRef = AC002055 /* recipe-mamey-bowl.png */; };
+		AC001056 /* recipe-mamey-flan.png in Resources */ = {isa = PBXBuildFile; fileRef = AC002056 /* recipe-mamey-flan.png */; };
+		AC001057 /* recipe-mamey-ice-cream.png in Resources */ = {isa = PBXBuildFile; fileRef = AC002057 /* recipe-mamey-ice-cream.png */; };
+		AC001058 /* recipe-mandarin-dressing.png in Resources */ = {isa = PBXBuildFile; fileRef = AC002058 /* recipe-mandarin-dressing.png */; };
+		AC001059 /* recipe-mandarin-salad.png in Resources */ = {isa = PBXBuildFile; fileRef = AC002059 /* recipe-mandarin-salad.png */; };
+		AC001060 /* recipe-mango-salsa.png in Resources */ = {isa = PBXBuildFile; fileRef = AC002060 /* recipe-mango-salsa.png */; };
+		AC001061 /* recipe-mango-sorbet.png in Resources */ = {isa = PBXBuildFile; fileRef = AC002061 /* recipe-mango-sorbet.png */; };
+		AC001062 /* recipe-mango-sticky-rice.png in Resources */ = {isa = PBXBuildFile; fileRef = AC002062 /* recipe-mango-sticky-rice.png */; };
+		AC001063 /* recipe-orange-chicken.png in Resources */ = {isa = PBXBuildFile; fileRef = AC002063 /* recipe-orange-chicken.png */; };
+		AC001064 /* recipe-orange-compote.png in Resources */ = {isa = PBXBuildFile; fileRef = AC002064 /* recipe-orange-compote.png */; };
+		AC001065 /* recipe-papaya-batido.png in Resources */ = {isa = PBXBuildFile; fileRef = AC002065 /* recipe-papaya-batido.png */; };
+		AC001066 /* recipe-papaya-salad.png in Resources */ = {isa = PBXBuildFile; fileRef = AC002066 /* recipe-papaya-salad.png */; };
+		AC001067 /* recipe-papaya-sorbet.png in Resources */ = {isa = PBXBuildFile; fileRef = AC002067 /* recipe-papaya-sorbet.png */; };
+		AC001068 /* recipe-passion-mousse.png in Resources */ = {isa = PBXBuildFile; fileRef = AC002068 /* recipe-passion-mousse.png */; };
+		AC001069 /* recipe-passion-tea.png in Resources */ = {isa = PBXBuildFile; fileRef = AC002069 /* recipe-passion-tea.png */; };
+		AC001070 /* recipe-passion-vinaigrette.png in Resources */ = {isa = PBXBuildFile; fileRef = AC002070 /* recipe-passion-vinaigrette.png */; };
+		AC001071 /* recipe-persimmon-bread.png in Resources */ = {isa = PBXBuildFile; fileRef = AC002071 /* recipe-persimmon-bread.png */; };
+		AC001072 /* recipe-persimmon-salsa.png in Resources */ = {isa = PBXBuildFile; fileRef = AC002072 /* recipe-persimmon-salsa.png */; };
+		AC001073 /* recipe-persimmon-smoothie.png in Resources */ = {isa = PBXBuildFile; fileRef = AC002073 /* recipe-persimmon-smoothie.png */; };
+		AC001074 /* recipe-pineapple-fried-rice.png in Resources */ = {isa = PBXBuildFile; fileRef = AC002074 /* recipe-pineapple-fried-rice.png */; };
+		AC001075 /* recipe-pineapple-salsa.png in Resources */ = {isa = PBXBuildFile; fileRef = AC002075 /* recipe-pineapple-salsa.png */; };
+		AC001076 /* recipe-pineapple-smoothie.png in Resources */ = {isa = PBXBuildFile; fileRef = AC002076 /* recipe-pineapple-smoothie.png */; };
+		AC001077 /* recipe-pom-couscous.png in Resources */ = {isa = PBXBuildFile; fileRef = AC002077 /* recipe-pom-couscous.png */; };
+		AC001078 /* recipe-pom-raita.png in Resources */ = {isa = PBXBuildFile; fileRef = AC002078 /* recipe-pom-raita.png */; };
+		AC001079 /* recipe-pom-spritzer.png in Resources */ = {isa = PBXBuildFile; fileRef = AC002079 /* recipe-pom-spritzer.png */; };
+		AC001080 /* recipe-preserved-lemons.png in Resources */ = {isa = PBXBuildFile; fileRef = AC002080 /* recipe-preserved-lemons.png */; };
+		AC001081 /* recipe-rhubarb-crumble.png in Resources */ = {isa = PBXBuildFile; fileRef = AC002081 /* recipe-rhubarb-crumble.png */; };
+		AC001082 /* recipe-rhubarb-roasted.png in Resources */ = {isa = PBXBuildFile; fileRef = AC002082 /* recipe-rhubarb-roasted.png */; };
+		AC001083 /* recipe-rhubarb-syrup.png in Resources */ = {isa = PBXBuildFile; fileRef = AC002083 /* recipe-rhubarb-syrup.png */; };
+		AC001084 /* recipe-sapodilla-chaat.png in Resources */ = {isa = PBXBuildFile; fileRef = AC002084 /* recipe-sapodilla-chaat.png */; };
+		AC001085 /* recipe-sapodilla-halwa.png in Resources */ = {isa = PBXBuildFile; fileRef = AC002085 /* recipe-sapodilla-halwa.png */; };
+		AC001086 /* recipe-sapodilla-ice-cream.png in Resources */ = {isa = PBXBuildFile; fileRef = AC002086 /* recipe-sapodilla-ice-cream.png */; };
+		AC001087 /* recipe-shrimp-ceviche.png in Resources */ = {isa = PBXBuildFile; fileRef = AC002087 /* recipe-shrimp-ceviche.png */; };
+		AC001088 /* recipe-soursop-punch.png in Resources */ = {isa = PBXBuildFile; fileRef = AC002088 /* recipe-soursop-punch.png */; };
+		AC001089 /* recipe-soursop-smoothie.png in Resources */ = {isa = PBXBuildFile; fileRef = AC002089 /* recipe-soursop-smoothie.png */; };
+		AC001090 /* recipe-soursop-sorbet.png in Resources */ = {isa = PBXBuildFile; fileRef = AC002090 /* recipe-soursop-sorbet.png */; };
+		AC001091 /* recipe-yuzu-curd.png in Resources */ = {isa = PBXBuildFile; fileRef = AC002091 /* recipe-yuzu-curd.png */; };
+		AC001092 /* recipe-yuzu-tea.png in Resources */ = {isa = PBXBuildFile; fileRef = AC002092 /* recipe-yuzu-tea.png */; };
+		AC001093 /* recipe-yuzu-vinaigrette.png in Resources */ = {isa = PBXBuildFile; fileRef = AC002093 /* recipe-yuzu-vinaigrette.png */; };
+		AB001001 /* fruit-avocado.png in Resources */ = {isa = PBXBuildFile; fileRef = AB002001 /* fruit-avocado.png */; };
+		AB001002 /* fruit-banana.png in Resources */ = {isa = PBXBuildFile; fileRef = AB002002 /* fruit-banana.png */; };
+		AB001003 /* fruit-cherimoya.png in Resources */ = {isa = PBXBuildFile; fileRef = AB002003 /* fruit-cherimoya.png */; };
+		AB001004 /* fruit-cranberry.png in Resources */ = {isa = PBXBuildFile; fileRef = AB002004 /* fruit-cranberry.png */; };
+		AB001005 /* fruit-date.png in Resources */ = {isa = PBXBuildFile; fileRef = AB002005 /* fruit-date.png */; };
+		AB001006 /* fruit-dragon-fruit.png in Resources */ = {isa = PBXBuildFile; fileRef = AB002006 /* fruit-dragon-fruit.png */; };
+		AB001007 /* fruit-fig.png in Resources */ = {isa = PBXBuildFile; fileRef = AB002007 /* fruit-fig.png */; };
+		AB001008 /* fruit-gooseberry.png in Resources */ = {isa = PBXBuildFile; fileRef = AB002008 /* fruit-gooseberry.png */; };
+		AB001009 /* fruit-grapefruit.png in Resources */ = {isa = PBXBuildFile; fileRef = AB002009 /* fruit-grapefruit.png */; };
+		AB001010 /* fruit-green-apple.png in Resources */ = {isa = PBXBuildFile; fileRef = AB002010 /* fruit-green-apple.png */; };
+		AB001011 /* fruit-guava.png in Resources */ = {isa = PBXBuildFile; fileRef = AB002011 /* fruit-guava.png */; };
+		AB001012 /* fruit-lemon.png in Resources */ = {isa = PBXBuildFile; fileRef = AB002012 /* fruit-lemon.png */; };
+		AB001013 /* fruit-lime.png in Resources */ = {isa = PBXBuildFile; fileRef = AB002013 /* fruit-lime.png */; };
+		AB001014 /* fruit-lychee.png in Resources */ = {isa = PBXBuildFile; fileRef = AB002014 /* fruit-lychee.png */; };
+		AB001015 /* fruit-mamey.png in Resources */ = {isa = PBXBuildFile; fileRef = AB002015 /* fruit-mamey.png */; };
+		AB001016 /* fruit-mandarin.png in Resources */ = {isa = PBXBuildFile; fileRef = AB002016 /* fruit-mandarin.png */; };
+		AB001017 /* fruit-mango.png in Resources */ = {isa = PBXBuildFile; fileRef = AB002017 /* fruit-mango.png */; };
+		AB001018 /* fruit-orange.png in Resources */ = {isa = PBXBuildFile; fileRef = AB002018 /* fruit-orange.png */; };
+		AB001019 /* fruit-papaya.png in Resources */ = {isa = PBXBuildFile; fileRef = AB002019 /* fruit-papaya.png */; };
+		AB001020 /* fruit-persimmon.png in Resources */ = {isa = PBXBuildFile; fileRef = AB002020 /* fruit-persimmon.png */; };
+		AB001021 /* fruit-pineapple.png in Resources */ = {isa = PBXBuildFile; fileRef = AB002021 /* fruit-pineapple.png */; };
+		AB001022 /* fruit-rhubarb.png in Resources */ = {isa = PBXBuildFile; fileRef = AB002022 /* fruit-rhubarb.png */; };
+		AB001023 /* fruit-sapodilla.png in Resources */ = {isa = PBXBuildFile; fileRef = AB002023 /* fruit-sapodilla.png */; };
+		AB001024 /* fruit-sour-cherry.png in Resources */ = {isa = PBXBuildFile; fileRef = AB002024 /* fruit-sour-cherry.png */; };
+		AB001025 /* fruit-soursop.png in Resources */ = {isa = PBXBuildFile; fileRef = AB002025 /* fruit-soursop.png */; };
+		AB001026 /* fruit-sweet-grape.png in Resources */ = {isa = PBXBuildFile; fileRef = AB002026 /* fruit-sweet-grape.png */; };
+		AB001027 /* fruit-yuzu.png in Resources */ = {isa = PBXBuildFile; fileRef = AB002027 /* fruit-yuzu.png */; };
+		AB001028 /* recipe-apple-slaw.png in Resources */ = {isa = PBXBuildFile; fileRef = AB002028 /* recipe-apple-slaw.png */; };
+		AB001029 /* recipe-avocado-toast.png in Resources */ = {isa = PBXBuildFile; fileRef = AB002029 /* recipe-avocado-toast.png */; };
+		AB001030 /* recipe-banana-pancakes.png in Resources */ = {isa = PBXBuildFile; fileRef = AB002030 /* recipe-banana-pancakes.png */; };
+		AB001031 /* recipe-cherimoya-cream.png in Resources */ = {isa = PBXBuildFile; fileRef = AB002031 /* recipe-cherimoya-cream.png */; };
+		AB001032 /* recipe-cherry-pie.png in Resources */ = {isa = PBXBuildFile; fileRef = AB002032 /* recipe-cherry-pie.png */; };
+		AB001033 /* recipe-cranberry-sauce.png in Resources */ = {isa = PBXBuildFile; fileRef = AB002033 /* recipe-cranberry-sauce.png */; };
+		AB001034 /* recipe-date-shake.png in Resources */ = {isa = PBXBuildFile; fileRef = AB002034 /* recipe-date-shake.png */; };
+		AB001035 /* recipe-dragon-bowl.png in Resources */ = {isa = PBXBuildFile; fileRef = AB002035 /* recipe-dragon-bowl.png */; };
+		AB001036 /* recipe-fig-toasts.png in Resources */ = {isa = PBXBuildFile; fileRef = AB002036 /* recipe-fig-toasts.png */; };
+		AB001037 /* recipe-gooseberry-fool.png in Resources */ = {isa = PBXBuildFile; fileRef = AB002037 /* recipe-gooseberry-fool.png */; };
+		AB001038 /* recipe-grape-focaccia.png in Resources */ = {isa = PBXBuildFile; fileRef = AB002038 /* recipe-grape-focaccia.png */; };
+		AB001039 /* recipe-grapefruit-brulee.png in Resources */ = {isa = PBXBuildFile; fileRef = AB002039 /* recipe-grapefruit-brulee.png */; };
+		AB001040 /* recipe-green-mango-salad.png in Resources */ = {isa = PBXBuildFile; fileRef = AB002040 /* recipe-green-mango-salad.png */; };
+		AB001041 /* recipe-grilled-pineapple.png in Resources */ = {isa = PBXBuildFile; fileRef = AB002041 /* recipe-grilled-pineapple.png */; };
+		AB001042 /* recipe-guava-paste.png in Resources */ = {isa = PBXBuildFile; fileRef = AB002042 /* recipe-guava-paste.png */; };
+		AB001043 /* recipe-kiwi-salsa.png in Resources */ = {isa = PBXBuildFile; fileRef = AB002043 /* recipe-kiwi-salsa.png */; };
+		AB001044 /* recipe-lemon-pasta.png in Resources */ = {isa = PBXBuildFile; fileRef = AB002044 /* recipe-lemon-pasta.png */; };
+		AB001045 /* recipe-lime-pie.png in Resources */ = {isa = PBXBuildFile; fileRef = AB002045 /* recipe-lime-pie.png */; };
+		AB001046 /* recipe-lychee-sorbet.png in Resources */ = {isa = PBXBuildFile; fileRef = AB002046 /* recipe-lychee-sorbet.png */; };
+		AB001047 /* recipe-mamey-batido.png in Resources */ = {isa = PBXBuildFile; fileRef = AB002047 /* recipe-mamey-batido.png */; };
+		AB001048 /* recipe-mandarin-cake.png in Resources */ = {isa = PBXBuildFile; fileRef = AB002048 /* recipe-mandarin-cake.png */; };
+		AB001049 /* recipe-mango-lassi.png in Resources */ = {isa = PBXBuildFile; fileRef = AB002049 /* recipe-mango-lassi.png */; };
+		AB001050 /* recipe-orange-salad.png in Resources */ = {isa = PBXBuildFile; fileRef = AB002050 /* recipe-orange-salad.png */; };
+		AB001051 /* recipe-papaya-bowl.png in Resources */ = {isa = PBXBuildFile; fileRef = AB002051 /* recipe-papaya-bowl.png */; };
+		AB001052 /* recipe-passion-curd.png in Resources */ = {isa = PBXBuildFile; fileRef = AB002052 /* recipe-passion-curd.png */; };
+		AB001053 /* recipe-persimmon-salad.png in Resources */ = {isa = PBXBuildFile; fileRef = AB002053 /* recipe-persimmon-salad.png */; };
+		AB001054 /* recipe-pom-molasses.png in Resources */ = {isa = PBXBuildFile; fileRef = AB002054 /* recipe-pom-molasses.png */; };
+		AB001055 /* recipe-rhubarb-compote.png in Resources */ = {isa = PBXBuildFile; fileRef = AB002055 /* recipe-rhubarb-compote.png */; };
+		AB001056 /* recipe-sapodilla-shake.png in Resources */ = {isa = PBXBuildFile; fileRef = AB002056 /* recipe-sapodilla-shake.png */; };
+		AB001057 /* recipe-soursop-juice.png in Resources */ = {isa = PBXBuildFile; fileRef = AB002057 /* recipe-soursop-juice.png */; };
+		AB001058 /* recipe-yuzu-ponzu.png in Resources */ = {isa = PBXBuildFile; fileRef = AB002058 /* recipe-yuzu-ponzu.png */; };
+		AA001021 /* SharedComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA002021 /* SharedComponents.swift */; };
+		AD001000 /* fruit-apricot.png in Resources */ = {isa = PBXBuildFile; fileRef = AD002000 /* fruit-apricot.png */; };
+		AD001001 /* fruit-blackberry.png in Resources */ = {isa = PBXBuildFile; fileRef = AD002001 /* fruit-blackberry.png */; };
+		AD001002 /* fruit-blood-orange.png in Resources */ = {isa = PBXBuildFile; fileRef = AD002002 /* fruit-blood-orange.png */; };
+		AD001003 /* fruit-coconut.png in Resources */ = {isa = PBXBuildFile; fileRef = AD002003 /* fruit-coconut.png */; };
+		AD001004 /* fruit-durian.png in Resources */ = {isa = PBXBuildFile; fileRef = AD002004 /* fruit-durian.png */; };
+		AD001005 /* fruit-jackfruit.png in Resources */ = {isa = PBXBuildFile; fileRef = AD002005 /* fruit-jackfruit.png */; };
+		AD001006 /* fruit-kumquat.png in Resources */ = {isa = PBXBuildFile; fileRef = AD002006 /* fruit-kumquat.png */; };
+		AD001007 /* fruit-peach.png in Resources */ = {isa = PBXBuildFile; fileRef = AD002007 /* fruit-peach.png */; };
+		AD001008 /* fruit-pear.png in Resources */ = {isa = PBXBuildFile; fileRef = AD002008 /* fruit-pear.png */; };
+		AD001009 /* fruit-plum.png in Resources */ = {isa = PBXBuildFile; fileRef = AD002009 /* fruit-plum.png */; };
+		AD001010 /* fruit-pomelo.png in Resources */ = {isa = PBXBuildFile; fileRef = AD002010 /* fruit-pomelo.png */; };
+		AD001011 /* fruit-raspberry.png in Resources */ = {isa = PBXBuildFile; fileRef = AD002011 /* fruit-raspberry.png */; };
+		AD001012 /* fruit-red-currant.png in Resources */ = {isa = PBXBuildFile; fileRef = AD002012 /* fruit-red-currant.png */; };
+		AD001013 /* fruit-starfruit.png in Resources */ = {isa = PBXBuildFile; fileRef = AD002013 /* fruit-starfruit.png */; };
+		AD001014 /* fruit-strawberry.png in Resources */ = {isa = PBXBuildFile; fileRef = AD002014 /* fruit-strawberry.png */; };
+		AD001015 /* fruit-watermelon.png in Resources */ = {isa = PBXBuildFile; fileRef = AD002015 /* fruit-watermelon.png */; };
+		AD001016 /* recipe-apricot-crumble.png in Resources */ = {isa = PBXBuildFile; fileRef = AD002016 /* recipe-apricot-crumble.png */; };
+		AD001017 /* recipe-apricot-jam.png in Resources */ = {isa = PBXBuildFile; fileRef = AD002017 /* recipe-apricot-jam.png */; };
+		AD001018 /* recipe-apricot-tagine.png in Resources */ = {isa = PBXBuildFile; fileRef = AD002018 /* recipe-apricot-tagine.png */; };
+		AD001019 /* recipe-apricots-grilled.png in Resources */ = {isa = PBXBuildFile; fileRef = AD002019 /* recipe-apricots-grilled.png */; };
+		AD001020 /* recipe-blackberry-cobbler.png in Resources */ = {isa = PBXBuildFile; fileRef = AD002020 /* recipe-blackberry-cobbler.png */; };
+		AD001021 /* recipe-blackberry-jam.png in Resources */ = {isa = PBXBuildFile; fileRef = AD002021 /* recipe-blackberry-jam.png */; };
+		AD001022 /* recipe-blackberry-sauce.png in Resources */ = {isa = PBXBuildFile; fileRef = AD002022 /* recipe-blackberry-sauce.png */; };
+		AD001023 /* recipe-blackberry-smoothie.png in Resources */ = {isa = PBXBuildFile; fileRef = AD002023 /* recipe-blackberry-smoothie.png */; };
+		AD001024 /* recipe-blood-orange-cake.png in Resources */ = {isa = PBXBuildFile; fileRef = AD002024 /* recipe-blood-orange-cake.png */; };
+		AD001025 /* recipe-blood-orange-marmalade.png in Resources */ = {isa = PBXBuildFile; fileRef = AD002025 /* recipe-blood-orange-marmalade.png */; };
+		AD001026 /* recipe-blood-orange-salad.png in Resources */ = {isa = PBXBuildFile; fileRef = AD002026 /* recipe-blood-orange-salad.png */; };
+		AD001027 /* recipe-blood-orangeade.png in Resources */ = {isa = PBXBuildFile; fileRef = AD002027 /* recipe-blood-orangeade.png */; };
+		AD001028 /* recipe-coconut-chutney.png in Resources */ = {isa = PBXBuildFile; fileRef = AD002028 /* recipe-coconut-chutney.png */; };
+		AD001029 /* recipe-coconut-macaroons.png in Resources */ = {isa = PBXBuildFile; fileRef = AD002029 /* recipe-coconut-macaroons.png */; };
+		AD001030 /* recipe-coconut-rice.png in Resources */ = {isa = PBXBuildFile; fileRef = AD002030 /* recipe-coconut-rice.png */; };
+		AD001031 /* recipe-durian-ice-cream.png in Resources */ = {isa = PBXBuildFile; fileRef = AD002031 /* recipe-durian-ice-cream.png */; };
+		AD001032 /* recipe-durian-pancakes.png in Resources */ = {isa = PBXBuildFile; fileRef = AD002032 /* recipe-durian-pancakes.png */; };
+		AD001033 /* recipe-durian-smoothie.png in Resources */ = {isa = PBXBuildFile; fileRef = AD002033 /* recipe-durian-smoothie.png */; };
+		AD001034 /* recipe-durian-sticky-rice.png in Resources */ = {isa = PBXBuildFile; fileRef = AD002034 /* recipe-durian-sticky-rice.png */; };
+		AD001035 /* recipe-jackfruit-chips.png in Resources */ = {isa = PBXBuildFile; fileRef = AD002035 /* recipe-jackfruit-chips.png */; };
+		AD001036 /* recipe-jackfruit-curry.png in Resources */ = {isa = PBXBuildFile; fileRef = AD002036 /* recipe-jackfruit-curry.png */; };
+		AD001037 /* recipe-jackfruit-smoothie.png in Resources */ = {isa = PBXBuildFile; fileRef = AD002037 /* recipe-jackfruit-smoothie.png */; };
+		AD001038 /* recipe-jackfruit-tacos.png in Resources */ = {isa = PBXBuildFile; fileRef = AD002038 /* recipe-jackfruit-tacos.png */; };
+		AD001039 /* recipe-kumquat-marmalade.png in Resources */ = {isa = PBXBuildFile; fileRef = AD002039 /* recipe-kumquat-marmalade.png */; };
+		AD001040 /* recipe-kumquat-salad.png in Resources */ = {isa = PBXBuildFile; fileRef = AD002040 /* recipe-kumquat-salad.png */; };
+		AD001041 /* recipe-kumquat-spritzer.png in Resources */ = {isa = PBXBuildFile; fileRef = AD002041 /* recipe-kumquat-spritzer.png */; };
+		AD001042 /* recipe-kumquats-candied.png in Resources */ = {isa = PBXBuildFile; fileRef = AD002042 /* recipe-kumquats-candied.png */; };
+		AD001043 /* recipe-peach-cobbler.png in Resources */ = {isa = PBXBuildFile; fileRef = AD002043 /* recipe-peach-cobbler.png */; };
+		AD001044 /* recipe-peach-iced-tea.png in Resources */ = {isa = PBXBuildFile; fileRef = AD002044 /* recipe-peach-iced-tea.png */; };
+		AD001045 /* recipe-peach-salsa.png in Resources */ = {isa = PBXBuildFile; fileRef = AD002045 /* recipe-peach-salsa.png */; };
+		AD001046 /* recipe-peaches-grilled.png in Resources */ = {isa = PBXBuildFile; fileRef = AD002046 /* recipe-peaches-grilled.png */; };
+		AD001047 /* recipe-pear-butter.png in Resources */ = {isa = PBXBuildFile; fileRef = AD002047 /* recipe-pear-butter.png */; };
+		AD001048 /* recipe-pear-crumble.png in Resources */ = {isa = PBXBuildFile; fileRef = AD002048 /* recipe-pear-crumble.png */; };
+		AD001049 /* recipe-pear-salad.png in Resources */ = {isa = PBXBuildFile; fileRef = AD002049 /* recipe-pear-salad.png */; };
+		AD001050 /* recipe-pears-poached.png in Resources */ = {isa = PBXBuildFile; fileRef = AD002050 /* recipe-pears-poached.png */; };
+		AD001051 /* recipe-pina-colada.png in Resources */ = {isa = PBXBuildFile; fileRef = AD002051 /* recipe-pina-colada.png */; };
+		AD001052 /* recipe-plum-cake.png in Resources */ = {isa = PBXBuildFile; fileRef = AD002052 /* recipe-plum-cake.png */; };
+		AD001053 /* recipe-plum-galette.png in Resources */ = {isa = PBXBuildFile; fileRef = AD002053 /* recipe-plum-galette.png */; };
+		AD001054 /* recipe-plum-sauce.png in Resources */ = {isa = PBXBuildFile; fileRef = AD002054 /* recipe-plum-sauce.png */; };
+		AD001055 /* recipe-plums-roasted.png in Resources */ = {isa = PBXBuildFile; fileRef = AD002055 /* recipe-plums-roasted.png */; };
+		AD001056 /* recipe-pomelo-chili-salt.png in Resources */ = {isa = PBXBuildFile; fileRef = AD002056 /* recipe-pomelo-chili-salt.png */; };
+		AD001057 /* recipe-pomelo-salad.png in Resources */ = {isa = PBXBuildFile; fileRef = AD002057 /* recipe-pomelo-salad.png */; };
+		AD001058 /* recipe-pomelo-sorbet.png in Resources */ = {isa = PBXBuildFile; fileRef = AD002058 /* recipe-pomelo-sorbet.png */; };
+		AD001059 /* recipe-pomelo-tea.png in Resources */ = {isa = PBXBuildFile; fileRef = AD002059 /* recipe-pomelo-tea.png */; };
+		AD001060 /* recipe-raspberry-chia-jam.png in Resources */ = {isa = PBXBuildFile; fileRef = AD002060 /* recipe-raspberry-chia-jam.png */; };
+		AD001061 /* recipe-raspberry-coulis.png in Resources */ = {isa = PBXBuildFile; fileRef = AD002061 /* recipe-raspberry-coulis.png */; };
+		AD001062 /* recipe-raspberry-fool.png in Resources */ = {isa = PBXBuildFile; fileRef = AD002062 /* recipe-raspberry-fool.png */; };
+		AD001063 /* recipe-raspberry-muffins.png in Resources */ = {isa = PBXBuildFile; fileRef = AD002063 /* recipe-raspberry-muffins.png */; };
+		AD001064 /* recipe-redcurrant-cake.png in Resources */ = {isa = PBXBuildFile; fileRef = AD002064 /* recipe-redcurrant-cake.png */; };
+		AD001065 /* recipe-redcurrant-cordial.png in Resources */ = {isa = PBXBuildFile; fileRef = AD002065 /* recipe-redcurrant-cordial.png */; };
+		AD001066 /* recipe-redcurrant-jelly.png in Resources */ = {isa = PBXBuildFile; fileRef = AD002066 /* recipe-redcurrant-jelly.png */; };
+		AD001067 /* recipe-redcurrant-sauce.png in Resources */ = {isa = PBXBuildFile; fileRef = AD002067 /* recipe-redcurrant-sauce.png */; };
+		AD001068 /* recipe-starfruit-candied.png in Resources */ = {isa = PBXBuildFile; fileRef = AD002068 /* recipe-starfruit-candied.png */; };
+		AD001069 /* recipe-starfruit-juice.png in Resources */ = {isa = PBXBuildFile; fileRef = AD002069 /* recipe-starfruit-juice.png */; };
+		AD001070 /* recipe-starfruit-salad.png in Resources */ = {isa = PBXBuildFile; fileRef = AD002070 /* recipe-starfruit-salad.png */; };
+		AD001071 /* recipe-starfruit-salsa.png in Resources */ = {isa = PBXBuildFile; fileRef = AD002071 /* recipe-starfruit-salsa.png */; };
+		AD001072 /* recipe-strawberries-cream.png in Resources */ = {isa = PBXBuildFile; fileRef = AD002072 /* recipe-strawberries-cream.png */; };
+		AD001073 /* recipe-strawberry-jam.png in Resources */ = {isa = PBXBuildFile; fileRef = AD002073 /* recipe-strawberry-jam.png */; };
+		AD001074 /* recipe-strawberry-lemonade.png in Resources */ = {isa = PBXBuildFile; fileRef = AD002074 /* recipe-strawberry-lemonade.png */; };
+		AD001075 /* recipe-strawberry-shortcake.png in Resources */ = {isa = PBXBuildFile; fileRef = AD002075 /* recipe-strawberry-shortcake.png */; };
+		AD001076 /* recipe-watermelon-agua.png in Resources */ = {isa = PBXBuildFile; fileRef = AD002076 /* recipe-watermelon-agua.png */; };
+		AD001077 /* recipe-watermelon-feta.png in Resources */ = {isa = PBXBuildFile; fileRef = AD002077 /* recipe-watermelon-feta.png */; };
+		AD001078 /* recipe-watermelon-gazpacho.png in Resources */ = {isa = PBXBuildFile; fileRef = AD002078 /* recipe-watermelon-gazpacho.png */; };
+		AD001079 /* recipe-watermelon-granita.png in Resources */ = {isa = PBXBuildFile; fileRef = AD002079 /* recipe-watermelon-granita.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		3BADC2AA2FF059CD0036D8C3 /* File.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = File.txt; sourceTree = "<group>"; };
+		3BAE475E2FEC9F9D005204B5 /* Geist-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Geist-Black.ttf"; sourceTree = "<group>"; };
+		3BAE475F2FEC9F9D005204B5 /* Geist-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Geist-BlackItalic.ttf"; sourceTree = "<group>"; };
+		3BAE47602FEC9F9D005204B5 /* Geist-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Geist-Bold.ttf"; sourceTree = "<group>"; };
+		3BAE47612FEC9F9D005204B5 /* Geist-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Geist-BoldItalic.ttf"; sourceTree = "<group>"; };
+		3BAE47622FEC9F9D005204B5 /* Geist-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Geist-ExtraBold.ttf"; sourceTree = "<group>"; };
+		3BAE47632FEC9F9D005204B5 /* Geist-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Geist-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
+		3BAE47642FEC9F9D005204B5 /* Geist-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Geist-ExtraLight.ttf"; sourceTree = "<group>"; };
+		3BAE47652FEC9F9D005204B5 /* Geist-ExtraLightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Geist-ExtraLightItalic.ttf"; sourceTree = "<group>"; };
+		3BAE47662FEC9F9D005204B5 /* Geist-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Geist-Italic.ttf"; sourceTree = "<group>"; };
+		3BAE47672FEC9F9D005204B5 /* Geist-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Geist-Light.ttf"; sourceTree = "<group>"; };
+		3BAE47682FEC9F9D005204B5 /* Geist-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Geist-LightItalic.ttf"; sourceTree = "<group>"; };
+		3BAE47692FEC9F9D005204B5 /* Geist-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Geist-Medium.ttf"; sourceTree = "<group>"; };
+		3BAE476A2FEC9F9D005204B5 /* Geist-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Geist-MediumItalic.ttf"; sourceTree = "<group>"; };
+		3BAE476B2FEC9F9D005204B5 /* Geist-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Geist-Regular.ttf"; sourceTree = "<group>"; };
+		3BAE476C2FEC9F9D005204B5 /* Geist-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Geist-SemiBold.ttf"; sourceTree = "<group>"; };
+		3BAE476D2FEC9F9D005204B5 /* Geist-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Geist-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
+		3BAE476E2FEC9F9D005204B5 /* Geist-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Geist-Thin.ttf"; sourceTree = "<group>"; };
+		3BAE476F2FEC9F9D005204B5 /* Geist-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Geist-ThinItalic.ttf"; sourceTree = "<group>"; };
+		3BAE47712FEC9F9D005204B5 /* OFL.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = OFL.txt; sourceTree = "<group>"; };
+		3BAE47722FEC9F9D005204B5 /* README.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
+		3BAE47742FEC9F9D005204B5 /* OFL.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = OFL.txt; sourceTree = "<group>"; };
+		3BAE47762FEC9F9D005204B5 /* Geist-Italic-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Geist-Italic-VariableFont_wght.ttf"; sourceTree = "<group>"; };
+		3BAE47772FEC9F9D005204B5 /* Geist-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Geist-VariableFont_wght.ttf"; sourceTree = "<group>"; };
+		3BAE47782FEC9F9D005204B5 /* GeistMono-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GeistMono-Black.ttf"; sourceTree = "<group>"; };
+		3BAE47792FEC9F9D005204B5 /* GeistMono-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GeistMono-BlackItalic.ttf"; sourceTree = "<group>"; };
+		3BAE477A2FEC9F9D005204B5 /* GeistMono-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GeistMono-Bold.ttf"; sourceTree = "<group>"; };
+		3BAE477B2FEC9F9D005204B5 /* GeistMono-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GeistMono-BoldItalic.ttf"; sourceTree = "<group>"; };
+		3BAE477C2FEC9F9D005204B5 /* GeistMono-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GeistMono-ExtraBold.ttf"; sourceTree = "<group>"; };
+		3BAE477D2FEC9F9D005204B5 /* GeistMono-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GeistMono-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
+		3BAE477E2FEC9F9D005204B5 /* GeistMono-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GeistMono-ExtraLight.ttf"; sourceTree = "<group>"; };
+		3BAE477F2FEC9F9D005204B5 /* GeistMono-ExtraLightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GeistMono-ExtraLightItalic.ttf"; sourceTree = "<group>"; };
+		3BAE47802FEC9F9D005204B5 /* GeistMono-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GeistMono-Italic.ttf"; sourceTree = "<group>"; };
+		3BAE47812FEC9F9D005204B5 /* GeistMono-Italic-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GeistMono-Italic-VariableFont_wght.ttf"; sourceTree = "<group>"; };
+		3BAE47822FEC9F9D005204B5 /* GeistMono-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GeistMono-Light.ttf"; sourceTree = "<group>"; };
+		3BAE47832FEC9F9D005204B5 /* GeistMono-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GeistMono-LightItalic.ttf"; sourceTree = "<group>"; };
+		3BAE47842FEC9F9D005204B5 /* GeistMono-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GeistMono-Medium.ttf"; sourceTree = "<group>"; };
+		3BAE47852FEC9F9D005204B5 /* GeistMono-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GeistMono-MediumItalic.ttf"; sourceTree = "<group>"; };
+		3BAE47862FEC9F9D005204B5 /* GeistMono-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GeistMono-Regular.ttf"; sourceTree = "<group>"; };
+		3BAE47872FEC9F9D005204B5 /* GeistMono-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GeistMono-SemiBold.ttf"; sourceTree = "<group>"; };
+		3BAE47882FEC9F9D005204B5 /* GeistMono-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GeistMono-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
+		3BAE47892FEC9F9D005204B5 /* GeistMono-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GeistMono-Thin.ttf"; sourceTree = "<group>"; };
+		3BAE478A2FEC9F9D005204B5 /* GeistMono-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GeistMono-ThinItalic.ttf"; sourceTree = "<group>"; };
+		3BAE478B2FEC9F9D005204B5 /* GeistMono-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GeistMono-VariableFont_wght.ttf"; sourceTree = "<group>"; };
+		3BAE478C2FEC9F9D005204B5 /* Pacifico-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pacifico-Regular.ttf"; sourceTree = "<group>"; };
+		AA002001 /* LemonPigApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LemonPigApp.swift; sourceTree = "<group>"; };
+		AA002002 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		AA002003 /* AppRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRouter.swift; sourceTree = "<group>"; };
+		AA002004 /* FruitData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitData.swift; sourceTree = "<group>"; };
+		AA002005 /* FlavorData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlavorData.swift; sourceTree = "<group>"; };
+		AF002001 /* FruitIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitIdentifier.swift; sourceTree = "<group>"; };
+		AA002101 /* CatalogSweetSour.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogSweetSour.swift; sourceTree = "<group>"; };
+		AA002102 /* CatalogTropicalTart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogTropicalTart.swift; sourceTree = "<group>"; };
+		AA002103 /* CatalogSweetCreamy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogSweetCreamy.swift; sourceTree = "<group>"; };
+		AA002104 /* CatalogCitrusy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogCitrusy.swift; sourceTree = "<group>"; };
+		AA002105 /* PhotoCredits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCredits.swift; sourceTree = "<group>"; };
+		AA002006 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		AA002007 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
+		AA002008 /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
+		AA002009 /* RecipeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeView.swift; sourceTree = "<group>"; };
+		AA00200A /* TasteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TasteView.swift; sourceTree = "<group>"; };
+		AA00200B /* NoMatchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoMatchView.swift; sourceTree = "<group>"; };
+		AA00200C /* DesignTokens.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignTokens.swift; sourceTree = "<group>"; };
+		AA00200D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AA00200E /* lemons-bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lemons-bg.png"; sourceTree = "<group>"; };
+		AA00200F /* tamarind-bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tamarind-bg.png"; sourceTree = "<group>"; };
+		AA002010 /* mascot-line-cut.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mascot-line-cut.png"; sourceTree = "<group>"; };
+		AA002011 /* mascot-line-navy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mascot-line-navy.png"; sourceTree = "<group>"; };
+		AA002012 /* mascot-line.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mascot-line.png"; sourceTree = "<group>"; };
+		AA002013 /* pig-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pig-icon.png"; sourceTree = "<group>"; };
+		AA002014 /* recipe-chutney.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-chutney.png"; sourceTree = "<group>"; };
+		AA002015 /* recipe-padthai.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-padthai.png"; sourceTree = "<group>"; };
+		AA002016 /* recipe-ribs.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-ribs.png"; sourceTree = "<group>"; };
+		AA002017 /* recipe-agua.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-agua.png"; sourceTree = "<group>"; };
+		AA002018 /* recipe-toyomansi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-toyomansi.png"; sourceTree = "<group>"; };
+		AA002019 /* recipe-calamansi-ade.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-calamansi-ade.png"; sourceTree = "<group>"; };
+		AA00201A /* recipe-calamansi-bars.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-calamansi-bars.png"; sourceTree = "<group>"; };
+		AA00201B /* recipe-calamansi-marinade.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-calamansi-marinade.png"; sourceTree = "<group>"; };
+		AA00201C /* fruit-calamansi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fruit-calamansi.png"; sourceTree = "<group>"; };
+		AA00201D /* fruit-green-mango.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fruit-green-mango.png"; sourceTree = "<group>"; };
+		AA00201E /* fruit-kiwi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fruit-kiwi.png"; sourceTree = "<group>"; };
+		AA00201F /* fruit-passion-fruit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fruit-passion-fruit.png"; sourceTree = "<group>"; };
+		AA002020 /* fruit-pomegranate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fruit-pomegranate.png"; sourceTree = "<group>"; };
+		AC002001 /* recipe-aam-panna.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-aam-panna.png"; sourceTree = "<group>"; };
+		AC002002 /* recipe-apple-crisp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-apple-crisp.png"; sourceTree = "<group>"; };
+		AC002003 /* recipe-apple-waldorf.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-apple-waldorf.png"; sourceTree = "<group>"; };
+		AC002004 /* recipe-applesauce.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-applesauce.png"; sourceTree = "<group>"; };
+		AC002005 /* recipe-avocado-citrus-salad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-avocado-citrus-salad.png"; sourceTree = "<group>"; };
+		AC002006 /* recipe-avocado-mousse.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-avocado-mousse.png"; sourceTree = "<group>"; };
+		AC002007 /* recipe-banana-bread.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-banana-bread.png"; sourceTree = "<group>"; };
+		AC002008 /* recipe-banana-nice-cream.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-banana-nice-cream.png"; sourceTree = "<group>"; };
+		AC002009 /* recipe-bananas-caramelized.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-bananas-caramelized.png"; sourceTree = "<group>"; };
+		AC002010 /* recipe-candied-orange.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-candied-orange.png"; sourceTree = "<group>"; };
+		AC002011 /* recipe-cherimoya-nice-cream.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-cherimoya-nice-cream.png"; sourceTree = "<group>"; };
+		AC002012 /* recipe-cherimoya-salad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-cherimoya-salad.png"; sourceTree = "<group>"; };
+		AC002013 /* recipe-cherimoya-smoothie.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-cherimoya-smoothie.png"; sourceTree = "<group>"; };
+		AC002014 /* recipe-cherry-clafoutis.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-cherry-clafoutis.png"; sourceTree = "<group>"; };
+		AC002015 /* recipe-cherry-compote.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-cherry-compote.png"; sourceTree = "<group>"; };
+		AC002016 /* recipe-cherry-soda.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-cherry-soda.png"; sourceTree = "<group>"; };
+		AC002017 /* recipe-choco-mandarins.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-choco-mandarins.png"; sourceTree = "<group>"; };
+		AC002018 /* recipe-cranberry-muffins.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-cranberry-muffins.png"; sourceTree = "<group>"; };
+		AC002019 /* recipe-cranberry-relish.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-cranberry-relish.png"; sourceTree = "<group>"; };
+		AC002020 /* recipe-cranberry-spritzer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-cranberry-spritzer.png"; sourceTree = "<group>"; };
+		AC002021 /* recipe-date-balls.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-date-balls.png"; sourceTree = "<group>"; };
+		AC002022 /* recipe-date-porridge.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-date-porridge.png"; sourceTree = "<group>"; };
+		AC002023 /* recipe-dates-stuffed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-dates-stuffed.png"; sourceTree = "<group>"; };
+		AC002024 /* recipe-dragon-chia.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-dragon-chia.png"; sourceTree = "<group>"; };
+		AC002025 /* recipe-dragon-lemonade.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-dragon-lemonade.png"; sourceTree = "<group>"; };
+		AC002026 /* recipe-dragon-salsa.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-dragon-salsa.png"; sourceTree = "<group>"; };
+		AC002027 /* recipe-fig-jam.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-fig-jam.png"; sourceTree = "<group>"; };
+		AC002028 /* recipe-fig-salad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-fig-salad.png"; sourceTree = "<group>"; };
+		AC002029 /* recipe-figs-roasted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-figs-roasted.png"; sourceTree = "<group>"; };
+		AC002030 /* recipe-gooseberry-chutney.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-gooseberry-chutney.png"; sourceTree = "<group>"; };
+		AC002031 /* recipe-gooseberry-crumble.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-gooseberry-crumble.png"; sourceTree = "<group>"; };
+		AC002032 /* recipe-gooseberry-jam.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-gooseberry-jam.png"; sourceTree = "<group>"; };
+		AC002033 /* recipe-grape-chicken-salad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-grape-chicken-salad.png"; sourceTree = "<group>"; };
+		AC002034 /* recipe-grape-granita.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-grape-granita.png"; sourceTree = "<group>"; };
+		AC002035 /* recipe-grapefruit-avocado.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-grapefruit-avocado.png"; sourceTree = "<group>"; };
+		AC002036 /* recipe-grapefruit-marmalade.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-grapefruit-marmalade.png"; sourceTree = "<group>"; };
+		AC002037 /* recipe-grapefruit-sparkler.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-grapefruit-sparkler.png"; sourceTree = "<group>"; };
+		AC002038 /* recipe-grapes-roasted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-grapes-roasted.png"; sourceTree = "<group>"; };
+		AC002039 /* recipe-green-mango-chutney.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-green-mango-chutney.png"; sourceTree = "<group>"; };
+		AC002040 /* recipe-green-mango-slaw.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-green-mango-slaw.png"; sourceTree = "<group>"; };
+		AC002041 /* recipe-guacamole.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-guacamole.png"; sourceTree = "<group>"; };
+		AC002042 /* recipe-guava-agua.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-guava-agua.png"; sourceTree = "<group>"; };
+		AC002043 /* recipe-guava-glaze.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-guava-glaze.png"; sourceTree = "<group>"; };
+		AC002044 /* recipe-guava-pastelitos.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-guava-pastelitos.png"; sourceTree = "<group>"; };
+		AC002045 /* recipe-kiwi-parfait.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-kiwi-parfait.png"; sourceTree = "<group>"; };
+		AC002046 /* recipe-kiwi-pavlova.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-kiwi-pavlova.png"; sourceTree = "<group>"; };
+		AC002047 /* recipe-kiwi-smoothie.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-kiwi-smoothie.png"; sourceTree = "<group>"; };
+		AC002048 /* recipe-lemon-chicken.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-lemon-chicken.png"; sourceTree = "<group>"; };
+		AC002049 /* recipe-lemonade.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-lemonade.png"; sourceTree = "<group>"; };
+		AC002050 /* recipe-lime-rice.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-lime-rice.png"; sourceTree = "<group>"; };
+		AC002051 /* recipe-limeade.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-limeade.png"; sourceTree = "<group>"; };
+		AC002052 /* recipe-lychee-iced-tea.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-lychee-iced-tea.png"; sourceTree = "<group>"; };
+		AC002053 /* recipe-lychee-panna-cotta.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-lychee-panna-cotta.png"; sourceTree = "<group>"; };
+		AC002054 /* recipe-lychee-salad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-lychee-salad.png"; sourceTree = "<group>"; };
+		AC002055 /* recipe-mamey-bowl.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-mamey-bowl.png"; sourceTree = "<group>"; };
+		AC002056 /* recipe-mamey-flan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-mamey-flan.png"; sourceTree = "<group>"; };
+		AC002057 /* recipe-mamey-ice-cream.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-mamey-ice-cream.png"; sourceTree = "<group>"; };
+		AC002058 /* recipe-mandarin-dressing.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-mandarin-dressing.png"; sourceTree = "<group>"; };
+		AC002059 /* recipe-mandarin-salad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-mandarin-salad.png"; sourceTree = "<group>"; };
+		AC002060 /* recipe-mango-salsa.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-mango-salsa.png"; sourceTree = "<group>"; };
+		AC002061 /* recipe-mango-sorbet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-mango-sorbet.png"; sourceTree = "<group>"; };
+		AC002062 /* recipe-mango-sticky-rice.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-mango-sticky-rice.png"; sourceTree = "<group>"; };
+		AC002063 /* recipe-orange-chicken.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-orange-chicken.png"; sourceTree = "<group>"; };
+		AC002064 /* recipe-orange-compote.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-orange-compote.png"; sourceTree = "<group>"; };
+		AC002065 /* recipe-papaya-batido.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-papaya-batido.png"; sourceTree = "<group>"; };
+		AC002066 /* recipe-papaya-salad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-papaya-salad.png"; sourceTree = "<group>"; };
+		AC002067 /* recipe-papaya-sorbet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-papaya-sorbet.png"; sourceTree = "<group>"; };
+		AC002068 /* recipe-passion-mousse.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-passion-mousse.png"; sourceTree = "<group>"; };
+		AC002069 /* recipe-passion-tea.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-passion-tea.png"; sourceTree = "<group>"; };
+		AC002070 /* recipe-passion-vinaigrette.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-passion-vinaigrette.png"; sourceTree = "<group>"; };
+		AC002071 /* recipe-persimmon-bread.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-persimmon-bread.png"; sourceTree = "<group>"; };
+		AC002072 /* recipe-persimmon-salsa.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-persimmon-salsa.png"; sourceTree = "<group>"; };
+		AC002073 /* recipe-persimmon-smoothie.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-persimmon-smoothie.png"; sourceTree = "<group>"; };
+		AC002074 /* recipe-pineapple-fried-rice.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-pineapple-fried-rice.png"; sourceTree = "<group>"; };
+		AC002075 /* recipe-pineapple-salsa.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-pineapple-salsa.png"; sourceTree = "<group>"; };
+		AC002076 /* recipe-pineapple-smoothie.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-pineapple-smoothie.png"; sourceTree = "<group>"; };
+		AC002077 /* recipe-pom-couscous.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-pom-couscous.png"; sourceTree = "<group>"; };
+		AC002078 /* recipe-pom-raita.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-pom-raita.png"; sourceTree = "<group>"; };
+		AC002079 /* recipe-pom-spritzer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-pom-spritzer.png"; sourceTree = "<group>"; };
+		AC002080 /* recipe-preserved-lemons.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-preserved-lemons.png"; sourceTree = "<group>"; };
+		AC002081 /* recipe-rhubarb-crumble.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-rhubarb-crumble.png"; sourceTree = "<group>"; };
+		AC002082 /* recipe-rhubarb-roasted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-rhubarb-roasted.png"; sourceTree = "<group>"; };
+		AC002083 /* recipe-rhubarb-syrup.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-rhubarb-syrup.png"; sourceTree = "<group>"; };
+		AC002084 /* recipe-sapodilla-chaat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-sapodilla-chaat.png"; sourceTree = "<group>"; };
+		AC002085 /* recipe-sapodilla-halwa.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-sapodilla-halwa.png"; sourceTree = "<group>"; };
+		AC002086 /* recipe-sapodilla-ice-cream.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-sapodilla-ice-cream.png"; sourceTree = "<group>"; };
+		AC002087 /* recipe-shrimp-ceviche.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-shrimp-ceviche.png"; sourceTree = "<group>"; };
+		AC002088 /* recipe-soursop-punch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-soursop-punch.png"; sourceTree = "<group>"; };
+		AC002089 /* recipe-soursop-smoothie.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-soursop-smoothie.png"; sourceTree = "<group>"; };
+		AC002090 /* recipe-soursop-sorbet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-soursop-sorbet.png"; sourceTree = "<group>"; };
+		AC002091 /* recipe-yuzu-curd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-yuzu-curd.png"; sourceTree = "<group>"; };
+		AC002092 /* recipe-yuzu-tea.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-yuzu-tea.png"; sourceTree = "<group>"; };
+		AC002093 /* recipe-yuzu-vinaigrette.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-yuzu-vinaigrette.png"; sourceTree = "<group>"; };
+		AB002001 /* fruit-avocado.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fruit-avocado.png"; sourceTree = "<group>"; };
+		AB002002 /* fruit-banana.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fruit-banana.png"; sourceTree = "<group>"; };
+		AB002003 /* fruit-cherimoya.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fruit-cherimoya.png"; sourceTree = "<group>"; };
+		AB002004 /* fruit-cranberry.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fruit-cranberry.png"; sourceTree = "<group>"; };
+		AB002005 /* fruit-date.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fruit-date.png"; sourceTree = "<group>"; };
+		AB002006 /* fruit-dragon-fruit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fruit-dragon-fruit.png"; sourceTree = "<group>"; };
+		AB002007 /* fruit-fig.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fruit-fig.png"; sourceTree = "<group>"; };
+		AB002008 /* fruit-gooseberry.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fruit-gooseberry.png"; sourceTree = "<group>"; };
+		AB002009 /* fruit-grapefruit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fruit-grapefruit.png"; sourceTree = "<group>"; };
+		AB002010 /* fruit-green-apple.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fruit-green-apple.png"; sourceTree = "<group>"; };
+		AB002011 /* fruit-guava.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fruit-guava.png"; sourceTree = "<group>"; };
+		AB002012 /* fruit-lemon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fruit-lemon.png"; sourceTree = "<group>"; };
+		AB002013 /* fruit-lime.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fruit-lime.png"; sourceTree = "<group>"; };
+		AB002014 /* fruit-lychee.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fruit-lychee.png"; sourceTree = "<group>"; };
+		AB002015 /* fruit-mamey.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fruit-mamey.png"; sourceTree = "<group>"; };
+		AB002016 /* fruit-mandarin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fruit-mandarin.png"; sourceTree = "<group>"; };
+		AB002017 /* fruit-mango.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fruit-mango.png"; sourceTree = "<group>"; };
+		AB002018 /* fruit-orange.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fruit-orange.png"; sourceTree = "<group>"; };
+		AB002019 /* fruit-papaya.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fruit-papaya.png"; sourceTree = "<group>"; };
+		AB002020 /* fruit-persimmon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fruit-persimmon.png"; sourceTree = "<group>"; };
+		AB002021 /* fruit-pineapple.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fruit-pineapple.png"; sourceTree = "<group>"; };
+		AB002022 /* fruit-rhubarb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fruit-rhubarb.png"; sourceTree = "<group>"; };
+		AB002023 /* fruit-sapodilla.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fruit-sapodilla.png"; sourceTree = "<group>"; };
+		AB002024 /* fruit-sour-cherry.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fruit-sour-cherry.png"; sourceTree = "<group>"; };
+		AB002025 /* fruit-soursop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fruit-soursop.png"; sourceTree = "<group>"; };
+		AB002026 /* fruit-sweet-grape.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fruit-sweet-grape.png"; sourceTree = "<group>"; };
+		AB002027 /* fruit-yuzu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fruit-yuzu.png"; sourceTree = "<group>"; };
+		AB002028 /* recipe-apple-slaw.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-apple-slaw.png"; sourceTree = "<group>"; };
+		AB002029 /* recipe-avocado-toast.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-avocado-toast.png"; sourceTree = "<group>"; };
+		AB002030 /* recipe-banana-pancakes.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-banana-pancakes.png"; sourceTree = "<group>"; };
+		AB002031 /* recipe-cherimoya-cream.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-cherimoya-cream.png"; sourceTree = "<group>"; };
+		AB002032 /* recipe-cherry-pie.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-cherry-pie.png"; sourceTree = "<group>"; };
+		AB002033 /* recipe-cranberry-sauce.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-cranberry-sauce.png"; sourceTree = "<group>"; };
+		AB002034 /* recipe-date-shake.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-date-shake.png"; sourceTree = "<group>"; };
+		AB002035 /* recipe-dragon-bowl.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-dragon-bowl.png"; sourceTree = "<group>"; };
+		AB002036 /* recipe-fig-toasts.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-fig-toasts.png"; sourceTree = "<group>"; };
+		AB002037 /* recipe-gooseberry-fool.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-gooseberry-fool.png"; sourceTree = "<group>"; };
+		AB002038 /* recipe-grape-focaccia.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-grape-focaccia.png"; sourceTree = "<group>"; };
+		AB002039 /* recipe-grapefruit-brulee.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-grapefruit-brulee.png"; sourceTree = "<group>"; };
+		AB002040 /* recipe-green-mango-salad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-green-mango-salad.png"; sourceTree = "<group>"; };
+		AB002041 /* recipe-grilled-pineapple.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-grilled-pineapple.png"; sourceTree = "<group>"; };
+		AB002042 /* recipe-guava-paste.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-guava-paste.png"; sourceTree = "<group>"; };
+		AB002043 /* recipe-kiwi-salsa.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-kiwi-salsa.png"; sourceTree = "<group>"; };
+		AB002044 /* recipe-lemon-pasta.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-lemon-pasta.png"; sourceTree = "<group>"; };
+		AB002045 /* recipe-lime-pie.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-lime-pie.png"; sourceTree = "<group>"; };
+		AB002046 /* recipe-lychee-sorbet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-lychee-sorbet.png"; sourceTree = "<group>"; };
+		AB002047 /* recipe-mamey-batido.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-mamey-batido.png"; sourceTree = "<group>"; };
+		AB002048 /* recipe-mandarin-cake.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-mandarin-cake.png"; sourceTree = "<group>"; };
+		AB002049 /* recipe-mango-lassi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-mango-lassi.png"; sourceTree = "<group>"; };
+		AB002050 /* recipe-orange-salad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-orange-salad.png"; sourceTree = "<group>"; };
+		AB002051 /* recipe-papaya-bowl.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-papaya-bowl.png"; sourceTree = "<group>"; };
+		AB002052 /* recipe-passion-curd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-passion-curd.png"; sourceTree = "<group>"; };
+		AB002053 /* recipe-persimmon-salad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-persimmon-salad.png"; sourceTree = "<group>"; };
+		AB002054 /* recipe-pom-molasses.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-pom-molasses.png"; sourceTree = "<group>"; };
+		AB002055 /* recipe-rhubarb-compote.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-rhubarb-compote.png"; sourceTree = "<group>"; };
+		AB002056 /* recipe-sapodilla-shake.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-sapodilla-shake.png"; sourceTree = "<group>"; };
+		AB002057 /* recipe-soursop-juice.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-soursop-juice.png"; sourceTree = "<group>"; };
+		AB002058 /* recipe-yuzu-ponzu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-yuzu-ponzu.png"; sourceTree = "<group>"; };
+		AA002021 /* SharedComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedComponents.swift; sourceTree = "<group>"; };
+		AA003001 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AE001001 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config/Config.xcconfig; sourceTree = "<group>"; };
+		AA004001 /* LemonPig.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LemonPig.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AD002000 /* fruit-apricot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fruit-apricot.png"; sourceTree = "<group>"; };
+		AD002001 /* fruit-blackberry.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fruit-blackberry.png"; sourceTree = "<group>"; };
+		AD002002 /* fruit-blood-orange.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fruit-blood-orange.png"; sourceTree = "<group>"; };
+		AD002003 /* fruit-coconut.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fruit-coconut.png"; sourceTree = "<group>"; };
+		AD002004 /* fruit-durian.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fruit-durian.png"; sourceTree = "<group>"; };
+		AD002005 /* fruit-jackfruit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fruit-jackfruit.png"; sourceTree = "<group>"; };
+		AD002006 /* fruit-kumquat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fruit-kumquat.png"; sourceTree = "<group>"; };
+		AD002007 /* fruit-peach.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fruit-peach.png"; sourceTree = "<group>"; };
+		AD002008 /* fruit-pear.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fruit-pear.png"; sourceTree = "<group>"; };
+		AD002009 /* fruit-plum.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fruit-plum.png"; sourceTree = "<group>"; };
+		AD002010 /* fruit-pomelo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fruit-pomelo.png"; sourceTree = "<group>"; };
+		AD002011 /* fruit-raspberry.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fruit-raspberry.png"; sourceTree = "<group>"; };
+		AD002012 /* fruit-red-currant.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fruit-red-currant.png"; sourceTree = "<group>"; };
+		AD002013 /* fruit-starfruit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fruit-starfruit.png"; sourceTree = "<group>"; };
+		AD002014 /* fruit-strawberry.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fruit-strawberry.png"; sourceTree = "<group>"; };
+		AD002015 /* fruit-watermelon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fruit-watermelon.png"; sourceTree = "<group>"; };
+		AD002016 /* recipe-apricot-crumble.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-apricot-crumble.png"; sourceTree = "<group>"; };
+		AD002017 /* recipe-apricot-jam.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-apricot-jam.png"; sourceTree = "<group>"; };
+		AD002018 /* recipe-apricot-tagine.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-apricot-tagine.png"; sourceTree = "<group>"; };
+		AD002019 /* recipe-apricots-grilled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-apricots-grilled.png"; sourceTree = "<group>"; };
+		AD002020 /* recipe-blackberry-cobbler.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-blackberry-cobbler.png"; sourceTree = "<group>"; };
+		AD002021 /* recipe-blackberry-jam.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-blackberry-jam.png"; sourceTree = "<group>"; };
+		AD002022 /* recipe-blackberry-sauce.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-blackberry-sauce.png"; sourceTree = "<group>"; };
+		AD002023 /* recipe-blackberry-smoothie.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-blackberry-smoothie.png"; sourceTree = "<group>"; };
+		AD002024 /* recipe-blood-orange-cake.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-blood-orange-cake.png"; sourceTree = "<group>"; };
+		AD002025 /* recipe-blood-orange-marmalade.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-blood-orange-marmalade.png"; sourceTree = "<group>"; };
+		AD002026 /* recipe-blood-orange-salad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-blood-orange-salad.png"; sourceTree = "<group>"; };
+		AD002027 /* recipe-blood-orangeade.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-blood-orangeade.png"; sourceTree = "<group>"; };
+		AD002028 /* recipe-coconut-chutney.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-coconut-chutney.png"; sourceTree = "<group>"; };
+		AD002029 /* recipe-coconut-macaroons.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-coconut-macaroons.png"; sourceTree = "<group>"; };
+		AD002030 /* recipe-coconut-rice.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-coconut-rice.png"; sourceTree = "<group>"; };
+		AD002031 /* recipe-durian-ice-cream.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-durian-ice-cream.png"; sourceTree = "<group>"; };
+		AD002032 /* recipe-durian-pancakes.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-durian-pancakes.png"; sourceTree = "<group>"; };
+		AD002033 /* recipe-durian-smoothie.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-durian-smoothie.png"; sourceTree = "<group>"; };
+		AD002034 /* recipe-durian-sticky-rice.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-durian-sticky-rice.png"; sourceTree = "<group>"; };
+		AD002035 /* recipe-jackfruit-chips.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-jackfruit-chips.png"; sourceTree = "<group>"; };
+		AD002036 /* recipe-jackfruit-curry.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-jackfruit-curry.png"; sourceTree = "<group>"; };
+		AD002037 /* recipe-jackfruit-smoothie.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-jackfruit-smoothie.png"; sourceTree = "<group>"; };
+		AD002038 /* recipe-jackfruit-tacos.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-jackfruit-tacos.png"; sourceTree = "<group>"; };
+		AD002039 /* recipe-kumquat-marmalade.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-kumquat-marmalade.png"; sourceTree = "<group>"; };
+		AD002040 /* recipe-kumquat-salad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-kumquat-salad.png"; sourceTree = "<group>"; };
+		AD002041 /* recipe-kumquat-spritzer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-kumquat-spritzer.png"; sourceTree = "<group>"; };
+		AD002042 /* recipe-kumquats-candied.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-kumquats-candied.png"; sourceTree = "<group>"; };
+		AD002043 /* recipe-peach-cobbler.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-peach-cobbler.png"; sourceTree = "<group>"; };
+		AD002044 /* recipe-peach-iced-tea.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-peach-iced-tea.png"; sourceTree = "<group>"; };
+		AD002045 /* recipe-peach-salsa.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-peach-salsa.png"; sourceTree = "<group>"; };
+		AD002046 /* recipe-peaches-grilled.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-peaches-grilled.png"; sourceTree = "<group>"; };
+		AD002047 /* recipe-pear-butter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-pear-butter.png"; sourceTree = "<group>"; };
+		AD002048 /* recipe-pear-crumble.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-pear-crumble.png"; sourceTree = "<group>"; };
+		AD002049 /* recipe-pear-salad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-pear-salad.png"; sourceTree = "<group>"; };
+		AD002050 /* recipe-pears-poached.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-pears-poached.png"; sourceTree = "<group>"; };
+		AD002051 /* recipe-pina-colada.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-pina-colada.png"; sourceTree = "<group>"; };
+		AD002052 /* recipe-plum-cake.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-plum-cake.png"; sourceTree = "<group>"; };
+		AD002053 /* recipe-plum-galette.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-plum-galette.png"; sourceTree = "<group>"; };
+		AD002054 /* recipe-plum-sauce.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-plum-sauce.png"; sourceTree = "<group>"; };
+		AD002055 /* recipe-plums-roasted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-plums-roasted.png"; sourceTree = "<group>"; };
+		AD002056 /* recipe-pomelo-chili-salt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-pomelo-chili-salt.png"; sourceTree = "<group>"; };
+		AD002057 /* recipe-pomelo-salad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-pomelo-salad.png"; sourceTree = "<group>"; };
+		AD002058 /* recipe-pomelo-sorbet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-pomelo-sorbet.png"; sourceTree = "<group>"; };
+		AD002059 /* recipe-pomelo-tea.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-pomelo-tea.png"; sourceTree = "<group>"; };
+		AD002060 /* recipe-raspberry-chia-jam.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-raspberry-chia-jam.png"; sourceTree = "<group>"; };
+		AD002061 /* recipe-raspberry-coulis.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-raspberry-coulis.png"; sourceTree = "<group>"; };
+		AD002062 /* recipe-raspberry-fool.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-raspberry-fool.png"; sourceTree = "<group>"; };
+		AD002063 /* recipe-raspberry-muffins.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-raspberry-muffins.png"; sourceTree = "<group>"; };
+		AD002064 /* recipe-redcurrant-cake.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-redcurrant-cake.png"; sourceTree = "<group>"; };
+		AD002065 /* recipe-redcurrant-cordial.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-redcurrant-cordial.png"; sourceTree = "<group>"; };
+		AD002066 /* recipe-redcurrant-jelly.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-redcurrant-jelly.png"; sourceTree = "<group>"; };
+		AD002067 /* recipe-redcurrant-sauce.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-redcurrant-sauce.png"; sourceTree = "<group>"; };
+		AD002068 /* recipe-starfruit-candied.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-starfruit-candied.png"; sourceTree = "<group>"; };
+		AD002069 /* recipe-starfruit-juice.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-starfruit-juice.png"; sourceTree = "<group>"; };
+		AD002070 /* recipe-starfruit-salad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-starfruit-salad.png"; sourceTree = "<group>"; };
+		AD002071 /* recipe-starfruit-salsa.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-starfruit-salsa.png"; sourceTree = "<group>"; };
+		AD002072 /* recipe-strawberries-cream.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-strawberries-cream.png"; sourceTree = "<group>"; };
+		AD002073 /* recipe-strawberry-jam.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-strawberry-jam.png"; sourceTree = "<group>"; };
+		AD002074 /* recipe-strawberry-lemonade.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-strawberry-lemonade.png"; sourceTree = "<group>"; };
+		AD002075 /* recipe-strawberry-shortcake.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-strawberry-shortcake.png"; sourceTree = "<group>"; };
+		AD002076 /* recipe-watermelon-agua.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-watermelon-agua.png"; sourceTree = "<group>"; };
+		AD002077 /* recipe-watermelon-feta.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-watermelon-feta.png"; sourceTree = "<group>"; };
+		AD002078 /* recipe-watermelon-gazpacho.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-watermelon-gazpacho.png"; sourceTree = "<group>"; };
+		AD002079 /* recipe-watermelon-granita.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-watermelon-granita.png"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AA005001 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3BAE47702FEC9F9D005204B5 /* static */ = {
+			isa = PBXGroup;
+			children = (
+				3BAE475E2FEC9F9D005204B5 /* Geist-Black.ttf */,
+				3BAE475F2FEC9F9D005204B5 /* Geist-BlackItalic.ttf */,
+				3BAE47602FEC9F9D005204B5 /* Geist-Bold.ttf */,
+				3BAE47612FEC9F9D005204B5 /* Geist-BoldItalic.ttf */,
+				3BAE47622FEC9F9D005204B5 /* Geist-ExtraBold.ttf */,
+				3BAE47632FEC9F9D005204B5 /* Geist-ExtraBoldItalic.ttf */,
+				3BAE47642FEC9F9D005204B5 /* Geist-ExtraLight.ttf */,
+				3BAE47652FEC9F9D005204B5 /* Geist-ExtraLightItalic.ttf */,
+				3BAE47662FEC9F9D005204B5 /* Geist-Italic.ttf */,
+				3BAE47672FEC9F9D005204B5 /* Geist-Light.ttf */,
+				3BAE47682FEC9F9D005204B5 /* Geist-LightItalic.ttf */,
+				3BAE47692FEC9F9D005204B5 /* Geist-Medium.ttf */,
+				3BAE476A2FEC9F9D005204B5 /* Geist-MediumItalic.ttf */,
+				3BAE476B2FEC9F9D005204B5 /* Geist-Regular.ttf */,
+				3BAE476C2FEC9F9D005204B5 /* Geist-SemiBold.ttf */,
+				3BAE476D2FEC9F9D005204B5 /* Geist-SemiBoldItalic.ttf */,
+				3BAE476E2FEC9F9D005204B5 /* Geist-Thin.ttf */,
+				3BAE476F2FEC9F9D005204B5 /* Geist-ThinItalic.ttf */,
+			);
+			path = static;
+			sourceTree = "<group>";
+		};
+		3BAE47732FEC9F9D005204B5 /* Geist (1) */ = {
+			isa = PBXGroup;
+			children = (
+				3BAE47702FEC9F9D005204B5 /* static */,
+				3BAE47712FEC9F9D005204B5 /* OFL.txt */,
+				3BAE47722FEC9F9D005204B5 /* README.txt */,
+			);
+			path = "Geist (1)";
+			sourceTree = "<group>";
+		};
+		3BAE47752FEC9F9D005204B5 /* Pacifico */ = {
+			isa = PBXGroup;
+			children = (
+				3BAE47742FEC9F9D005204B5 /* OFL.txt */,
+			);
+			path = Pacifico;
+			sourceTree = "<group>";
+		};
+		3BAE478D2FEC9F9D005204B5 /* Fonts2 */ = {
+			isa = PBXGroup;
+			children = (
+				3BAE47732FEC9F9D005204B5 /* Geist (1) */,
+				3BAE47752FEC9F9D005204B5 /* Pacifico */,
+				3BAE47762FEC9F9D005204B5 /* Geist-Italic-VariableFont_wght.ttf */,
+				3BAE47772FEC9F9D005204B5 /* Geist-VariableFont_wght.ttf */,
+				3BAE47782FEC9F9D005204B5 /* GeistMono-Black.ttf */,
+				3BAE47792FEC9F9D005204B5 /* GeistMono-BlackItalic.ttf */,
+				3BAE477A2FEC9F9D005204B5 /* GeistMono-Bold.ttf */,
+				3BAE477B2FEC9F9D005204B5 /* GeistMono-BoldItalic.ttf */,
+				3BAE477C2FEC9F9D005204B5 /* GeistMono-ExtraBold.ttf */,
+				3BAE477D2FEC9F9D005204B5 /* GeistMono-ExtraBoldItalic.ttf */,
+				3BAE477E2FEC9F9D005204B5 /* GeistMono-ExtraLight.ttf */,
+				3BAE477F2FEC9F9D005204B5 /* GeistMono-ExtraLightItalic.ttf */,
+				3BAE47802FEC9F9D005204B5 /* GeistMono-Italic.ttf */,
+				3BAE47812FEC9F9D005204B5 /* GeistMono-Italic-VariableFont_wght.ttf */,
+				3BAE47822FEC9F9D005204B5 /* GeistMono-Light.ttf */,
+				3BAE47832FEC9F9D005204B5 /* GeistMono-LightItalic.ttf */,
+				3BAE47842FEC9F9D005204B5 /* GeistMono-Medium.ttf */,
+				3BAE47852FEC9F9D005204B5 /* GeistMono-MediumItalic.ttf */,
+				3BAE47862FEC9F9D005204B5 /* GeistMono-Regular.ttf */,
+				3BAE47872FEC9F9D005204B5 /* GeistMono-SemiBold.ttf */,
+				3BAE47882FEC9F9D005204B5 /* GeistMono-SemiBoldItalic.ttf */,
+				3BAE47892FEC9F9D005204B5 /* GeistMono-Thin.ttf */,
+				3BAE478A2FEC9F9D005204B5 /* GeistMono-ThinItalic.ttf */,
+				3BAE478B2FEC9F9D005204B5 /* GeistMono-VariableFont_wght.ttf */,
+				3BAE478C2FEC9F9D005204B5 /* Pacifico-Regular.ttf */,
+			);
+			path = Fonts2;
+			sourceTree = "<group>";
+		};
+		AA006001 = {
+			isa = PBXGroup;
+			children = (
+				AA006002 /* LemonPig */,
+				AA006003 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		AA006002 /* LemonPig */ = {
+			isa = PBXGroup;
+			children = (
+				3BAE478D2FEC9F9D005204B5 /* Fonts2 */,
+				AA002001 /* LemonPigApp.swift */,
+				AA002002 /* ContentView.swift */,
+				AA006004 /* Models */,
+				AA006005 /* Views */,
+				AA006006 /* Utils */,
+				AA006007 /* Images */,
+				AA00200D /* Assets.xcassets */,
+				AA003001 /* Info.plist */,
+				AE001001 /* Config.xcconfig */,
+				3BADC2AA2FF059CD0036D8C3 /* File.txt */,
+			);
+			path = LemonPig;
+			sourceTree = "<group>";
+		};
+		AA006003 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AA004001 /* LemonPig.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AA006004 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				AA002003 /* AppRouter.swift */,
+				AA002004 /* FruitData.swift */,
+				AA002005 /* FlavorData.swift */,
+				AF002001 /* FruitIdentifier.swift */,
+				AA002101 /* CatalogSweetSour.swift */,
+				AA002102 /* CatalogTropicalTart.swift */,
+				AA002103 /* CatalogSweetCreamy.swift */,
+				AA002104 /* CatalogCitrusy.swift */,
+				AA002105 /* PhotoCredits.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		AA006005 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				AA002006 /* HomeView.swift */,
+				AA002007 /* CameraView.swift */,
+				AA002008 /* ResultView.swift */,
+				AA002009 /* RecipeView.swift */,
+				AA00200A /* TasteView.swift */,
+				AA00200B /* NoMatchView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		AA006006 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				AA00200C /* DesignTokens.swift */,
+				AA002021 /* SharedComponents.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		AA006007 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				AA00200E /* lemons-bg.png */,
+				AA00200F /* tamarind-bg.png */,
+				AA002010 /* mascot-line-cut.png */,
+				AA002011 /* mascot-line-navy.png */,
+				AA002012 /* mascot-line.png */,
+				AA002013 /* pig-icon.png */,
+				AA002014 /* recipe-chutney.png */,
+				AA002015 /* recipe-padthai.png */,
+				AA002016 /* recipe-ribs.png */,
+				AA002017 /* recipe-agua.png */,
+				AA002018 /* recipe-toyomansi.png */,
+				AA002019 /* recipe-calamansi-ade.png */,
+				AA00201A /* recipe-calamansi-bars.png */,
+				AA00201B /* recipe-calamansi-marinade.png */,
+				AA00201C /* fruit-calamansi.png */,
+				AA00201D /* fruit-green-mango.png */,
+				AA00201E /* fruit-kiwi.png */,
+				AA00201F /* fruit-passion-fruit.png */,
+				AA002020 /* fruit-pomegranate.png */,
+				AC002001 /* recipe-aam-panna.png */,
+				AC002002 /* recipe-apple-crisp.png */,
+				AC002003 /* recipe-apple-waldorf.png */,
+				AC002004 /* recipe-applesauce.png */,
+				AC002005 /* recipe-avocado-citrus-salad.png */,
+				AC002006 /* recipe-avocado-mousse.png */,
+				AC002007 /* recipe-banana-bread.png */,
+				AC002008 /* recipe-banana-nice-cream.png */,
+				AC002009 /* recipe-bananas-caramelized.png */,
+				AC002010 /* recipe-candied-orange.png */,
+				AC002011 /* recipe-cherimoya-nice-cream.png */,
+				AC002012 /* recipe-cherimoya-salad.png */,
+				AC002013 /* recipe-cherimoya-smoothie.png */,
+				AC002014 /* recipe-cherry-clafoutis.png */,
+				AC002015 /* recipe-cherry-compote.png */,
+				AC002016 /* recipe-cherry-soda.png */,
+				AC002017 /* recipe-choco-mandarins.png */,
+				AC002018 /* recipe-cranberry-muffins.png */,
+				AC002019 /* recipe-cranberry-relish.png */,
+				AC002020 /* recipe-cranberry-spritzer.png */,
+				AC002021 /* recipe-date-balls.png */,
+				AC002022 /* recipe-date-porridge.png */,
+				AC002023 /* recipe-dates-stuffed.png */,
+				AC002024 /* recipe-dragon-chia.png */,
+				AC002025 /* recipe-dragon-lemonade.png */,
+				AC002026 /* recipe-dragon-salsa.png */,
+				AC002027 /* recipe-fig-jam.png */,
+				AC002028 /* recipe-fig-salad.png */,
+				AC002029 /* recipe-figs-roasted.png */,
+				AC002030 /* recipe-gooseberry-chutney.png */,
+				AC002031 /* recipe-gooseberry-crumble.png */,
+				AC002032 /* recipe-gooseberry-jam.png */,
+				AC002033 /* recipe-grape-chicken-salad.png */,
+				AC002034 /* recipe-grape-granita.png */,
+				AC002035 /* recipe-grapefruit-avocado.png */,
+				AC002036 /* recipe-grapefruit-marmalade.png */,
+				AC002037 /* recipe-grapefruit-sparkler.png */,
+				AC002038 /* recipe-grapes-roasted.png */,
+				AC002039 /* recipe-green-mango-chutney.png */,
+				AC002040 /* recipe-green-mango-slaw.png */,
+				AC002041 /* recipe-guacamole.png */,
+				AC002042 /* recipe-guava-agua.png */,
+				AC002043 /* recipe-guava-glaze.png */,
+				AC002044 /* recipe-guava-pastelitos.png */,
+				AC002045 /* recipe-kiwi-parfait.png */,
+				AC002046 /* recipe-kiwi-pavlova.png */,
+				AC002047 /* recipe-kiwi-smoothie.png */,
+				AC002048 /* recipe-lemon-chicken.png */,
+				AC002049 /* recipe-lemonade.png */,
+				AC002050 /* recipe-lime-rice.png */,
+				AC002051 /* recipe-limeade.png */,
+				AC002052 /* recipe-lychee-iced-tea.png */,
+				AC002053 /* recipe-lychee-panna-cotta.png */,
+				AC002054 /* recipe-lychee-salad.png */,
+				AC002055 /* recipe-mamey-bowl.png */,
+				AC002056 /* recipe-mamey-flan.png */,
+				AC002057 /* recipe-mamey-ice-cream.png */,
+				AC002058 /* recipe-mandarin-dressing.png */,
+				AC002059 /* recipe-mandarin-salad.png */,
+				AC002060 /* recipe-mango-salsa.png */,
+				AC002061 /* recipe-mango-sorbet.png */,
+				AC002062 /* recipe-mango-sticky-rice.png */,
+				AC002063 /* recipe-orange-chicken.png */,
+				AC002064 /* recipe-orange-compote.png */,
+				AC002065 /* recipe-papaya-batido.png */,
+				AC002066 /* recipe-papaya-salad.png */,
+				AC002067 /* recipe-papaya-sorbet.png */,
+				AC002068 /* recipe-passion-mousse.png */,
+				AC002069 /* recipe-passion-tea.png */,
+				AC002070 /* recipe-passion-vinaigrette.png */,
+				AC002071 /* recipe-persimmon-bread.png */,
+				AC002072 /* recipe-persimmon-salsa.png */,
+				AC002073 /* recipe-persimmon-smoothie.png */,
+				AC002074 /* recipe-pineapple-fried-rice.png */,
+				AC002075 /* recipe-pineapple-salsa.png */,
+				AC002076 /* recipe-pineapple-smoothie.png */,
+				AC002077 /* recipe-pom-couscous.png */,
+				AC002078 /* recipe-pom-raita.png */,
+				AC002079 /* recipe-pom-spritzer.png */,
+				AC002080 /* recipe-preserved-lemons.png */,
+				AC002081 /* recipe-rhubarb-crumble.png */,
+				AC002082 /* recipe-rhubarb-roasted.png */,
+				AC002083 /* recipe-rhubarb-syrup.png */,
+				AC002084 /* recipe-sapodilla-chaat.png */,
+				AC002085 /* recipe-sapodilla-halwa.png */,
+				AC002086 /* recipe-sapodilla-ice-cream.png */,
+				AC002087 /* recipe-shrimp-ceviche.png */,
+				AC002088 /* recipe-soursop-punch.png */,
+				AC002089 /* recipe-soursop-smoothie.png */,
+				AC002090 /* recipe-soursop-sorbet.png */,
+				AD002000 /* fruit-apricot.png */,
+				AD002001 /* fruit-blackberry.png */,
+				AD002002 /* fruit-blood-orange.png */,
+				AD002003 /* fruit-coconut.png */,
+				AD002004 /* fruit-durian.png */,
+				AD002005 /* fruit-jackfruit.png */,
+				AD002006 /* fruit-kumquat.png */,
+				AD002007 /* fruit-peach.png */,
+				AD002008 /* fruit-pear.png */,
+				AD002009 /* fruit-plum.png */,
+				AD002010 /* fruit-pomelo.png */,
+				AD002011 /* fruit-raspberry.png */,
+				AD002012 /* fruit-red-currant.png */,
+				AD002013 /* fruit-starfruit.png */,
+				AD002014 /* fruit-strawberry.png */,
+				AD002015 /* fruit-watermelon.png */,
+				AD002016 /* recipe-apricot-crumble.png */,
+				AD002017 /* recipe-apricot-jam.png */,
+				AD002018 /* recipe-apricot-tagine.png */,
+				AD002019 /* recipe-apricots-grilled.png */,
+				AD002020 /* recipe-blackberry-cobbler.png */,
+				AD002021 /* recipe-blackberry-jam.png */,
+				AD002022 /* recipe-blackberry-sauce.png */,
+				AD002023 /* recipe-blackberry-smoothie.png */,
+				AD002024 /* recipe-blood-orange-cake.png */,
+				AD002025 /* recipe-blood-orange-marmalade.png */,
+				AD002026 /* recipe-blood-orange-salad.png */,
+				AD002027 /* recipe-blood-orangeade.png */,
+				AD002028 /* recipe-coconut-chutney.png */,
+				AD002029 /* recipe-coconut-macaroons.png */,
+				AD002030 /* recipe-coconut-rice.png */,
+				AD002031 /* recipe-durian-ice-cream.png */,
+				AD002032 /* recipe-durian-pancakes.png */,
+				AD002033 /* recipe-durian-smoothie.png */,
+				AD002034 /* recipe-durian-sticky-rice.png */,
+				AD002035 /* recipe-jackfruit-chips.png */,
+				AD002036 /* recipe-jackfruit-curry.png */,
+				AD002037 /* recipe-jackfruit-smoothie.png */,
+				AD002038 /* recipe-jackfruit-tacos.png */,
+				AD002039 /* recipe-kumquat-marmalade.png */,
+				AD002040 /* recipe-kumquat-salad.png */,
+				AD002041 /* recipe-kumquat-spritzer.png */,
+				AD002042 /* recipe-kumquats-candied.png */,
+				AD002043 /* recipe-peach-cobbler.png */,
+				AD002044 /* recipe-peach-iced-tea.png */,
+				AD002045 /* recipe-peach-salsa.png */,
+				AD002046 /* recipe-peaches-grilled.png */,
+				AD002047 /* recipe-pear-butter.png */,
+				AD002048 /* recipe-pear-crumble.png */,
+				AD002049 /* recipe-pear-salad.png */,
+				AD002050 /* recipe-pears-poached.png */,
+				AD002051 /* recipe-pina-colada.png */,
+				AD002052 /* recipe-plum-cake.png */,
+				AD002053 /* recipe-plum-galette.png */,
+				AD002054 /* recipe-plum-sauce.png */,
+				AD002055 /* recipe-plums-roasted.png */,
+				AD002056 /* recipe-pomelo-chili-salt.png */,
+				AD002057 /* recipe-pomelo-salad.png */,
+				AD002058 /* recipe-pomelo-sorbet.png */,
+				AD002059 /* recipe-pomelo-tea.png */,
+				AD002060 /* recipe-raspberry-chia-jam.png */,
+				AD002061 /* recipe-raspberry-coulis.png */,
+				AD002062 /* recipe-raspberry-fool.png */,
+				AD002063 /* recipe-raspberry-muffins.png */,
+				AD002064 /* recipe-redcurrant-cake.png */,
+				AD002065 /* recipe-redcurrant-cordial.png */,
+				AD002066 /* recipe-redcurrant-jelly.png */,
+				AD002067 /* recipe-redcurrant-sauce.png */,
+				AD002068 /* recipe-starfruit-candied.png */,
+				AD002069 /* recipe-starfruit-juice.png */,
+				AD002070 /* recipe-starfruit-salad.png */,
+				AD002071 /* recipe-starfruit-salsa.png */,
+				AD002072 /* recipe-strawberries-cream.png */,
+				AD002073 /* recipe-strawberry-jam.png */,
+				AD002074 /* recipe-strawberry-lemonade.png */,
+				AD002075 /* recipe-strawberry-shortcake.png */,
+				AD002076 /* recipe-watermelon-agua.png */,
+				AD002077 /* recipe-watermelon-feta.png */,
+				AD002078 /* recipe-watermelon-gazpacho.png */,
+				AD002079 /* recipe-watermelon-granita.png */,
+				AC002091 /* recipe-yuzu-curd.png */,
+				AC002092 /* recipe-yuzu-tea.png */,
+				AC002093 /* recipe-yuzu-vinaigrette.png */,
+				AB002001 /* fruit-avocado.png */,
+				AB002002 /* fruit-banana.png */,
+				AB002003 /* fruit-cherimoya.png */,
+				AB002004 /* fruit-cranberry.png */,
+				AB002005 /* fruit-date.png */,
+				AB002006 /* fruit-dragon-fruit.png */,
+				AB002007 /* fruit-fig.png */,
+				AB002008 /* fruit-gooseberry.png */,
+				AB002009 /* fruit-grapefruit.png */,
+				AB002010 /* fruit-green-apple.png */,
+				AB002011 /* fruit-guava.png */,
+				AB002012 /* fruit-lemon.png */,
+				AB002013 /* fruit-lime.png */,
+				AB002014 /* fruit-lychee.png */,
+				AB002015 /* fruit-mamey.png */,
+				AB002016 /* fruit-mandarin.png */,
+				AB002017 /* fruit-mango.png */,
+				AB002018 /* fruit-orange.png */,
+				AB002019 /* fruit-papaya.png */,
+				AB002020 /* fruit-persimmon.png */,
+				AB002021 /* fruit-pineapple.png */,
+				AB002022 /* fruit-rhubarb.png */,
+				AB002023 /* fruit-sapodilla.png */,
+				AB002024 /* fruit-sour-cherry.png */,
+				AB002025 /* fruit-soursop.png */,
+				AB002026 /* fruit-sweet-grape.png */,
+				AB002027 /* fruit-yuzu.png */,
+				AB002028 /* recipe-apple-slaw.png */,
+				AB002029 /* recipe-avocado-toast.png */,
+				AB002030 /* recipe-banana-pancakes.png */,
+				AB002031 /* recipe-cherimoya-cream.png */,
+				AB002032 /* recipe-cherry-pie.png */,
+				AB002033 /* recipe-cranberry-sauce.png */,
+				AB002034 /* recipe-date-shake.png */,
+				AB002035 /* recipe-dragon-bowl.png */,
+				AB002036 /* recipe-fig-toasts.png */,
+				AB002037 /* recipe-gooseberry-fool.png */,
+				AB002038 /* recipe-grape-focaccia.png */,
+				AB002039 /* recipe-grapefruit-brulee.png */,
+				AB002040 /* recipe-green-mango-salad.png */,
+				AB002041 /* recipe-grilled-pineapple.png */,
+				AB002042 /* recipe-guava-paste.png */,
+				AB002043 /* recipe-kiwi-salsa.png */,
+				AB002044 /* recipe-lemon-pasta.png */,
+				AB002045 /* recipe-lime-pie.png */,
+				AB002046 /* recipe-lychee-sorbet.png */,
+				AB002047 /* recipe-mamey-batido.png */,
+				AB002048 /* recipe-mandarin-cake.png */,
+				AB002049 /* recipe-mango-lassi.png */,
+				AB002050 /* recipe-orange-salad.png */,
+				AB002051 /* recipe-papaya-bowl.png */,
+				AB002052 /* recipe-passion-curd.png */,
+				AB002053 /* recipe-persimmon-salad.png */,
+				AB002054 /* recipe-pom-molasses.png */,
+				AB002055 /* recipe-rhubarb-compote.png */,
+				AB002056 /* recipe-sapodilla-shake.png */,
+				AB002057 /* recipe-soursop-juice.png */,
+				AB002058 /* recipe-yuzu-ponzu.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AA007001 /* LemonPig */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AA009001 /* Build configuration list for PBXNativeTarget "LemonPig" */;
+			buildPhases = (
+				AA008001 /* Sources */,
+				AA005001 /* Frameworks */,
+				AA008002 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LemonPig;
+			productName = LemonPig;
+			productReference = AA004001 /* LemonPig.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AA00A001 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					AA007001 = {
+						CreatedOnToolsVersion = 15.0;
+					};
+				};
+			};
+			buildConfigurationList = AA009002 /* Build configuration list for PBXProject "LemonPig" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = AA006001;
+			productRefGroup = AA006003 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AA007001 /* LemonPig */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AA008002 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA00100D /* Assets.xcassets in Resources */,
+				AA00100E /* lemons-bg.png in Resources */,
+				AA00100F /* tamarind-bg.png in Resources */,
+				AA001010 /* mascot-line-cut.png in Resources */,
+				AA001011 /* mascot-line-navy.png in Resources */,
+				AA001012 /* mascot-line.png in Resources */,
+				3BAE478E2FEC9F9D005204B5 /* GeistMono-ExtraLight.ttf in Resources */,
+				3BAE478F2FEC9F9D005204B5 /* GeistMono-Bold.ttf in Resources */,
+				3BAE47902FEC9F9D005204B5 /* Geist-ExtraLight.ttf in Resources */,
+				3BAE47912FEC9F9D005204B5 /* OFL.txt in Resources */,
+				3BAE47922FEC9F9D005204B5 /* Geist-Thin.ttf in Resources */,
+				3BAE47932FEC9F9D005204B5 /* Geist-Italic-VariableFont_wght.ttf in Resources */,
+				3BAE47942FEC9F9D005204B5 /* Geist-VariableFont_wght.ttf in Resources */,
+				3BAE47952FEC9F9D005204B5 /* Geist-Light.ttf in Resources */,
+				3BAE47962FEC9F9D005204B5 /* GeistMono-ExtraBold.ttf in Resources */,
+				3BAE47972FEC9F9D005204B5 /* GeistMono-Black.ttf in Resources */,
+				3BAE47982FEC9F9D005204B5 /* Geist-Bold.ttf in Resources */,
+				3BAE47992FEC9F9D005204B5 /* GeistMono-SemiBoldItalic.ttf in Resources */,
+				3BAE479A2FEC9F9D005204B5 /* GeistMono-ExtraLightItalic.ttf in Resources */,
+				3BAE479B2FEC9F9D005204B5 /* Geist-LightItalic.ttf in Resources */,
+				3BAE479C2FEC9F9D005204B5 /* Geist-BlackItalic.ttf in Resources */,
+				3BAE479D2FEC9F9D005204B5 /* Geist-BoldItalic.ttf in Resources */,
+				3BADC2AB2FF059CD0036D8C3 /* File.txt in Resources */,
+				3BAE479E2FEC9F9D005204B5 /* Geist-SemiBoldItalic.ttf in Resources */,
+				3BAE479F2FEC9F9D005204B5 /* GeistMono-VariableFont_wght.ttf in Resources */,
+				3BAE47A02FEC9F9D005204B5 /* Geist-MediumItalic.ttf in Resources */,
+				3BAE47A12FEC9F9D005204B5 /* Pacifico-Regular.ttf in Resources */,
+				3BAE47A22FEC9F9D005204B5 /* GeistMono-Italic.ttf in Resources */,
+				3BAE47A32FEC9F9D005204B5 /* GeistMono-LightItalic.ttf in Resources */,
+				3BAE47A42FEC9F9D005204B5 /* Geist-ExtraBoldItalic.ttf in Resources */,
+				3BAE47A52FEC9F9D005204B5 /* Geist-ExtraBold.ttf in Resources */,
+				3BAE47A62FEC9F9D005204B5 /* GeistMono-ExtraBoldItalic.ttf in Resources */,
+				3BAE47A72FEC9F9D005204B5 /* GeistMono-Light.ttf in Resources */,
+				3BAE47A82FEC9F9D005204B5 /* GeistMono-Thin.ttf in Resources */,
+				3BAE47A92FEC9F9D005204B5 /* Geist-Regular.ttf in Resources */,
+				3BAE47AA2FEC9F9D005204B5 /* GeistMono-MediumItalic.ttf in Resources */,
+				3BAE47AB2FEC9F9D005204B5 /* GeistMono-BlackItalic.ttf in Resources */,
+				3BAE47AC2FEC9F9D005204B5 /* Geist-ThinItalic.ttf in Resources */,
+				3BAE47AD2FEC9F9D005204B5 /* GeistMono-SemiBold.ttf in Resources */,
+				3BAE47AE2FEC9F9D005204B5 /* GeistMono-Medium.ttf in Resources */,
+				3BAE47AF2FEC9F9D005204B5 /* Geist-Italic.ttf in Resources */,
+				3BAE47B12FEC9F9D005204B5 /* Geist-Medium.ttf in Resources */,
+				3BAE47B22FEC9F9D005204B5 /* Geist-ExtraLightItalic.ttf in Resources */,
+				3BAE47B32FEC9F9D005204B5 /* Geist-SemiBold.ttf in Resources */,
+				3BAE47B42FEC9F9D005204B5 /* GeistMono-ThinItalic.ttf in Resources */,
+				3BAE47B52FEC9F9D005204B5 /* Geist-Black.ttf in Resources */,
+				3BAE47B62FEC9F9D005204B5 /* GeistMono-Italic-VariableFont_wght.ttf in Resources */,
+				3BAE47B72FEC9F9D005204B5 /* GeistMono-BoldItalic.ttf in Resources */,
+				3BAE47B82FEC9F9D005204B5 /* README.txt in Resources */,
+				3BAE47B92FEC9F9D005204B5 /* GeistMono-Regular.ttf in Resources */,
+				AA001013 /* pig-icon.png in Resources */,
+				AA001014 /* recipe-chutney.png in Resources */,
+				AA001015 /* recipe-padthai.png in Resources */,
+				AA001016 /* recipe-ribs.png in Resources */,
+				AA001017 /* recipe-agua.png in Resources */,
+				AA001018 /* recipe-toyomansi.png in Resources */,
+				AA001019 /* recipe-calamansi-ade.png in Resources */,
+				AA00101A /* recipe-calamansi-bars.png in Resources */,
+				AA00101B /* recipe-calamansi-marinade.png in Resources */,
+				AA00101C /* fruit-calamansi.png in Resources */,
+				AA00101D /* fruit-green-mango.png in Resources */,
+				AA00101E /* fruit-kiwi.png in Resources */,
+				AA00101F /* fruit-passion-fruit.png in Resources */,
+				AA001020 /* fruit-pomegranate.png in Resources */,
+				AC001001 /* recipe-aam-panna.png in Resources */,
+				AC001002 /* recipe-apple-crisp.png in Resources */,
+				AC001003 /* recipe-apple-waldorf.png in Resources */,
+				AC001004 /* recipe-applesauce.png in Resources */,
+				AC001005 /* recipe-avocado-citrus-salad.png in Resources */,
+				AC001006 /* recipe-avocado-mousse.png in Resources */,
+				AC001007 /* recipe-banana-bread.png in Resources */,
+				AC001008 /* recipe-banana-nice-cream.png in Resources */,
+				AC001009 /* recipe-bananas-caramelized.png in Resources */,
+				AC001010 /* recipe-candied-orange.png in Resources */,
+				AC001011 /* recipe-cherimoya-nice-cream.png in Resources */,
+				AC001012 /* recipe-cherimoya-salad.png in Resources */,
+				AC001013 /* recipe-cherimoya-smoothie.png in Resources */,
+				AC001014 /* recipe-cherry-clafoutis.png in Resources */,
+				AC001015 /* recipe-cherry-compote.png in Resources */,
+				AC001016 /* recipe-cherry-soda.png in Resources */,
+				AC001017 /* recipe-choco-mandarins.png in Resources */,
+				AC001018 /* recipe-cranberry-muffins.png in Resources */,
+				AC001019 /* recipe-cranberry-relish.png in Resources */,
+				AC001020 /* recipe-cranberry-spritzer.png in Resources */,
+				AC001021 /* recipe-date-balls.png in Resources */,
+				AC001022 /* recipe-date-porridge.png in Resources */,
+				AC001023 /* recipe-dates-stuffed.png in Resources */,
+				AC001024 /* recipe-dragon-chia.png in Resources */,
+				AC001025 /* recipe-dragon-lemonade.png in Resources */,
+				AC001026 /* recipe-dragon-salsa.png in Resources */,
+				AC001027 /* recipe-fig-jam.png in Resources */,
+				AC001028 /* recipe-fig-salad.png in Resources */,
+				AC001029 /* recipe-figs-roasted.png in Resources */,
+				AC001030 /* recipe-gooseberry-chutney.png in Resources */,
+				AC001031 /* recipe-gooseberry-crumble.png in Resources */,
+				AC001032 /* recipe-gooseberry-jam.png in Resources */,
+				AC001033 /* recipe-grape-chicken-salad.png in Resources */,
+				AC001034 /* recipe-grape-granita.png in Resources */,
+				AC001035 /* recipe-grapefruit-avocado.png in Resources */,
+				AC001036 /* recipe-grapefruit-marmalade.png in Resources */,
+				AC001037 /* recipe-grapefruit-sparkler.png in Resources */,
+				AC001038 /* recipe-grapes-roasted.png in Resources */,
+				AC001039 /* recipe-green-mango-chutney.png in Resources */,
+				AC001040 /* recipe-green-mango-slaw.png in Resources */,
+				AC001041 /* recipe-guacamole.png in Resources */,
+				AC001042 /* recipe-guava-agua.png in Resources */,
+				AC001043 /* recipe-guava-glaze.png in Resources */,
+				AC001044 /* recipe-guava-pastelitos.png in Resources */,
+				AC001045 /* recipe-kiwi-parfait.png in Resources */,
+				AC001046 /* recipe-kiwi-pavlova.png in Resources */,
+				AC001047 /* recipe-kiwi-smoothie.png in Resources */,
+				AC001048 /* recipe-lemon-chicken.png in Resources */,
+				AC001049 /* recipe-lemonade.png in Resources */,
+				AC001050 /* recipe-lime-rice.png in Resources */,
+				AC001051 /* recipe-limeade.png in Resources */,
+				AC001052 /* recipe-lychee-iced-tea.png in Resources */,
+				AC001053 /* recipe-lychee-panna-cotta.png in Resources */,
+				AC001054 /* recipe-lychee-salad.png in Resources */,
+				AC001055 /* recipe-mamey-bowl.png in Resources */,
+				AC001056 /* recipe-mamey-flan.png in Resources */,
+				AC001057 /* recipe-mamey-ice-cream.png in Resources */,
+				AC001058 /* recipe-mandarin-dressing.png in Resources */,
+				AC001059 /* recipe-mandarin-salad.png in Resources */,
+				AC001060 /* recipe-mango-salsa.png in Resources */,
+				AC001061 /* recipe-mango-sorbet.png in Resources */,
+				AC001062 /* recipe-mango-sticky-rice.png in Resources */,
+				AC001063 /* recipe-orange-chicken.png in Resources */,
+				AC001064 /* recipe-orange-compote.png in Resources */,
+				AC001065 /* recipe-papaya-batido.png in Resources */,
+				AC001066 /* recipe-papaya-salad.png in Resources */,
+				AC001067 /* recipe-papaya-sorbet.png in Resources */,
+				AC001068 /* recipe-passion-mousse.png in Resources */,
+				AC001069 /* recipe-passion-tea.png in Resources */,
+				AC001070 /* recipe-passion-vinaigrette.png in Resources */,
+				AC001071 /* recipe-persimmon-bread.png in Resources */,
+				AC001072 /* recipe-persimmon-salsa.png in Resources */,
+				AC001073 /* recipe-persimmon-smoothie.png in Resources */,
+				AC001074 /* recipe-pineapple-fried-rice.png in Resources */,
+				AC001075 /* recipe-pineapple-salsa.png in Resources */,
+				AC001076 /* recipe-pineapple-smoothie.png in Resources */,
+				AC001077 /* recipe-pom-couscous.png in Resources */,
+				AC001078 /* recipe-pom-raita.png in Resources */,
+				AC001079 /* recipe-pom-spritzer.png in Resources */,
+				AC001080 /* recipe-preserved-lemons.png in Resources */,
+				AC001081 /* recipe-rhubarb-crumble.png in Resources */,
+				AC001082 /* recipe-rhubarb-roasted.png in Resources */,
+				AC001083 /* recipe-rhubarb-syrup.png in Resources */,
+				AC001084 /* recipe-sapodilla-chaat.png in Resources */,
+				AC001085 /* recipe-sapodilla-halwa.png in Resources */,
+				AC001086 /* recipe-sapodilla-ice-cream.png in Resources */,
+				AC001087 /* recipe-shrimp-ceviche.png in Resources */,
+				AC001088 /* recipe-soursop-punch.png in Resources */,
+				AC001089 /* recipe-soursop-smoothie.png in Resources */,
+				AC001090 /* recipe-soursop-sorbet.png in Resources */,
+				AD001000 /* fruit-apricot.png in Resources */,
+				AD001001 /* fruit-blackberry.png in Resources */,
+				AD001002 /* fruit-blood-orange.png in Resources */,
+				AD001003 /* fruit-coconut.png in Resources */,
+				AD001004 /* fruit-durian.png in Resources */,
+				AD001005 /* fruit-jackfruit.png in Resources */,
+				AD001006 /* fruit-kumquat.png in Resources */,
+				AD001007 /* fruit-peach.png in Resources */,
+				AD001008 /* fruit-pear.png in Resources */,
+				AD001009 /* fruit-plum.png in Resources */,
+				AD001010 /* fruit-pomelo.png in Resources */,
+				AD001011 /* fruit-raspberry.png in Resources */,
+				AD001012 /* fruit-red-currant.png in Resources */,
+				AD001013 /* fruit-starfruit.png in Resources */,
+				AD001014 /* fruit-strawberry.png in Resources */,
+				AD001015 /* fruit-watermelon.png in Resources */,
+				AD001016 /* recipe-apricot-crumble.png in Resources */,
+				AD001017 /* recipe-apricot-jam.png in Resources */,
+				AD001018 /* recipe-apricot-tagine.png in Resources */,
+				AD001019 /* recipe-apricots-grilled.png in Resources */,
+				AD001020 /* recipe-blackberry-cobbler.png in Resources */,
+				AD001021 /* recipe-blackberry-jam.png in Resources */,
+				AD001022 /* recipe-blackberry-sauce.png in Resources */,
+				AD001023 /* recipe-blackberry-smoothie.png in Resources */,
+				AD001024 /* recipe-blood-orange-cake.png in Resources */,
+				AD001025 /* recipe-blood-orange-marmalade.png in Resources */,
+				AD001026 /* recipe-blood-orange-salad.png in Resources */,
+				AD001027 /* recipe-blood-orangeade.png in Resources */,
+				AD001028 /* recipe-coconut-chutney.png in Resources */,
+				AD001029 /* recipe-coconut-macaroons.png in Resources */,
+				AD001030 /* recipe-coconut-rice.png in Resources */,
+				AD001031 /* recipe-durian-ice-cream.png in Resources */,
+				AD001032 /* recipe-durian-pancakes.png in Resources */,
+				AD001033 /* recipe-durian-smoothie.png in Resources */,
+				AD001034 /* recipe-durian-sticky-rice.png in Resources */,
+				AD001035 /* recipe-jackfruit-chips.png in Resources */,
+				AD001036 /* recipe-jackfruit-curry.png in Resources */,
+				AD001037 /* recipe-jackfruit-smoothie.png in Resources */,
+				AD001038 /* recipe-jackfruit-tacos.png in Resources */,
+				AD001039 /* recipe-kumquat-marmalade.png in Resources */,
+				AD001040 /* recipe-kumquat-salad.png in Resources */,
+				AD001041 /* recipe-kumquat-spritzer.png in Resources */,
+				AD001042 /* recipe-kumquats-candied.png in Resources */,
+				AD001043 /* recipe-peach-cobbler.png in Resources */,
+				AD001044 /* recipe-peach-iced-tea.png in Resources */,
+				AD001045 /* recipe-peach-salsa.png in Resources */,
+				AD001046 /* recipe-peaches-grilled.png in Resources */,
+				AD001047 /* recipe-pear-butter.png in Resources */,
+				AD001048 /* recipe-pear-crumble.png in Resources */,
+				AD001049 /* recipe-pear-salad.png in Resources */,
+				AD001050 /* recipe-pears-poached.png in Resources */,
+				AD001051 /* recipe-pina-colada.png in Resources */,
+				AD001052 /* recipe-plum-cake.png in Resources */,
+				AD001053 /* recipe-plum-galette.png in Resources */,
+				AD001054 /* recipe-plum-sauce.png in Resources */,
+				AD001055 /* recipe-plums-roasted.png in Resources */,
+				AD001056 /* recipe-pomelo-chili-salt.png in Resources */,
+				AD001057 /* recipe-pomelo-salad.png in Resources */,
+				AD001058 /* recipe-pomelo-sorbet.png in Resources */,
+				AD001059 /* recipe-pomelo-tea.png in Resources */,
+				AD001060 /* recipe-raspberry-chia-jam.png in Resources */,
+				AD001061 /* recipe-raspberry-coulis.png in Resources */,
+				AD001062 /* recipe-raspberry-fool.png in Resources */,
+				AD001063 /* recipe-raspberry-muffins.png in Resources */,
+				AD001064 /* recipe-redcurrant-cake.png in Resources */,
+				AD001065 /* recipe-redcurrant-cordial.png in Resources */,
+				AD001066 /* recipe-redcurrant-jelly.png in Resources */,
+				AD001067 /* recipe-redcurrant-sauce.png in Resources */,
+				AD001068 /* recipe-starfruit-candied.png in Resources */,
+				AD001069 /* recipe-starfruit-juice.png in Resources */,
+				AD001070 /* recipe-starfruit-salad.png in Resources */,
+				AD001071 /* recipe-starfruit-salsa.png in Resources */,
+				AD001072 /* recipe-strawberries-cream.png in Resources */,
+				AD001073 /* recipe-strawberry-jam.png in Resources */,
+				AD001074 /* recipe-strawberry-lemonade.png in Resources */,
+				AD001075 /* recipe-strawberry-shortcake.png in Resources */,
+				AD001076 /* recipe-watermelon-agua.png in Resources */,
+				AD001077 /* recipe-watermelon-feta.png in Resources */,
+				AD001078 /* recipe-watermelon-gazpacho.png in Resources */,
+				AD001079 /* recipe-watermelon-granita.png in Resources */,
+				AC001091 /* recipe-yuzu-curd.png in Resources */,
+				AC001092 /* recipe-yuzu-tea.png in Resources */,
+				AC001093 /* recipe-yuzu-vinaigrette.png in Resources */,
+				AB001001 /* fruit-avocado.png in Resources */,
+				AB001002 /* fruit-banana.png in Resources */,
+				AB001003 /* fruit-cherimoya.png in Resources */,
+				AB001004 /* fruit-cranberry.png in Resources */,
+				AB001005 /* fruit-date.png in Resources */,
+				AB001006 /* fruit-dragon-fruit.png in Resources */,
+				AB001007 /* fruit-fig.png in Resources */,
+				AB001008 /* fruit-gooseberry.png in Resources */,
+				AB001009 /* fruit-grapefruit.png in Resources */,
+				AB001010 /* fruit-green-apple.png in Resources */,
+				AB001011 /* fruit-guava.png in Resources */,
+				AB001012 /* fruit-lemon.png in Resources */,
+				AB001013 /* fruit-lime.png in Resources */,
+				AB001014 /* fruit-lychee.png in Resources */,
+				AB001015 /* fruit-mamey.png in Resources */,
+				AB001016 /* fruit-mandarin.png in Resources */,
+				AB001017 /* fruit-mango.png in Resources */,
+				AB001018 /* fruit-orange.png in Resources */,
+				AB001019 /* fruit-papaya.png in Resources */,
+				AB001020 /* fruit-persimmon.png in Resources */,
+				AB001021 /* fruit-pineapple.png in Resources */,
+				AB001022 /* fruit-rhubarb.png in Resources */,
+				AB001023 /* fruit-sapodilla.png in Resources */,
+				AB001024 /* fruit-sour-cherry.png in Resources */,
+				AB001025 /* fruit-soursop.png in Resources */,
+				AB001026 /* fruit-sweet-grape.png in Resources */,
+				AB001027 /* fruit-yuzu.png in Resources */,
+				AB001028 /* recipe-apple-slaw.png in Resources */,
+				AB001029 /* recipe-avocado-toast.png in Resources */,
+				AB001030 /* recipe-banana-pancakes.png in Resources */,
+				AB001031 /* recipe-cherimoya-cream.png in Resources */,
+				AB001032 /* recipe-cherry-pie.png in Resources */,
+				AB001033 /* recipe-cranberry-sauce.png in Resources */,
+				AB001034 /* recipe-date-shake.png in Resources */,
+				AB001035 /* recipe-dragon-bowl.png in Resources */,
+				AB001036 /* recipe-fig-toasts.png in Resources */,
+				AB001037 /* recipe-gooseberry-fool.png in Resources */,
+				AB001038 /* recipe-grape-focaccia.png in Resources */,
+				AB001039 /* recipe-grapefruit-brulee.png in Resources */,
+				AB001040 /* recipe-green-mango-salad.png in Resources */,
+				AB001041 /* recipe-grilled-pineapple.png in Resources */,
+				AB001042 /* recipe-guava-paste.png in Resources */,
+				AB001043 /* recipe-kiwi-salsa.png in Resources */,
+				AB001044 /* recipe-lemon-pasta.png in Resources */,
+				AB001045 /* recipe-lime-pie.png in Resources */,
+				AB001046 /* recipe-lychee-sorbet.png in Resources */,
+				AB001047 /* recipe-mamey-batido.png in Resources */,
+				AB001048 /* recipe-mandarin-cake.png in Resources */,
+				AB001049 /* recipe-mango-lassi.png in Resources */,
+				AB001050 /* recipe-orange-salad.png in Resources */,
+				AB001051 /* recipe-papaya-bowl.png in Resources */,
+				AB001052 /* recipe-passion-curd.png in Resources */,
+				AB001053 /* recipe-persimmon-salad.png in Resources */,
+				AB001054 /* recipe-pom-molasses.png in Resources */,
+				AB001055 /* recipe-rhubarb-compote.png in Resources */,
+				AB001056 /* recipe-sapodilla-shake.png in Resources */,
+				AB001057 /* recipe-soursop-juice.png in Resources */,
+				AB001058 /* recipe-yuzu-ponzu.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AA008001 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA001001 /* LemonPigApp.swift in Sources */,
+				AA001002 /* ContentView.swift in Sources */,
+				AA001003 /* AppRouter.swift in Sources */,
+				AA001004 /* FruitData.swift in Sources */,
+				AA001005 /* FlavorData.swift in Sources */,
+				AF001001 /* FruitIdentifier.swift in Sources */,
+				AA001101 /* CatalogSweetSour.swift in Sources */,
+				AA001102 /* CatalogTropicalTart.swift in Sources */,
+				AA001103 /* CatalogSweetCreamy.swift in Sources */,
+				AA001104 /* CatalogCitrusy.swift in Sources */,
+				AA001105 /* PhotoCredits.swift in Sources */,
+				AA001006 /* HomeView.swift in Sources */,
+				AA001007 /* CameraView.swift in Sources */,
+				AA001008 /* ResultView.swift in Sources */,
+				AA001009 /* RecipeView.swift in Sources */,
+				AA00100A /* TasteView.swift in Sources */,
+				AA00100B /* NoMatchView.swift in Sources */,
+				AA00100C /* DesignTokens.swift in Sources */,
+				AA001021 /* SharedComponents.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		AA009003 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		AA009004 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		AA009005 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AE001001 /* Config.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = LemonPig/Info.plist;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = NO;
+				INFOPLIST_KEY_UILaunchScreen_Generation = NO;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lemonpig.app;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		AA009006 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AE001001 /* Config.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = LemonPig/Info.plist;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = NO;
+				INFOPLIST_KEY_UILaunchScreen_Generation = NO;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.lemonpig.app;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AA009001 /* Build configuration list for PBXNativeTarget "LemonPig" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AA009005 /* Debug */,
+				AA009006 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AA009002 /* Build configuration list for PBXProject "LemonPig" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AA009003 /* Debug */,
+				AA009004 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AA00A001 /* Project object */;
+}

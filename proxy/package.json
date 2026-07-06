@@ -1,0 +1,14 @@
+{
+  "name": "lemonpig-identify",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Cloudflare Worker that proxies Lemon Pig fruit identification to the Anthropic API, keeping the API key server-side.",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy"
+  },
+  "devDependencies": {
+    "wrangler": "^3.90.0"
+  }
+}

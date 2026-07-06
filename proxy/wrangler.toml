@@ -1,0 +1,18 @@
+name = "lemonpig-identify"
+main = "src/index.js"
+compatibility_date = "2026-01-01"
+
+# Per-IP daily rate cap. Create the namespace once with:
+#   npx wrangler kv namespace create RATE_KV
+# then paste the printed id below and uncomment. The Worker runs without it
+# (the cap is simply skipped), so you can deploy first and add this later.
+# [[kv_namespaces]]
+# binding = "RATE_KV"
+# id = "PASTE_NAMESPACE_ID_HERE"
+
+[vars]
+DAILY_CAP = "40"
+
+# Secrets are NOT set here — never commit them. Set with:
+#   npx wrangler secret put ANTHROPIC_API_KEY
+#   npx wrangler secret put APP_TOKEN

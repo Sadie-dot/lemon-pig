@@ -1,0 +1,427 @@
+import SwiftUI
+import Security
+
+// Live fruit identification via the Claude API (see AI Disclosure on the home
+// screen). The camera sends a photo; Claude either names a catalog fruit or
+// generates a full profile on the fly for fruits outside the catalog.
+
+// MARK: - Captured image store
+
+/// Holds photos taken in-session so ResultView can show them as the hero for
+/// generated (non-bundled) fruits. Keys use the "captured-" prefix, which
+/// never collides with bundled asset names.
+final class CapturedImageStore {
+    static let shared = CapturedImageStore()
+    private var images: [String: UIImage] = [:]
+
+    func store(_ image: UIImage) -> String {
+        let key = "captured-\(UUID().uuidString)"
+        images[key] = image
+        return key
+    }
+
+    func image(named name: String) -> UIImage? { images[name] }
+}
+
+// MARK: - API key storage (Keychain)
+
+enum ClaudeKeyStore {
+    private static let service = "com.lemonpig.claude-api-key"
+
+    static var key: String? {
+        let query: [String: Any] = [
+            kSecClass as String: kSecClassGenericPassword,
+            kSecAttrService as String: service,
+            kSecReturnData as String: true,
+            kSecMatchLimit as String: kSecMatchLimitOne
+        ]
+        var item: CFTypeRef?
+        guard SecItemCopyMatching(query as CFDictionary, &item) == errSecSuccess,
+              let data = item as? Data,
+              let str = String(data: data, encoding: .utf8), !str.isEmpty else { return nil }
+        return str
+    }
+
+    static func save(_ key: String) {
+        let trimmed = key.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard !trimmed.isEmpty else { return }
+        let base: [String: Any] = [
+            kSecClass as String: kSecClassGenericPassword,
+            kSecAttrService as String: service
+        ]
+        SecItemDelete(base as CFDictionary)
+        var add = base
+        add[kSecValueData as String] = Data(trimmed.utf8)
+        SecItemAdd(add as CFDictionary, nil)
+    }
+}
+
+// MARK: - Identification result
+
+enum FruitIdentification {
+    /// The photo shows a fruit that exists in the bundled catalog.
+    case catalog(Fruit, confidence: Int)
+    /// The photo shows a fruit outside the catalog; profile generated live.
+    case generated(Fruit, confidence: Int)
+    /// The photo doesn't show a fruit.
+    case notAFruit(String)
+}
+
+enum FruitIdentifierError: LocalizedError {
+    case missingKey
+    case badImage
+    case api(String)
+    case refused
+
+    var errorDescription: String? {
+        switch self {
+        case .missingKey: return "No Claude API key set."
+        case .badImage:   return "Couldn't read that photo."
+        case .api(let m): return m
+        case .refused:    return "Claude declined to analyze this photo."
+        }
+    }
+}
+
+// MARK: - Backend selection
+
+/// How the app reaches Claude. When the Info.plist carries a proxy URL the app
+/// routes through the developer-hosted Worker (which holds the API key) and no
+/// per-user key is needed. Otherwise each user supplies their own key.
+enum IdentifyBackend {
+    /// Developer-hosted proxy: the app ships no key, users just scan.
+    case proxy(url: URL, appToken: String?)
+    /// Bring-your-own-key: the user's key is read from the Keychain.
+    case directKey(String)
+
+    /// Resolves the backend from Info.plist config, falling back to the
+    /// stored user key. Returns nil when neither is available.
+    static func resolve() -> IdentifyBackend? {
+        let info = Bundle.main.infoDictionary
+        if let raw = (info?["LPIdentifyProxyURL"] as? String)?
+            .trimmingCharacters(in: .whitespacesAndNewlines),
+           !raw.isEmpty, let url = URL(string: raw) {
+            let token = (info?["LPIdentifyAppToken"] as? String)?
+                .trimmingCharacters(in: .whitespacesAndNewlines)
+            return .proxy(url: url, appToken: (token?.isEmpty == false) ? token : nil)
+        }
+        if let key = ClaudeKeyStore.key {
+            return .directKey(key)
+        }
+        return nil
+    }
+
+    /// Whether the "Connect Claude" key prompt should appear. Only the
+    /// BYO-key flow needs a user key; a configured proxy never prompts.
+    static var usesProxy: Bool {
+        if let raw = (Bundle.main.infoDictionary?["LPIdentifyProxyURL"] as? String)?
+            .trimmingCharacters(in: .whitespacesAndNewlines), !raw.isEmpty {
+            return true
+        }
+        return false
+    }
+}
+
+// MARK: - Identifier
+
+struct FruitIdentifier {
+
+    func identify(_ image: UIImage) async throws -> FruitIdentification {
+        guard let backend = IdentifyBackend.resolve() else { throw FruitIdentifierError.missingKey }
+        guard let jpeg = downscaledJPEG(image) else { throw FruitIdentifierError.badImage }
+        let imageBase64 = jpeg.base64EncodedString()
+
+        let request: URLRequest
+        switch backend {
+        case .proxy(let url, let appToken):
+            request = proxyRequest(url: url, appToken: appToken, imageBase64: imageBase64)
+        case .directKey(let key):
+            request = directRequest(apiKey: key, imageBase64: imageBase64)
+        }
+
+        let (data, response) = try await URLSession.shared.data(for: request)
+        if let http = response as? HTTPURLResponse, http.statusCode != 200 {
+            let apiError = try? JSONDecoder().decode(APIErrorEnvelope.self, from: data)
+            throw FruitIdentifierError.api(apiError?.error.message ?? "Identification failed (\(http.statusCode)).")
+        }
+
+        let message = try JSONDecoder().decode(APIMessage.self, from: data)
+        if message.stopReason == "refusal" { throw FruitIdentifierError.refused }
+        guard let text = message.content.first(where: { $0.type == "text" })?.text,
+              let payload = text.data(using: .utf8) else {
+            throw FruitIdentifierError.api("Empty response from Claude.")
+        }
+
+        let decoder = JSONDecoder()
+        decoder.keyDecodingStrategy = .convertFromSnakeCase
+        let result = try decoder.decode(IdentificationPayload.self, from: payload)
+
+        guard result.isFruit else {
+            return .notAFruit(result.name)
+        }
+        if let match = searchCatalogFruit(result.name) {
+            return .catalog(match, confidence: result.confidence)
+        }
+        guard let profile = result.profile else {
+            // Model judged it in-catalog but the name didn't resolve — treat as a miss.
+            return .notAFruit(result.name)
+        }
+        let heroKey = CapturedImageStore.shared.store(image)
+        return .generated(buildFruit(name: result.name, profile: profile, heroKey: heroKey),
+                          confidence: result.confidence)
+    }
+
+    // MARK: Requests
+
+    /// Talks to the developer-hosted Worker. The prompt, model, and schema
+    /// live on the proxy; the app sends only the image and catalog names.
+    private func proxyRequest(url: URL, appToken: String?, imageBase64: String) -> URLRequest {
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.timeoutInterval = 120
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        if let appToken { request.setValue(appToken, forHTTPHeaderField: "x-lp-app-token") }
+        let body: [String: Any] = [
+            "image": imageBase64,
+            "catalog": allCatalogFruits.map(\.name)
+        ]
+        request.httpBody = try? JSONSerialization.data(withJSONObject: body)
+        return request
+    }
+
+    /// Talks to the Anthropic API directly with the user's own key.
+    private func directRequest(apiKey: String, imageBase64: String) -> URLRequest {
+        var request = URLRequest(url: URL(string: "https://api.anthropic.com/v1/messages")!)
+        request.httpMethod = "POST"
+        request.timeoutInterval = 120
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.setValue(apiKey, forHTTPHeaderField: "x-api-key")
+        request.setValue("2023-06-01", forHTTPHeaderField: "anthropic-version")
+        request.httpBody = try? JSONSerialization.data(withJSONObject: requestBody(imageBase64: imageBase64))
+        return request
+    }
+
+    private func requestBody(imageBase64: String) -> [String: Any] {
+        let catalogNames = allCatalogFruits.map(\.name).joined(separator: ", ")
+        let prompt = """
+        Identify the fruit in this photo for a playful fruit-encyclopedia app.
+
+        The app's built-in catalog contains exactly these fruits: \(catalogNames).
+
+        Rules:
+        - If the photo does not clearly show a fruit (or fruit-forward food), set is_fruit false and put a short description of what you see in name.
+        - If the fruit is in the catalog list, use the catalog's exact name, set in_catalog true, and set profile to null.
+        - Otherwise set in_catalog false and generate a complete profile in the app's voice: warm, sensory, a little cheeky, food-writer energy. Facts must be accurate; never invent safety claims. Include 4 realistic recipes at the quality of a good food blog.
+        - pull_quote_highlight must be an exact substring of pull_quote.
+        - confidence is 0-100.
+        """
+        return [
+            "model": "claude-opus-4-8",
+            "max_tokens": 16000,
+            "output_config": ["format": ["type": "json_schema", "schema": identificationSchema]],
+            "messages": [[
+                "role": "user",
+                "content": [
+                    ["type": "image",
+                     "source": ["type": "base64", "media_type": "image/jpeg", "data": imageBase64]],
+                    ["type": "text", "text": prompt]
+                ]
+            ]]
+        ]
+    }
+
+    private var identificationSchema: [String: Any] {
+        let str: [String: Any] = ["type": "string"]
+        let strArray: [String: Any] = ["type": "array", "items": str]
+        let ingredient: [String: Any] = [
+            "type": "object",
+            "properties": ["qty": ["type": "number"], "unit": str, "name": str],
+            "required": ["qty", "unit", "name"], "additionalProperties": false
+        ]
+        let step: [String: Any] = [
+            "type": "object",
+            "properties": ["title": str, "body": str],
+            "required": ["title", "body"], "additionalProperties": false
+        ]
+        let recipe: [String: Any] = [
+            "type": "object",
+            "properties": [
+                "name": str,
+                "time": ["type": "string", "description": "e.g. \"20 min\" or \"2 hr\""],
+                "level": ["type": "string", "enum": ["Easy", "Medium", "Hard"]],
+                "cal": ["type": "string", "description": "calories per serving, digits only"],
+                "lede": str,
+                "ingredients": ["type": "array", "items": ingredient],
+                "steps": ["type": "array", "items": step],
+                "tips": strArray,
+                "base_yield_value": ["type": "number"],
+                "base_yield_unit": str,
+                "base_servings": ["type": "integer"]
+            ],
+            "required": ["name", "time", "level", "cal", "lede", "ingredients", "steps",
+                         "tips", "base_yield_value", "base_yield_unit", "base_servings"],
+            "additionalProperties": false
+        ]
+        let profile: [String: Any] = [
+            "type": "object",
+            "properties": [
+                "latin_name": str,
+                "pull_quote": str,
+                "pull_quote_highlight": str,
+                "flavors": ["type": "array",
+                            "items": ["type": "string",
+                                      "enum": ["Sweet-sour", "Tropical", "Tart", "Sweet", "Creamy", "Citrusy"]]],
+                "snapshot": str,
+                "love_body": str,
+                "love_bullets": strArray,
+                "how_to_enjoy": [
+                    "type": "object",
+                    "properties": ["eat": str, "look_for": str, "store": str],
+                    "required": ["eat", "look_for", "store"], "additionalProperties": false
+                ],
+                "recipes": ["type": "array", "items": recipe]
+            ],
+            "required": ["latin_name", "pull_quote", "pull_quote_highlight", "flavors",
+                         "snapshot", "love_body", "love_bullets", "how_to_enjoy", "recipes"],
+            "additionalProperties": false
+        ]
+        return [
+            "type": "object",
+            "properties": [
+                "is_fruit": ["type": "boolean"],
+                "name": str,
+                "confidence": ["type": "integer"],
+                "in_catalog": ["type": "boolean"],
+                "profile": ["anyOf": [["type": "null"], profile]]
+            ],
+            "required": ["is_fruit", "name", "confidence", "in_catalog", "profile"],
+            "additionalProperties": false
+        ]
+    }
+
+    // MARK: Response mapping
+
+    private func buildFruit(name: String, profile: GeneratedProfile, heroKey: String) -> Fruit {
+        let tags = profile.flavors.compactMap { label -> FlavorTag? in
+            guard let color = Self.flavorColors[label] else { return nil }
+            return FlavorTag(label: label, color: color)
+        }
+        let accent = tags.first?.color ?? .lpTropical
+        let recipes = profile.recipes.prefix(4).map { r -> RecipeCard in
+            let recipe = Recipe(
+                name: r.name,
+                eyebrow: "\(name) recipe",
+                imageName: heroKey,
+                time: r.time, level: r.level, cal: r.cal,
+                lede: r.lede,
+                ingredients: r.ingredients.map { Ingredient(qty: $0.qty, unit: $0.unit, name: $0.name) },
+                steps: r.steps.map { Step(title: $0.title, body: $0.body) },
+                tips: r.tips,
+                baseYieldValue: r.baseYieldValue,
+                baseYieldUnit: r.baseYieldUnit,
+                baseServings: r.baseServings,
+                accentColor: accent
+            )
+            return RecipeCard(name: r.name, imageName: heroKey,
+                              meta: "\(r.time) · \(r.level)", recipe: recipe)
+        }
+        return Fruit(
+            name: name,
+            latinName: profile.latinName,
+            imageName: heroKey,
+            eyebrow: "Sniffed out live",
+            pullQuote: profile.pullQuote,
+            pullQuoteHighlight: profile.pullQuote.contains(profile.pullQuoteHighlight)
+                ? profile.pullQuoteHighlight : profile.pullQuote,
+            flavors: tags.isEmpty ? [FlavorTag(label: "Sweet", color: .lpSweet)] : tags,
+            snapshot: profile.snapshot,
+            loveBody: profile.loveBody,
+            loveBullets: profile.loveBullets,
+            howToEnjoy: HowToEnjoy(eat: profile.howToEnjoy.eat,
+                                   lookFor: profile.howToEnjoy.lookFor,
+                                   store: profile.howToEnjoy.store),
+            recipes: Array(recipes)
+        )
+    }
+
+    private static let flavorColors: [String: Color] = [
+        "Sweet-sour": .lpSweetSour,
+        "Tropical":   .lpTropical,
+        "Tart":       .lpTart,
+        "Sweet":      .lpSweet,
+        "Creamy":     .lpCreamy,
+        "Citrusy":    .lpCitrusy
+    ]
+
+    // MARK: Image prep
+
+    private func downscaledJPEG(_ image: UIImage, maxEdge: CGFloat = 1024) -> Data? {
+        let longEdge = max(image.size.width, image.size.height)
+        guard longEdge > maxEdge else { return image.jpegData(compressionQuality: 0.7) }
+        let scale = maxEdge / longEdge
+        let newSize = CGSize(width: image.size.width * scale, height: image.size.height * scale)
+        let format = UIGraphicsImageRendererFormat()
+        format.scale = 1
+        let resized = UIGraphicsImageRenderer(size: newSize, format: format).image { _ in
+            image.draw(in: CGRect(origin: .zero, size: newSize))
+        }
+        return resized.jpegData(compressionQuality: 0.7)
+    }
+}
+
+// MARK: - Wire types
+
+private struct APIMessage: Decodable {
+    struct Block: Decodable {
+        let type: String
+        let text: String?
+    }
+    let content: [Block]
+    let stopReason: String?
+
+    enum CodingKeys: String, CodingKey {
+        case content
+        case stopReason = "stop_reason"
+    }
+}
+
+private struct APIErrorEnvelope: Decodable {
+    struct APIError: Decodable { let message: String }
+    let error: APIError
+}
+
+private struct IdentificationPayload: Decodable {
+    let isFruit: Bool
+    let name: String
+    let confidence: Int
+    let inCatalog: Bool
+    let profile: GeneratedProfile?
+}
+
+private struct GeneratedProfile: Decodable {
+    struct Enjoy: Decodable { let eat: String; let lookFor: String; let store: String }
+    struct WireIngredient: Decodable { let qty: Double; let unit: String; let name: String }
+    struct WireStep: Decodable { let title: String; let body: String }
+    struct WireRecipe: Decodable {
+        let name: String
+        let time: String
+        let level: String
+        let cal: String
+        let lede: String
+        let ingredients: [WireIngredient]
+        let steps: [WireStep]
+        let tips: [String]
+        let baseYieldValue: Double
+        let baseYieldUnit: String
+        let baseServings: Int
+    }
+    let latinName: String
+    let pullQuote: String
+    let pullQuoteHighlight: String
+    let flavors: [String]
+    let snapshot: String
+    let loveBody: String
+    let loveBullets: [String]
+    let howToEnjoy: Enjoy
+    let recipes: [WireRecipe]
+}
