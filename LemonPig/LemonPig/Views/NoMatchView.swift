@@ -1,6 +1,7 @@
 import SwiftUI
 
 struct NoMatchView: View {
+    var source: NoMatchSource = .camera
     @EnvironmentObject var router: AppRouter
     @Environment(\.accessibilityReduceMotion) var reduceMotion
 
@@ -81,11 +82,13 @@ struct NoMatchView: View {
                 VStack(spacing: 16) {
                     HairlineDivider()
 
-                    GoldPillButton("Try another photo") {
+                    // Coming from search, no photo was ever taken — offer the
+                    // camera as the path that *can* identify this fruit.
+                    GoldPillButton(source == .search ? "Identify with camera" : "Try another photo") {
                         router.popToRoot()
                         DispatchQueue.main.async { router.push(.camera) }
                     } icon: {
-                        Image(systemName: "arrow.triangle.2.circlepath")
+                        Image(systemName: source == .search ? "camera" : "arrow.triangle.2.circlepath")
                             .font(.system(size: 14, weight: .semibold))
                             .foregroundColor(.lpInk)
                     }
@@ -98,7 +101,7 @@ struct NoMatchView: View {
                                 Image(systemName: "magnifyingglass")
                                     .font(.system(size: 13))
                                     .accessibilityHidden(true)
-                                Text("Search by name")
+                                Text(source == .search ? "Try another name" : "Search by name")
                                     .font(.geist(14, weight: .medium))
                                     .tracking(-0.1)
                             }

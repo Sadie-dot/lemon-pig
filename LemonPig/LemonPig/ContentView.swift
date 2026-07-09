@@ -16,8 +16,8 @@ struct ContentView: View {
                         RecipeView(recipe: recipe)
                     case .taste(let flavor):
                         TasteView(initialFlavor: flavor)
-                    case .noMatch:
-                        NoMatchView()
+                    case .noMatch(let source):
+                        NoMatchView(source: source)
                     }
                 }
         }

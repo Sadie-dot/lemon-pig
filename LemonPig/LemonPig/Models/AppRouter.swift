@@ -1,11 +1,18 @@
 import SwiftUI
 
+/// Where a dead-end identification came from, so NoMatchView can offer the
+/// right recovery action ("another photo" only makes sense after a photo).
+enum NoMatchSource: Hashable {
+    case camera
+    case search
+}
+
 enum Route: Hashable {
     case camera
     case result(Fruit)
     case recipe(Recipe)
     case taste(FlavorKey?)
-    case noMatch
+    case noMatch(NoMatchSource)
 }
 
 @MainActor

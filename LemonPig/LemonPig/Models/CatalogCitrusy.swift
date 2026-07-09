@@ -342,6 +342,44 @@ func searchCatalogFruit(_ query: String) -> Fruit? {
     }
 }
 
+/// Catches near-miss typos of catalog names ("avacado") before search falls
+/// through to live identification, which is slow and costs an API call.
+/// Thresholds are deliberately tight so real off-catalog fruits still go
+/// live instead of snapping to the nearest catalog name.
+func fuzzyCatalogFruit(_ query: String) -> Fruit? {
+    let q = query.trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
+    guard q.count >= 4 else { return nil }
+    let allowed = q.count >= 7 ? 2 : 1
+    var best: (fruit: Fruit, distance: Int)?
+    for fruit in allCatalogFruits {
+        if let d = editDistance(Array(q), Array(fruit.name.lowercased()), limit: allowed),
+           d < (best?.distance ?? Int.max) {
+            best = (fruit, d)
+        }
+    }
+    return best?.fruit
+}
+
+/// Levenshtein distance, or nil once it provably exceeds `limit`.
+private func editDistance(_ a: [Character], _ b: [Character], limit: Int) -> Int? {
+    guard !a.isEmpty, !b.isEmpty else { return nil }
+    guard abs(a.count - b.count) <= limit else { return nil }
+    var prev = Array(0...b.count)
+    var curr = [Int](repeating: 0, count: b.count + 1)
+    for i in 1...a.count {
+        curr[0] = i
+        var rowMin = curr[0]
+        for j in 1...b.count {
+            let cost = a[i - 1] == b[j - 1] ? 0 : 1
+            curr[j] = min(prev[j] + 1, curr[j - 1] + 1, prev[j - 1] + cost)
+            rowMin = min(rowMin, curr[j])
+        }
+        if rowMin > limit { return nil }
+        swap(&prev, &curr)
+    }
+    return prev[b.count] <= limit ? prev[b.count] : nil
+}
+
 // MARK: - Additional recipes (Citrusy)
 
 let lemonadeClassic = Recipe(

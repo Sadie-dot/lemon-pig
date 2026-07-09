@@ -24,7 +24,15 @@ struct HomeView: View {
     @State private var factIndex = 0
     @State private var showAIDisclosure = false
     @State private var showPhotoCredits = false
+    @State private var identifyPhase: IdentifyPhase = .idle
+    @State private var identifyTask: Task<Void, Never>?
     @FocusState private var searchFocused: Bool
+
+    enum IdentifyPhase: Equatable {
+        case idle
+        case identifying(String)
+        case error(String)
+    }
 
     // The design's 132pt hero includes a 50pt status-bar mock; extend it by
     // the device's extra top inset so the bottom-anchored wordmark keeps the
@@ -107,10 +115,20 @@ struct HomeView: View {
                     withAnimation(.easeOut(duration: 0.18)) { showPhotoCredits = false }
                 }
             }
+            if case .identifying(let name) = identifyPhase {
+                IdentifyingOverlay(name: name, onCancel: cancelIdentify)
+            }
+            if case .error(let message) = identifyPhase {
+                IdentifyErrorOverlay(message: message) {
+                    withAnimation(.easeOut(duration: 0.18)) { identifyPhase = .idle }
+                }
+            }
         }
+        .onDisappear { cancelIdentify() }
     }
 
     private func submitSearch() {
+        guard identifyPhase == .idle else { return }
         let q = searchText.trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
         guard !q.isEmpty else { return }
 
@@ -120,10 +138,72 @@ struct HomeView: View {
             router.push(.taste(flavor.key))
         } else if let fruit = searchCatalogFruit(q) {
             router.push(.result(fruit))
-        } else if let flavor = allFlavors.first(where: { $0.key.lowercased().contains(q) || q.contains($0.key.lowercased()) }) {
+        } else if let fruit = fuzzyCatalogFruit(q) {
+            // Near-miss typo of a catalog name — resolve locally rather than
+            // spending a live identification on it.
+            router.push(.result(fruit))
+        } else if let flavor = allFlavors.first(where: { $0.key.lowercased().contains(q) }) {
+            // A partial flavor word ("swee") still opens the taste page, but a
+            // fruit name that merely contains one ("sweetsop") goes live.
             router.push(.taste(flavor.key))
         } else {
-            router.push(.noMatch)
+            identifyLive(searchText.trimmingCharacters(in: .whitespacesAndNewlines))
+        }
+    }
+
+    // MARK: Live identification by name
+
+    private func identifyLive(_ name: String) {
+        // BYO-key builds with no key stored can't identify; the classic
+        // no-match screen (whose primary action leads to the camera, which
+        // owns the key-entry flow) beats a dead-end error here.
+        guard IdentifyBackend.usesProxy || ClaudeKeyStore.key != nil else {
+            router.push(.noMatch(.search))
+            return
+        }
+        searchFocused = false
+        withAnimation(.easeOut(duration: 0.18)) { identifyPhase = .identifying(name) }
+        UIAccessibility.post(notification: .announcement, argument: "Identifying \(name)")
+
+        identifyTask = Task {
+            do {
+                let result = try await FruitIdentifier().identify(name: name)
+                guard !Task.isCancelled else { return }
+                await MainActor.run { handleIdentification(result) }
+            } catch FruitIdentifierError.missingKey {
+                await MainActor.run {
+                    identifyPhase = .idle
+                    router.push(.noMatch(.search))
+                }
+            } catch {
+                // URLSession surfaces cancellation as an error; stay quiet then.
+                guard !Task.isCancelled else { return }
+                await MainActor.run { failIdentification(error.localizedDescription) }
+            }
+        }
+    }
+
+    private func handleIdentification(_ result: FruitIdentification) {
+        withAnimation(.easeOut(duration: 0.18)) { identifyPhase = .idle }
+        switch result {
+        case .catalog(let fruit, _), .generated(let fruit, _):
+            UIAccessibility.post(notification: .announcement, argument: "Identified: \(fruit.name)")
+            router.push(.result(fruit))
+        case .notAFruit:
+            router.push(.noMatch(.search))
+        }
+    }
+
+    private func failIdentification(_ message: String) {
+        withAnimation(.easeOut(duration: 0.18)) { identifyPhase = .error(message) }
+        UIAccessibility.post(notification: .announcement, argument: message)
+    }
+
+    private func cancelIdentify() {
+        identifyTask?.cancel()
+        identifyTask = nil
+        if case .identifying = identifyPhase {
+            withAnimation(.easeOut(duration: 0.18)) { identifyPhase = .idle }
         }
     }
 }
@@ -502,6 +582,107 @@ private struct HomeSignOff: View {
             }
             .padding(.top, 8) // + VStack spacing 6 = reference gap of 14
         }
+    }
+}
+
+// MARK: - Live identify overlays
+
+// Full-screen wait state while Claude writes a profile for a searched name.
+// Mirrors the camera's identifying phase: snout pulse, announcement, and a
+// way out — generation can take a minute.
+private struct IdentifyingOverlay: View {
+    let name: String
+    let onCancel: () -> Void
+    @Environment(\.accessibilityReduceMotion) var reduceMotion
+    @State private var pulse = false
+
+    var body: some View {
+        ZStack {
+            Color.lpNavy.opacity(0.72).ignoresSafeArea()
+
+            VStack(spacing: 6) {
+                SnoutView(size: 84)
+                    .opacity(reduceMotion ? 1 : (pulse ? 0.35 : 1))
+                    .animation(reduceMotion ? nil : .easeInOut(duration: 0.7).repeatForever(autoreverses: true),
+                               value: pulse)
+                    .accessibilityHidden(true)
+
+                Text("Sniffing out \u{201C}\(name)\u{201D}\u{2026}")
+                    .font(.geist(17, weight: .semibold))
+                    .foregroundColor(.lpCream)
+                    .multilineTextAlignment(.center)
+                    .padding(.top, 10)
+
+                Text("Claude is writing a full profile — this can take a minute.")
+                    .font(.geist(13))
+                    .foregroundColor(Color.lpCream.opacity(0.75))
+                    .multilineTextAlignment(.center)
+                    .fixedSize(horizontal: false, vertical: true)
+
+                Button(action: onCancel) {
+                    Text("Cancel")
+                        .font(.geist(13, weight: .semibold))
+                        .foregroundColor(Color.lpCream.opacity(0.85))
+                        .frame(minWidth: LP.minTap, minHeight: LP.minTap)
+                        .padding(.horizontal, 18)
+                        .overlay(Capsule().strokeBorder(Color.lpCream.opacity(0.35), lineWidth: 1))
+                }
+                .padding(.top, 12)
+            }
+            .padding(24)
+            .background(Color.lpPurple)
+            .overlay(
+                RoundedRectangle(cornerRadius: LP.radius)
+                    .strokeBorder(Color.white.opacity(0.14), lineWidth: 1)
+            )
+            .clipShape(RoundedRectangle(cornerRadius: LP.radius))
+            .shadow(color: .black.opacity(0.4), radius: 24, x: 0, y: 12)
+            .padding(.horizontal, 40)
+        }
+        .transition(.opacity)
+        .onAppear { pulse = true }
+        .accessibilityAddTraits(.isModal)
+        .accessibilityAction(.escape, onCancel)
+    }
+}
+
+private struct IdentifyErrorOverlay: View {
+    let message: String
+    let onDismiss: () -> Void
+
+    var body: some View {
+        ZStack {
+            Color.lpNavy.opacity(0.72).ignoresSafeArea()
+                .onTapGesture(perform: onDismiss)
+
+            VStack(spacing: 12) {
+                Text("Oinks — that didn't work")
+                    .font(.geist(18, weight: .bold))
+                    .foregroundColor(.lpCream)
+                    .accessibilityAddTraits(.isHeader)
+
+                Text(message)
+                    .font(.geist(14))
+                    .foregroundColor(Color.lpCream.opacity(0.85))
+                    .multilineTextAlignment(.center)
+                    .fixedSize(horizontal: false, vertical: true)
+
+                GoldPillButton("OK", action: onDismiss)
+                    .padding(.top, 6)
+            }
+            .padding(24)
+            .background(Color.lpPurple)
+            .overlay(
+                RoundedRectangle(cornerRadius: LP.radius)
+                    .strokeBorder(Color.white.opacity(0.14), lineWidth: 1)
+            )
+            .clipShape(RoundedRectangle(cornerRadius: LP.radius))
+            .shadow(color: .black.opacity(0.4), radius: 24, x: 0, y: 12)
+            .padding(.horizontal, 40)
+        }
+        .transition(.opacity.combined(with: .scale(scale: 0.96)))
+        .accessibilityAddTraits(.isModal)
+        .accessibilityAction(.escape, onDismiss)
     }
 }
 

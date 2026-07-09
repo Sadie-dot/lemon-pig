@@ -377,7 +377,7 @@ struct CameraView: View {
         case .notAFruit:
             guard !navigated else { return }
             navigated = true
-            router.push(.noMatch)
+            router.push(.noMatch(.camera))
         }
     }
 
