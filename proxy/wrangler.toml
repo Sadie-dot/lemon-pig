@@ -11,6 +11,14 @@ id = "a7132a01107d46a0adfdaf7f69ee1d14"
 [vars]
 DAILY_CAP = "40"
 
+# Off-catalog discovery log: fruit name + mode only, never IPs, so future
+# catalog versions know which fruits people actually look up. Optional —
+# the Worker runs fine with this binding removed. The dataset is created
+# automatically on first write.
+[[analytics_engine_datasets]]
+binding = "DISCOVERY_AE"
+dataset = "lemonpig_discoveries"
+
 # Secrets are NOT set here — never commit them. Set with:
 #   npx wrangler secret put ANTHROPIC_API_KEY
 #   npx wrangler secret put APP_TOKEN
