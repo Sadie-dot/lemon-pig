@@ -10,7 +10,19 @@ private let facts: [Fact] = [
     Fact(pre: "A ",   highlight: "dragon fruit", post: " flower blooms for a single night, opening only after dark."),
     Fact(pre: "A ",   highlight: "pineapple",    post: " takes nearly two years to grow one ripe fruit."),
     Fact(pre: "",     highlight: "Lemons",       post: " float while limes sink — limes are simply denser than water."),
-    Fact(pre: "Each ",highlight: "fig",          post: " is a cluster of flowers blooming inward, not a single fruit.")
+    Fact(pre: "Each ",highlight: "fig",          post: " is a cluster of flowers blooming inward, not a single fruit."),
+    Fact(pre: "A ",   highlight: "strawberry",   post: " wears its two hundred seeds on the outside — and each seed is its own tiny fruit."),
+    Fact(pre: "",     highlight: "Avocados",     post: " refuse to ripen on the tree — growers use them as living storage, picking as needed."),
+    Fact(pre: "",     highlight: "Durian",       post: " smells so mighty it's banned on Singapore's subway."),
+    Fact(pre: "Ripe ",highlight: "cranberries",  post: " bounce — growers really do sort good ones by bouncing them."),
+    Fact(pre: "A ",   highlight: "watermelon",   post: " is a berry by botany's rules — one that's about 92 percent water."),
+    Fact(pre: "",     highlight: "Grapes",       post: " never sweeten after picking — what you buy is as ripe as they'll ever be."),
+    Fact(pre: "One ", highlight: "pomegranate",  post: " can pack six hundred jewel-like seeds inside its leathery rind."),
+    Fact(pre: "The ", highlight: "kiwi",         post: " was called the Chinese gooseberry until 1959, when New Zealand growers renamed it."),
+    Fact(pre: "A ",   highlight: "coconut",      post: " isn't a nut — it's a drupe like a peach, built to float across oceans."),
+    Fact(pre: "Crack a ", highlight: "peach",    post: " pit and the kernel looks like an almond — the two trees are close cousins."),
+    Fact(pre: "Every ",   highlight: "orange",   post: " is an ancient hybrid of pomelo and mandarin — there is no wild orange."),
+    Fact(pre: "A ",   highlight: "jackfruit",    post: " can outweigh a five-year-old — it's the largest fruit that grows on trees.")
 ]
 
 private let tasteRows: [[(label: String, flavorKey: FlavorKey, color: Color)]] = [
