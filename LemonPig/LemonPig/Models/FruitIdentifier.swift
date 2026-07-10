@@ -10,18 +10,104 @@ import Security
 
 /// Holds photos taken in-session so ResultView can show them as the hero for
 /// generated (non-bundled) fruits. Keys use the "captured-" prefix, which
-/// never collides with bundled asset names.
+/// never collides with bundled asset names. Photos are also written to disk
+/// so heroes for persisted discoveries survive relaunch.
 final class CapturedImageStore {
     static let shared = CapturedImageStore()
     private var images: [String: UIImage] = [:]
+    private let directory = LemonPigStorage.directory(named: "CapturedImages")
 
     func store(_ image: UIImage) -> String {
         let key = "captured-\(UUID().uuidString)"
         images[key] = image
+        if let data = image.jpegData(compressionQuality: 0.8) {
+            try? data.write(to: directory.appendingPathComponent(key + ".jpg"), options: .atomic)
+        }
         return key
     }
 
-    func image(named name: String) -> UIImage? { images[name] }
+    func image(named name: String) -> UIImage? {
+        if let img = images[name] { return img }
+        guard name.hasPrefix("captured-") else { return nil }
+        let url = directory.appendingPathComponent(name + ".jpg")
+        guard let img = UIImage(contentsOfFile: url.path) else { return nil }
+        images[name] = img
+        return img
+    }
+}
+
+enum LemonPigStorage {
+    /// App-support subdirectory, created on first use.
+    static func directory(named name: String) -> URL {
+        let base = FileManager.default.urls(for: .applicationSupportDirectory, in: .userDomainMask)[0]
+        let dir = base.appendingPathComponent(name, isDirectory: true)
+        try? FileManager.default.createDirectory(at: dir, withIntermediateDirectories: true)
+        return dir
+    }
+}
+
+// MARK: - Discovered fruit store
+
+/// Remembers every off-catalog fruit Claude has generated, keyed by name, so
+/// that looking the same fruit up twice — in one session or across launches —
+/// always lands on the same profile instead of a fresh (and different)
+/// generation.
+final class DiscoveredFruitStore {
+    static let shared = DiscoveredFruitStore()
+
+    fileprivate struct StoredDiscovery: Codable {
+        let name: String
+        let confidence: Int
+        var heroKey: String
+        let profile: GeneratedProfile
+    }
+
+    /// Keyed by normalized fruit name.
+    private var entries: [String: StoredDiscovery]
+    private let fileURL = LemonPigStorage.directory(named: "DiscoveredFruits")
+        .appendingPathComponent("discoveries.json")
+
+    init() {
+        if let data = try? Data(contentsOf: fileURL),
+           let stored = try? JSONDecoder().decode([String: StoredDiscovery].self, from: data) {
+            entries = stored
+        } else {
+            entries = [:]
+        }
+    }
+
+    private static func normalize(_ name: String) -> String {
+        name.trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
+    }
+
+    fileprivate func entry(for name: String) -> StoredDiscovery? {
+        entries[Self.normalize(name)]
+    }
+
+    fileprivate func record(_ discovery: StoredDiscovery) {
+        entries[Self.normalize(discovery.name)] = discovery
+        save()
+    }
+
+    fileprivate func updateHero(name: String, heroKey: String) {
+        guard var e = entries[Self.normalize(name)] else { return }
+        e.heroKey = heroKey
+        entries[Self.normalize(name)] = e
+        save()
+    }
+
+    /// Rebuilds the Fruit for a previously discovered name, or nil if this
+    /// name has never been generated.
+    func identification(matching name: String) -> FruitIdentification? {
+        guard let e = entry(for: name) else { return nil }
+        return .generated(FruitIdentifier.buildFruit(name: e.name, profile: e.profile, heroKey: e.heroKey),
+                          confidence: e.confidence)
+    }
+
+    private func save() {
+        guard let data = try? JSONEncoder().encode(entries) else { return }
+        try? data.write(to: fileURL, options: .atomic)
+    }
 }
 
 // MARK: - API key storage (Keychain)
@@ -148,8 +234,12 @@ struct FruitIdentifier {
     /// The name is validated with the proxy's exact rule first, so a query
     /// the proxy would reject never costs a network round-trip.
     func identify(name: String) async throws -> FruitIdentification {
-        guard let backend = IdentifyBackend.resolve() else { throw FruitIdentifierError.missingKey }
         let trimmed = name.trimmingCharacters(in: .whitespacesAndNewlines)
+        // A fruit we've already discovered never needs the network again.
+        if let known = DiscoveredFruitStore.shared.identification(matching: trimmed) {
+            return known
+        }
+        guard let backend = IdentifyBackend.resolve() else { throw FruitIdentifierError.missingKey }
         guard Self.isSearchableName(trimmed) else { return .notAFruit(trimmed) }
 
         let request: URLRequest
@@ -203,10 +293,24 @@ struct FruitIdentifier {
             // Model judged it in-catalog but the name didn't resolve — treat as a miss.
             return .notAFruit(result.name)
         }
+        let capturedKey = capturedImage.map { CapturedImageStore.shared.store($0) }
+        // If this fruit was discovered before (say, photographed and later
+        // typed, or misspelled two different ways), keep the first profile so
+        // the fruit always reads the same. A fresh photo still becomes the hero.
+        if let earlier = DiscoveredFruitStore.shared.entry(for: result.name) {
+            let heroKey = capturedKey ?? earlier.heroKey
+            if capturedKey != nil {
+                DiscoveredFruitStore.shared.updateHero(name: earlier.name, heroKey: heroKey)
+            }
+            return .generated(Self.buildFruit(name: earlier.name, profile: earlier.profile, heroKey: heroKey),
+                              confidence: earlier.confidence)
+        }
         // Name lookups have no photo; an unresolvable key lands on the navy
         // hero fallback in ResultView/RecipeView.
-        let heroKey = capturedImage.map { CapturedImageStore.shared.store($0) } ?? "generated-no-photo"
-        return .generated(buildFruit(name: result.name, profile: profile, heroKey: heroKey),
+        let heroKey = capturedKey ?? "generated-no-photo"
+        DiscoveredFruitStore.shared.record(.init(name: result.name, confidence: result.confidence,
+                                                 heroKey: heroKey, profile: profile))
+        return .generated(Self.buildFruit(name: result.name, profile: profile, heroKey: heroKey),
                           confidence: result.confidence)
     }
 
@@ -356,7 +460,7 @@ struct FruitIdentifier {
 
     // MARK: Response mapping
 
-    private func buildFruit(name: String, profile: GeneratedProfile, heroKey: String) -> Fruit {
+    fileprivate static func buildFruit(name: String, profile: GeneratedProfile, heroKey: String) -> Fruit {
         let tags = profile.flavors.compactMap { label -> FlavorTag? in
             guard let color = Self.flavorColors[label] else { return nil }
             return FlavorTag(label: label, color: color)
@@ -453,11 +557,12 @@ private struct IdentificationPayload: Decodable {
     let profile: GeneratedProfile?
 }
 
-private struct GeneratedProfile: Decodable {
-    struct Enjoy: Decodable { let eat: String; let lookFor: String; let store: String }
-    struct WireIngredient: Decodable { let qty: Double; let unit: String; let name: String }
-    struct WireStep: Decodable { let title: String; let body: String }
-    struct WireRecipe: Decodable {
+// Codable (not just Decodable) so DiscoveredFruitStore can persist profiles.
+private struct GeneratedProfile: Codable {
+    struct Enjoy: Codable { let eat: String; let lookFor: String; let store: String }
+    struct WireIngredient: Codable { let qty: Double; let unit: String; let name: String }
+    struct WireStep: Codable { let title: String; let body: String }
+    struct WireRecipe: Codable {
         let name: String
         let time: String
         let level: String

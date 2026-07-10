@@ -16,7 +16,6 @@ struct ResultView: View {
                     // Flavor chips (only those with a dot color)
                     if !fruit.flavors.isEmpty {
                         FlavorChipsRow(tags: fruit.flavors, router: router)
-                            .padding(.horizontal, 20)
                             .padding(.top, 18)
                             .padding(.bottom, 4)
                     }
@@ -252,22 +251,28 @@ private struct FlavorChipsRow: View {
     let tags: [FlavorTag]
     let router: AppRouter
     var body: some View {
-        HStack(spacing: 8) {
-            ForEach(tags, id: \.label) { tag in
-                Button { router.push(.taste(tag.flavorKey)) } label: {
-                    HStack(spacing: 8) {
-                        ResultFlavorDot(color: tag.color)
-                        Text(tag.label)
-                            .font(.geist(13, weight: .medium))
-                            .tracking(-0.1)
+        // Generated fruits can carry up to six tags — scroll rather than
+        // compress (a squeezed HStack wraps the labels mid-word).
+        ScrollView(.horizontal, showsIndicators: false) {
+            HStack(spacing: 8) {
+                ForEach(tags, id: \.label) { tag in
+                    Button { router.push(.taste(tag.flavorKey)) } label: {
+                        HStack(spacing: 8) {
+                            ResultFlavorDot(color: tag.color)
+                            Text(tag.label)
+                                .font(.geist(13, weight: .medium))
+                                .tracking(-0.1)
+                                .lineLimit(1)
+                                .fixedSize()
+                        }
+                        .padding(.horizontal, 15)
+                        .frame(minHeight: LP.minTap)
                     }
-                    .padding(.horizontal, 15)
-                    .frame(minHeight: LP.minTap)
+                    .buttonStyle(TasteChipStyle(dotColor: tag.color))
+                    .accessibilityLabel("Browse \(tag.label) fruits")
                 }
-                .buttonStyle(TasteChipStyle(dotColor: tag.color))
-                .accessibilityLabel("Browse \(tag.label) fruits")
             }
-            Spacer()
+            .padding(.horizontal, 20)
         }
     }
 }
