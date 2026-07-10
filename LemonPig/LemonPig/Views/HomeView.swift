@@ -19,7 +19,7 @@ private let facts: [Fact] = [
     Fact(pre: "",     highlight: "Grapes",       post: " never sweeten after picking — what you buy is as ripe as they'll ever be."),
     Fact(pre: "One ", highlight: "pomegranate",  post: " can pack six hundred jewel-like seeds inside its leathery rind."),
     Fact(pre: "The ", highlight: "kiwi",         post: " was called the Chinese gooseberry until 1959, when New Zealand growers renamed it."),
-    Fact(pre: "A ",   highlight: "coconut",      post: " isn't a nut — it's a drupe like a peach, built to float across oceans."),
+    Fact(pre: "A ",   highlight: "coconut",      post: " isn't a nut — it's a stone fruit like a peach, built to float across oceans."),
     Fact(pre: "Crack a ", highlight: "peach",    post: " pit and the kernel looks like an almond — the two trees are close cousins."),
     Fact(pre: "Every ",   highlight: "orange",   post: " is an ancient hybrid of pomelo and mandarin — there is no wild orange."),
     Fact(pre: "A ",   highlight: "jackfruit",    post: " can outweigh a five-year-old — it's the largest fruit that grows on trees.")
