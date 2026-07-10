@@ -314,7 +314,7 @@ let allCatalogFruits: [Fruit] = [
     // Tart
     greenAppleFruit, rhubarbFruit, cranberryFruit, sourCherryFruit, gooseberryFruit, yuzuFruit,
     // Sweet
-    figFruit, dateFruit, persimmonFruit, cherimoyaFruit, grapeFruit_sweet, bananaFruit,
+    appleFruit, figFruit, dateFruit, persimmonFruit, cherimoyaFruit, grapeFruit_sweet, bananaFruit,
     // Creamy
     avocadoFruit, sapodillaFruit, mameyFruit, soursopFruit,
     // Citrusy

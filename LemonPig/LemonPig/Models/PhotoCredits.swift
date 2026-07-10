@@ -15,6 +15,7 @@ struct PhotoCredit: Identifiable {
 }
 
 let photoCredits: [PhotoCredit] = [
+    PhotoCredit(imageName: "fruit-apple", label: "Apple (fruit)", author: "HaJunkiyada", license: "CC BY-SA 4.0", sourceURL: "https://commons.wikimedia.org/w/index.php?curid=180638760"),
     PhotoCredit(imageName: "fruit-avocado", label: "Avocado (fruit)", author: "Wilfredor", license: "CC0", sourceURL: "https://commons.wikimedia.org/w/index.php?curid=103651060"),
     PhotoCredit(imageName: "fruit-banana", label: "Banana (fruit)", author: "Wilfredor", license: "CC0", sourceURL: "https://commons.wikimedia.org/w/index.php?curid=25211373"),
     PhotoCredit(imageName: "fruit-cherimoya", label: "Cherimoya (fruit)", author: "Daderot", license: "Public domain", sourceURL: "https://commons.wikimedia.org/w/index.php?curid=15704974"),
@@ -42,7 +43,11 @@ let photoCredits: [PhotoCredit] = [
     PhotoCredit(imageName: "fruit-soursop", label: "Soursop (fruit)", author: "Iwai-Dialax", license: "CC BY 4.0", sourceURL: "https://commons.wikimedia.org/w/index.php?curid=163580055"),
     PhotoCredit(imageName: "fruit-sweet-grape", label: "Sweet Grape (fruit)", author: "W.carter", license: "CC0", sourceURL: "https://commons.wikimedia.org/w/index.php?curid=86223228"),
     PhotoCredit(imageName: "fruit-yuzu", label: "Yuzu (fruit)", author: "Ishizaki Yūshi", license: "Public domain", sourceURL: "https://commons.wikimedia.org/w/index.php?curid=41732345"),
+    PhotoCredit(imageName: "recipe-apple-butter", label: "Slow Apple Butter (recipe)", author: "Unknown", license: "CC BY-SA 4.0", sourceURL: "https://commons.wikimedia.org/w/index.php?curid=47710332"),
+    PhotoCredit(imageName: "recipe-apple-pie", label: "Classic Apple Pie (recipe)", author: "The-Wuje", license: "CC BY-SA 4.0", sourceURL: "https://commons.wikimedia.org/w/index.php?curid=162287331"),
     PhotoCredit(imageName: "recipe-apple-slaw", label: "Apple Slaw (recipe)", author: "Horacio Cambeiro", license: "CC BY-SA 3.0", sourceURL: "https://commons.wikimedia.org/w/index.php?curid=194084156"),
+    PhotoCredit(imageName: "recipe-baked-apples", label: "Maple Baked Apples (recipe)", author: "Andrey Korzun", license: "CC BY-SA 4.0", sourceURL: "https://commons.wikimedia.org/w/index.php?curid=41906483"),
+    PhotoCredit(imageName: "recipe-caramel-apples", label: "Caramel Apples (recipe)", author: "photogmateo", license: "CC BY 2.0", sourceURL: "https://commons.wikimedia.org/w/index.php?curid=34923304"),
     PhotoCredit(imageName: "recipe-avocado-toast", label: "Avocado Toast (recipe)", author: "Andy Li", license: "CC0", sourceURL: "https://commons.wikimedia.org/w/index.php?curid=181353089"),
     PhotoCredit(imageName: "recipe-banana-pancakes", label: "Banana Pancakes (recipe)", author: "Andy Li", license: "CC0", sourceURL: "https://commons.wikimedia.org/w/index.php?curid=182844746"),
     PhotoCredit(imageName: "recipe-cherimoya-cream", label: "Cherimoya Cream (recipe)", author: "Slamforeman", license: "CC0", sourceURL: "https://commons.wikimedia.org/w/index.php?curid=141403035"),

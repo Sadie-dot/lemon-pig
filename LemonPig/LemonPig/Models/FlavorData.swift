@@ -61,6 +61,7 @@ let allFlavors: [Flavor] = [
         FlavorFruit(name: "Grapefruit", desc: "Bitter-sweet and tangy", benefit: "Vitamin C", imageName: "fruit-grapefruit", tileColor: Color(hex: "#E2674B"), fruit: grapefruitFruit)
     ]),
     Flavor(key: "Sweet", tag: "Honeyed and mellow", accent: .lpSweet, fruits: [
+        FlavorFruit(name: "Apple",       desc: "Crisp, honeyed, dependable",           benefit: "Fiber",        imageName: "fruit-apple", tileColor: Color(hex: "#C0392B"), fruit: appleFruit),
         FlavorFruit(name: "Fig",         desc: "Honeyed, jammy, floral",               benefit: "Fiber",        imageName: "fruit-fig", tileColor: Color(hex: "#7D4F9E"), fruit: figFruit),
         FlavorFruit(name: "Date",        desc: "Caramel and toffee — candy-sweet",     benefit: "Potassium",    imageName: "fruit-date", tileColor: Color(hex: "#8A5A2B"), fruit: dateFruit),
         FlavorFruit(name: "Persimmon",   desc: "Honey-soft and mellow",                benefit: "Vitamin A",    imageName: "fruit-persimmon", tileColor: Color(hex: "#E2762B"), fruit: persimmonFruit),

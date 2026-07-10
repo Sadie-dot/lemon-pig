@@ -1989,3 +1989,156 @@ let durianFruit = Fruit(
         RecipeCard(name: "Durian Ice Cream", imageName: "recipe-durian-ice-cream", meta: "20 min · Medium", recipe: durianIceCream)
     ]
 )
+
+// MARK: - Apple
+
+let applePie = Recipe(
+    name: "Classic Apple Pie",
+    eyebrow: "Apple recipe",
+    imageName: "recipe-apple-pie",
+    time: "90 min", level: "Medium", cal: "340",
+    lede: "A lattice-topped landmark: cinnamon-scented apples bubbling under pastry that shatters where it should.",
+    ingredients: [
+        Ingredient(qty: 2,    unit: "",     name: "pie crusts (homemade or good store-bought)"),
+        Ingredient(qty: 6,    unit: "cup",  name: "apples, peeled and sliced"),
+        Ingredient(qty: 0.66, unit: "cup",  name: "sugar"),
+        Ingredient(qty: 2,    unit: "tbsp", name: "flour"),
+        Ingredient(qty: 1,    unit: "tsp",  name: "cinnamon"),
+        Ingredient(qty: 0.25, unit: "tsp",  name: "nutmeg"),
+        Ingredient(qty: 1,    unit: "tbsp", name: "lemon juice"),
+        Ingredient(qty: 2,    unit: "tbsp", name: "butter, cubed"),
+        Ingredient(qty: 1,    unit: "",     name: "egg, beaten, for the wash")
+    ],
+    steps: [
+        Step(title: "Fill",    body: "Toss the apples with sugar, flour, spices, and lemon juice. Pile into the bottom crust and dot with butter."),
+        Step(title: "Lattice", body: "Cut the top crust into strips and weave a lattice. Crimp the edges and brush with egg wash."),
+        Step(title: "Bake",    body: "45–55 minutes at 200°C (400°F), shielding the rim with foil once it is deeply golden."),
+        Step(title: "Wait",    body: "Rest at least 2 hours — the filling sets as it cools, and patience is what keeps the slice intact.")
+    ],
+    tips: [
+        "Mix apple varieties — a couple of tart ones keep the filling lively.",
+        "A pizza stone under the pie dish guarantees a crisp bottom crust.",
+        "Bubbling in the center — not just the edges — is the real done signal."
+    ],
+    baseYieldValue: 1, baseYieldUnit: "pie", baseServings: 8,
+    accentColor: .lpSweet
+)
+
+let bakedApplesMaple = Recipe(
+    name: "Maple Baked Apples",
+    eyebrow: "Apple recipe",
+    imageName: "recipe-baked-apples",
+    time: "45 min", level: "Easy", cal: "210",
+    lede: "Whole apples roasted until they slump into their own sauce, stuffed with oats, walnuts, and maple.",
+    ingredients: [
+        Ingredient(qty: 4,    unit: "",     name: "apples"),
+        Ingredient(qty: 0.33, unit: "cup",  name: "rolled oats"),
+        Ingredient(qty: 0.25, unit: "cup",  name: "walnuts, chopped"),
+        Ingredient(qty: 3,    unit: "tbsp", name: "maple syrup"),
+        Ingredient(qty: 2,    unit: "tbsp", name: "butter, softened"),
+        Ingredient(qty: 0.5,  unit: "tsp",  name: "cinnamon"),
+        Ingredient(qty: 0.5,  unit: "cup",  name: "apple cider or water")
+    ],
+    steps: [
+        Step(title: "Core",  body: "Core the apples from the top without breaking through the base, leaving a generous well."),
+        Step(title: "Stuff", body: "Mash oats, walnuts, maple, butter, and cinnamon together; pack into the wells."),
+        Step(title: "Bake",  body: "Set in a dish, pour the cider around, and bake 35–40 minutes at 190°C (375°F) until wrinkled and tender."),
+        Step(title: "Baste", body: "Spoon the pan juices over before serving — ice cream optional but correct.")
+    ],
+    tips: [
+        "Score a shallow ring around each apple's equator so the skin doesn't burst.",
+        "Firm varieties hold their shape; soft ones collapse into applesauce.",
+        "Leftovers reheat into an excellent breakfast over yogurt."
+    ],
+    baseYieldValue: 4, baseYieldUnit: "apples", baseServings: 4,
+    accentColor: .lpSweet
+)
+
+let appleButterSlow = Recipe(
+    name: "Slow Apple Butter",
+    eyebrow: "Apple recipe",
+    imageName: "recipe-apple-butter",
+    time: "3 hr", level: "Easy", cal: "35",
+    lede: "No butter involved — just apples cooked low and slow until they turn mahogany, silky, and spreadable.",
+    ingredients: [
+        Ingredient(qty: 12,   unit: "cup",  name: "apples, peeled and chopped"),
+        Ingredient(qty: 0.75, unit: "cup",  name: "brown sugar"),
+        Ingredient(qty: 1,    unit: "cup",  name: "apple cider"),
+        Ingredient(qty: 2,    unit: "tsp",  name: "cinnamon"),
+        Ingredient(qty: 0.25, unit: "tsp",  name: "ground cloves"),
+        Ingredient(qty: 1,    unit: "tbsp", name: "lemon juice"),
+        Ingredient(qty: 1,    unit: "pinch",name: "salt")
+    ],
+    steps: [
+        Step(title: "Soften", body: "Simmer everything, covered, 30 minutes until the apples fall apart."),
+        Step(title: "Blend",  body: "Purée smooth with an immersion blender — careful, it's lava."),
+        Step(title: "Reduce", body: "Cook uncovered on the lowest heat 2–3 hours, stirring now and then, until deep brown and thick enough to mound on a spoon."),
+        Step(title: "Jar",    body: "Cool, then refrigerate up to 3 weeks — or freeze half for winter toast emergencies.")
+    ],
+    tips: [
+        "Done test: a dollop on a cold plate shouldn't weep liquid at the edges.",
+        "A slow cooker on low overnight does the reducing while you sleep.",
+        "Swirl into oatmeal, glaze pork, or upgrade a grilled cheese."
+    ],
+    baseYieldValue: 3, baseYieldUnit: "cups", baseServings: 24,
+    accentColor: .lpSweet
+)
+
+let caramelApples = Recipe(
+    name: "Caramel Apples",
+    eyebrow: "Apple recipe",
+    imageName: "recipe-caramel-apples",
+    time: "30 min", level: "Easy", cal: "300",
+    lede: "The county-fair classic: cold crisp apples in a chewy caramel jacket, rolled in toasted nuts.",
+    ingredients: [
+        Ingredient(qty: 6,    unit: "",     name: "apples, cold from the fridge"),
+        Ingredient(qty: 400,  unit: "g",    name: "soft caramels, unwrapped"),
+        Ingredient(qty: 2,    unit: "tbsp", name: "heavy cream"),
+        Ingredient(qty: 1,    unit: "cup",  name: "peanuts or pecans, chopped"),
+        Ingredient(qty: 6,    unit: "",     name: "sturdy sticks")
+    ],
+    steps: [
+        Step(title: "Prep",  body: "Scrub the wax off the apples and dry completely — caramel refuses wet or waxy skin. Push in the sticks."),
+        Step(title: "Melt",  body: "Melt caramels with cream over low heat until glossy and pourable."),
+        Step(title: "Dip",   body: "Tilt the pan, roll each apple through, let the excess drip, then roll the base in nuts."),
+        Step(title: "Set",   body: "Rest on buttered parchment 15 minutes in the fridge until the jacket is chewy-firm.")
+    ],
+    tips: [
+        "Cold apples set the caramel fast and stop the dreaded slide-off.",
+        "Dry skin matters more than anything else here — really dry them.",
+        "Slice set apples into wedges for sharing without the dental drama."
+    ],
+    baseYieldValue: 6, baseYieldUnit: "apples", baseServings: 6,
+    accentColor: .lpSweet
+)
+
+let appleFruit = Fruit(
+    name: "Apple",
+    latinName: "Malus domestica",
+    imageName: "fruit-apple",
+    eyebrow: "Rooted up",
+    pullQuote: "Ten thousand varieties in, and the crunch still lands every time.",
+    pullQuoteHighlight: "the crunch still lands",
+    flavors: [
+        FlavorTag(label: "Sweet", color: .lpSweet),
+        FlavorTag(label: "Tart",  color: .lpTart)
+    ],
+    snapshot: "The world's default fruit is anything but boring: thousands of cultivars run from honey-sweet Fuji to wine-dark Arkansas Black, all built around that signature snap.",
+    loveBody: "An apple is the rare fruit that's equally at home raw in a lunchbox, melted into a pie, or pressed into a glass. It keeps for months, travels without complaint, and pairs with everything from cheddar to caramel.",
+    loveBullets: [
+        "Pectin-rich — the natural thickener behind every good jam",
+        "Stores for months in the cold without losing its snap",
+        "Sweet, tart, crisp, or soft: there's a cultivar for every mood"
+    ],
+    howToEnjoy: HowToEnjoy(
+        eat: "Out of hand, sliced with sharp cheese, grated into slaws, or baked anywhere butter and cinnamon gather.",
+        lookFor: "Heavy, firm fruit with taut skin and a sweet smell at the blossom end — dull, soft, or waxy-sticky skin means it's past its snap.",
+        store: "The crisper drawer, away from greens — apples exhale ethylene that wilts everything nearby."
+    ),
+    recipes: [
+        RecipeCard(name: "Classic Apple Pie", imageName: "recipe-apple-pie", meta: "90 min · Medium", recipe: applePie),
+        RecipeCard(name: "Maple Baked Apples", imageName: "recipe-baked-apples", meta: "45 min · Easy", recipe: bakedApplesMaple),
+        RecipeCard(name: "Slow Apple Butter", imageName: "recipe-apple-butter", meta: "3 hr · Easy", recipe: appleButterSlow),
+        RecipeCard(name: "Caramel Apples", imageName: "recipe-caramel-apples", meta: "30 min · Easy", recipe: caramelApples)
+    ]
+)

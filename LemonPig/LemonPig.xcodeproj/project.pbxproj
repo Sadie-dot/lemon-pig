@@ -242,6 +242,11 @@
 		AC001093 /* recipe-yuzu-vinaigrette.png in Resources */ = {isa = PBXBuildFile; fileRef = AC002093 /* recipe-yuzu-vinaigrette.png */; };
 		AD001000 /* fruit-apricot.png in Resources */ = {isa = PBXBuildFile; fileRef = AD002000 /* fruit-apricot.png */; };
 		AD001001 /* fruit-blackberry.png in Resources */ = {isa = PBXBuildFile; fileRef = AD002001 /* fruit-blackberry.png */; };
+		AG001001 /* fruit-apple.png in Resources */ = {isa = PBXBuildFile; fileRef = AG002001 /* fruit-apple.png */; };
+		AG001002 /* recipe-apple-pie.png in Resources */ = {isa = PBXBuildFile; fileRef = AG002002 /* recipe-apple-pie.png */; };
+		AG001003 /* recipe-baked-apples.png in Resources */ = {isa = PBXBuildFile; fileRef = AG002003 /* recipe-baked-apples.png */; };
+		AG001004 /* recipe-apple-butter.png in Resources */ = {isa = PBXBuildFile; fileRef = AG002004 /* recipe-apple-butter.png */; };
+		AG001005 /* recipe-caramel-apples.png in Resources */ = {isa = PBXBuildFile; fileRef = AG002005 /* recipe-caramel-apples.png */; };
 		AD001002 /* fruit-blood-orange.png in Resources */ = {isa = PBXBuildFile; fileRef = AD002002 /* fruit-blood-orange.png */; };
 		AD001003 /* fruit-coconut.png in Resources */ = {isa = PBXBuildFile; fileRef = AD002003 /* fruit-coconut.png */; };
 		AD001004 /* fruit-durian.png in Resources */ = {isa = PBXBuildFile; fileRef = AD002004 /* fruit-durian.png */; };
@@ -562,6 +567,11 @@
 		AC002093 /* recipe-yuzu-vinaigrette.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-yuzu-vinaigrette.png"; sourceTree = "<group>"; };
 		AD002000 /* fruit-apricot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fruit-apricot.png"; sourceTree = "<group>"; };
 		AD002001 /* fruit-blackberry.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fruit-blackberry.png"; sourceTree = "<group>"; };
+		AG002001 /* fruit-apple.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fruit-apple.png"; sourceTree = "<group>"; };
+		AG002002 /* recipe-apple-pie.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-apple-pie.png"; sourceTree = "<group>"; };
+		AG002003 /* recipe-baked-apples.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-baked-apples.png"; sourceTree = "<group>"; };
+		AG002004 /* recipe-apple-butter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-apple-butter.png"; sourceTree = "<group>"; };
+		AG002005 /* recipe-caramel-apples.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recipe-caramel-apples.png"; sourceTree = "<group>"; };
 		AD002002 /* fruit-blood-orange.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fruit-blood-orange.png"; sourceTree = "<group>"; };
 		AD002003 /* fruit-coconut.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fruit-coconut.png"; sourceTree = "<group>"; };
 		AD002004 /* fruit-durian.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fruit-durian.png"; sourceTree = "<group>"; };
@@ -916,6 +926,11 @@
 				AC002090 /* recipe-soursop-sorbet.png */,
 				AD002000 /* fruit-apricot.png */,
 				AD002001 /* fruit-blackberry.png */,
+				AG002001 /* fruit-apple.png */,
+				AG002002 /* recipe-apple-pie.png */,
+				AG002003 /* recipe-baked-apples.png */,
+				AG002004 /* recipe-apple-butter.png */,
+				AG002005 /* recipe-caramel-apples.png */,
 				AD002002 /* fruit-blood-orange.png */,
 				AD002003 /* fruit-coconut.png */,
 				AD002004 /* fruit-durian.png */,
@@ -1273,6 +1288,11 @@
 				AC001090 /* recipe-soursop-sorbet.png in Resources */,
 				AD001000 /* fruit-apricot.png in Resources */,
 				AD001001 /* fruit-blackberry.png in Resources */,
+				AG001001 /* fruit-apple.png in Resources */,
+				AG001002 /* recipe-apple-pie.png in Resources */,
+				AG001003 /* recipe-baked-apples.png in Resources */,
+				AG001004 /* recipe-apple-butter.png in Resources */,
+				AG001005 /* recipe-caramel-apples.png in Resources */,
 				AD001002 /* fruit-blood-orange.png in Resources */,
 				AD001003 /* fruit-coconut.png in Resources */,
 				AD001004 /* fruit-durian.png in Resources */,

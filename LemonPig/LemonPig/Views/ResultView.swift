@@ -310,8 +310,10 @@ private struct PullQuote: View {
     private func buildText() -> Text {
         let parts = text.components(separatedBy: highlight)
         guard parts.count == 2 else { return Text(text) }
+        // Keep the tail — a mid-quote highlight must not truncate the quote.
         return Text(parts[0])
             + Text(highlight).foregroundColor(.lpGold)
+            + Text(parts[1])
     }
 }
 
