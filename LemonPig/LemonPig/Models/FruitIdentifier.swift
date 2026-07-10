@@ -60,6 +60,10 @@ final class DiscoveredFruitStore {
         let confidence: Int
         var heroKey: String
         let profile: GeneratedProfile
+
+        /// Entries persisted before the schema gained hero colors are worth
+        /// one regeneration so they stop rendering the bare navy hero.
+        var isCurrent: Bool { profile.skinHex != nil && profile.fleshHex != nil }
     }
 
     /// Keyed by normalized fruit name.
@@ -96,10 +100,11 @@ final class DiscoveredFruitStore {
         save()
     }
 
-    /// Rebuilds the Fruit for a previously discovered name, or nil if this
-    /// name has never been generated.
+    /// Rebuilds the Fruit for a previously discovered name. Nil if this name
+    /// has never been generated — or was generated under an older schema, in
+    /// which case the caller regenerates and record() upgrades the entry.
     func identification(matching name: String) -> FruitIdentification? {
-        guard let e = entry(for: name) else { return nil }
+        guard let e = entry(for: name), e.isCurrent else { return nil }
         return .generated(FruitIdentifier.buildFruit(name: e.name, profile: e.profile, heroKey: e.heroKey),
                           confidence: e.confidence)
     }
@@ -305,8 +310,9 @@ struct FruitIdentifier {
         let capturedKey = capturedImage.map { CapturedImageStore.shared.store($0) }
         // If this fruit was discovered before (say, photographed and later
         // typed, or misspelled two different ways), keep the first profile so
-        // the fruit always reads the same. A fresh photo still becomes the hero.
-        if let earlier = DiscoveredFruitStore.shared.entry(for: result.name) {
+        // the fruit always reads the same. A fresh photo still becomes the
+        // hero, and a pre-hero-color entry yields to the fresh profile.
+        if let earlier = DiscoveredFruitStore.shared.entry(for: result.name), earlier.isCurrent {
             let heroKey = capturedKey ?? earlier.heroKey
             if capturedKey != nil {
                 DiscoveredFruitStore.shared.updateHero(name: earlier.name, heroKey: heroKey)
