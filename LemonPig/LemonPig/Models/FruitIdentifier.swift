@@ -488,7 +488,7 @@ struct FruitIdentifier {
             name: name,
             latinName: profile.latinName,
             imageName: heroKey,
-            eyebrow: "Sniffed out live",
+            eyebrow: "AI generated live",
             pullQuote: profile.pullQuote,
             pullQuoteHighlight: profile.pullQuote.contains(profile.pullQuoteHighlight)
                 ? profile.pullQuoteHighlight : profile.pullQuote,

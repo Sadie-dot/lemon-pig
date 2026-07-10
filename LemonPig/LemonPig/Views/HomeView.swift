@@ -607,7 +607,7 @@ private struct IdentifyingOverlay: View {
                                value: pulse)
                     .accessibilityHidden(true)
 
-                Text("Sniffing out \u{201C}\(name)\u{201D}\u{2026}")
+                Text("Rooting up \u{201C}\(name)\u{201D}\u{2026}")
                     .font(.geist(17, weight: .semibold))
                     .foregroundColor(.lpCream)
                     .multilineTextAlignment(.center)
