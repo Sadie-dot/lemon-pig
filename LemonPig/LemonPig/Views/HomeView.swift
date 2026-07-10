@@ -373,6 +373,20 @@ private struct SearchField: View {
             .accessibilityLabel("Search fruit by name")
             .padding(.leading, 16)
 
+            if !text.isEmpty {
+                Button {
+                    text = ""
+                    isFocused.wrappedValue = true
+                } label: {
+                    Image(systemName: "xmark.circle.fill")
+                        .font(.system(size: 16, weight: .semibold))
+                        .foregroundColor(Color.lpCream.opacity(0.55))
+                        .frame(width: LP.minTap, height: LP.minTap)
+                        .contentShape(Rectangle())
+                }
+                .accessibilityLabel("Clear search text")
+            }
+
             Button(action: onSubmit) {
                 ZStack {
                     Circle()
@@ -607,7 +621,7 @@ private struct IdentifyingOverlay: View {
                                value: pulse)
                     .accessibilityHidden(true)
 
-                Text("Rooting up \u{201C}\(name)\u{201D}\u{2026}")
+                Text("Rooting up \u{201C}\(name)\u{201D}")
                     .font(.geist(17, weight: .semibold))
                     .foregroundColor(.lpCream)
                     .multilineTextAlignment(.center)
@@ -620,14 +634,18 @@ private struct IdentifyingOverlay: View {
                     .fixedSize(horizontal: false, vertical: true)
 
                 Button(action: onCancel) {
+                    // Compact pill; the surrounding frame keeps the 44pt
+                    // hit target accessibility actually requires.
                     Text("Cancel")
                         .font(.geist(13, weight: .semibold))
                         .foregroundColor(Color.lpCream.opacity(0.85))
-                        .frame(minWidth: LP.minTap, minHeight: LP.minTap)
-                        .padding(.horizontal, 18)
+                        .padding(.horizontal, 14)
+                        .padding(.vertical, 7)
                         .overlay(Capsule().strokeBorder(Color.lpCream.opacity(0.35), lineWidth: 1))
+                        .frame(minWidth: LP.minTap, minHeight: LP.minTap)
+                        .contentShape(Rectangle())
                 }
-                .padding(.top, 12)
+                .padding(.top, 8)
             }
             .padding(24)
             .background(Color.lpPurple)

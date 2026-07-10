@@ -362,9 +362,11 @@ private struct ResultIcon: View {
             case "info":
                 var circle = Path(ellipseIn: CGRect(x: 1.6*s, y: 1.6*s, width: 12.8*s, height: 12.8*s))
                 ctx.stroke(circle, with: c, style: style)
-                var line = Path(); line.move(to: CGPoint(x: 8*s, y: 7.4*s)); line.addLine(to: CGPoint(x: 8*s, y: 10.8*s))
-                ctx.stroke(line, with: c, style: style)
-                var dot = Path(ellipseIn: CGRect(x: 7.55*s, y: 4.65*s, width: 0.9*s, height: 0.9*s))
+                // The "i" needs weight at this size or it reads as noise:
+                // fat dot, long stem.
+                var line = Path(); line.move(to: CGPoint(x: 8*s, y: 7.2*s)); line.addLine(to: CGPoint(x: 8*s, y: 11.4*s))
+                ctx.stroke(line, with: c, style: StrokeStyle(lineWidth: 1.9*s, lineCap: .round))
+                var dot = Path(ellipseIn: CGRect(x: 7*s, y: 4*s, width: 2*s, height: 2*s))
                 ctx.fill(dot, with: c)
             case "heart":
                 var p = Path(); p.move(to: CGPoint(x: 8*s, y: 13.2*s))
