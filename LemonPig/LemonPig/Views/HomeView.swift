@@ -22,6 +22,7 @@ struct HomeView: View {
     @EnvironmentObject var router: AppRouter
     @State private var searchText = ""
     @State private var factIndex = 0
+    @State private var hasAppeared = false
     @State private var showAIDisclosure = false
     @State private var showPhotoCredits = false
     @State private var identifyPhase: IdentifyPhase = .idle
@@ -125,6 +126,12 @@ struct HomeView: View {
             }
         }
         .onDisappear { cancelIdentify() }
+        // Fires on every pop back to home (NavigationStack re-appears the
+        // root), so each return shows the next fact; first launch keeps #1.
+        .onAppear {
+            if hasAppeared { factIndex = (factIndex + 1) % facts.count }
+            hasAppeared = true
+        }
     }
 
     private func submitSearch() {
