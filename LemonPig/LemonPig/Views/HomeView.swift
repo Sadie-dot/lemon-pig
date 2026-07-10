@@ -203,7 +203,7 @@ struct HomeView: View {
             } catch {
                 // URLSession surfaces cancellation as an error; stay quiet then.
                 guard !Task.isCancelled else { return }
-                await MainActor.run { failIdentification(error.localizedDescription) }
+                await MainActor.run { failIdentification(FruitIdentifier.friendlyMessage(for: error)) }
             }
         }
     }
@@ -395,6 +395,8 @@ private struct SearchField: View {
             .font(.geist(15, weight: .medium))
             .foregroundColor(.lpCream)
             .submitLabel(.search)
+            .autocorrectionDisabled()
+            .textInputAutocapitalization(.never)
             .onSubmit(onSubmit)
             .focused(isFocused)
             .accessibilityLabel("Search fruit by name")

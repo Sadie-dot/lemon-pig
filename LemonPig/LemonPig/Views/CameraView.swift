@@ -359,7 +359,7 @@ struct CameraView: View {
             } catch FruitIdentifierError.missingKey {
                 await MainActor.run { phase = .ready; showKeyEntry = true }
             } catch {
-                await MainActor.run { fail(error.localizedDescription) }
+                await MainActor.run { fail(FruitIdentifier.friendlyMessage(for: error)) }
             }
         }
     }

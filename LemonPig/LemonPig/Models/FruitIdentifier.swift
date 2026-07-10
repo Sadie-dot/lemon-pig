@@ -218,6 +218,22 @@ enum IdentifyBackend {
 
 struct FruitIdentifier {
 
+    /// User-facing message for an identify failure, in the app's voice.
+    /// Connectivity failures get a friendly line instead of Apple's system
+    /// wording; anything else keeps its own description.
+    static func friendlyMessage(for error: Error) -> String {
+        if let urlError = error as? URLError {
+            switch urlError.code {
+            case .notConnectedToInternet, .networkConnectionLost, .dataNotAllowed,
+                 .cannotConnectToHost, .cannotFindHost, .timedOut:
+                return "Oh, fruit! You may be offline. Please check your connection and try again."
+            default:
+                break
+            }
+        }
+        return error.localizedDescription
+    }
+
     func identify(_ image: UIImage) async throws -> FruitIdentification {
         guard let backend = IdentifyBackend.resolve() else { throw FruitIdentifierError.missingKey }
         guard let jpeg = downscaledJPEG(image) else { throw FruitIdentifierError.badImage }
