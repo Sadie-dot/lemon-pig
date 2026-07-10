@@ -155,7 +155,9 @@ private struct RecipeHero: View {
                     .font(.geist(33, weight: .bold))
                     .tracking(-1)
                     .foregroundColor(.lpCream)
-                    .frame(height: titleHeight) // reference line-height: 1.04 × 33
+                    // Generated recipe names can run long — wrap, never truncate.
+                    .fixedSize(horizontal: false, vertical: true)
+                    .frame(minHeight: titleHeight, alignment: .leading) // reference line-height: 1.04 × 33
                     .accessibilityAddTraits(.isHeader)
             }
             .padding(.horizontal, 20)

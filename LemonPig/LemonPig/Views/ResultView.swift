@@ -86,7 +86,9 @@ struct ResultView: View {
                         // Recipes
                         SectionBlock(title: "Recipes", iconKey: "pot", isLast: true) {
                             ScrollView(.horizontal, showsIndicators: false) {
-                                HStack(spacing: 12) {
+                                // Top-aligned so cards with wrapped titles don't
+                                // push their neighbors' images out of line.
+                                HStack(alignment: .top, spacing: 12) {
                                     ForEach(fruit.recipes, id: \.name) { card in
                                         RecipeCardTile(card: card) {
                                             if let recipe = card.recipe {
@@ -437,7 +439,17 @@ private struct RecipeCardTile: View {
                             .resizable()
                             .scaledToFill()
                     } else {
-                        Color(hex: "#2a1066")
+                        ZStack {
+                            Color(hex: "#2a1066")
+                            if let pig = UIImage(named: "pig-icon") {
+                                Image(uiImage: pig)
+                                    .renderingMode(.template)
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width: 54, height: 54)
+                                    .foregroundColor(LP.divider)
+                            }
+                        }
                     }
                 }
                 .frame(width: 150, height: 104)
