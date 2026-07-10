@@ -111,6 +111,8 @@ private struct RecipeHero: View {
                         .scaleEffect(1.65, anchor: UnitPoint(x: 0.6, y: 0.42))
                         .clipped()
                         .accessibilityHidden(true)
+                } else if let skin = recipe.heroSkin, let flesh = recipe.heroFlesh {
+                    LinearGradient(colors: [skin, flesh], startPoint: .top, endPoint: .bottom)
                 } else {
                     Color.lpNavy
                 }

@@ -16,6 +16,10 @@ struct Fruit: Hashable, Identifiable {
     let loveBullets: [String]
     let howToEnjoy: HowToEnjoy
     let recipes: [RecipeCard]
+    // Hero gradient for generated fruits with no photo (nil for catalog
+    // fruits and pre-hero-color discoveries — those fall back to navy).
+    var heroSkin: Color? = nil
+    var heroFlesh: Color? = nil
 }
 
 struct FlavorTag: Hashable {
@@ -54,6 +58,8 @@ struct Recipe: Hashable {
     let baseYieldUnit: String
     let baseServings: Int
     let accentColor: Color
+    var heroSkin: Color? = nil
+    var heroFlesh: Color? = nil
 }
 
 struct Ingredient: Hashable {

@@ -143,6 +143,7 @@ Rules:
 - If the fruit is in the catalog list, use the catalog's exact name, set in_catalog true, and set profile to null.
 - Otherwise set in_catalog false and generate a complete profile in the app's voice: warm, sensory, a little cheeky, food-writer energy. Facts must be accurate; never invent safety claims. Include 4 realistic recipes at the quality of a good food blog.
 - pull_quote_highlight must be an exact substring of pull_quote.
+- skin_hex and flesh_hex are the fruit's naturalistic ripe skin and flesh colors.
 - confidence is 0-100.`;
 
   return anthropicRequest([
@@ -162,6 +163,7 @@ Rules:
 - If it names a catalog fruit — including misspellings, synonyms, or non-English names — use the catalog's exact name, set in_catalog true, and set profile to null.
 - Otherwise set in_catalog false, put the fruit's common English name in name, and generate a complete profile in the app's voice: warm, sensory, a little cheeky, food-writer energy. Facts must be accurate; never invent safety claims. Include 4 realistic recipes at the quality of a good food blog.
 - pull_quote_highlight must be an exact substring of pull_quote.
+- skin_hex and flesh_hex are the fruit's naturalistic ripe skin and flesh colors.
 - confidence is 0-100: how sure you are the text names a real fruit and the profile matches it.`;
 
   return anthropicRequest([{ type: "text", text: prompt }]);
@@ -230,9 +232,12 @@ function identificationSchema() {
         additionalProperties: false,
       },
       recipes: { type: "array", items: recipe },
+      skin_hex: { type: "string", description: "typical ripe skin color as a 6-digit CSS hex like \"#C0392B\"" },
+      flesh_hex: { type: "string", description: "typical flesh color as a 6-digit CSS hex" },
     },
     required: ["latin_name", "pull_quote", "pull_quote_highlight", "flavors",
-               "snapshot", "love_body", "love_bullets", "how_to_enjoy", "recipes"],
+               "snapshot", "love_body", "love_bullets", "how_to_enjoy", "recipes",
+               "skin_hex", "flesh_hex"],
     additionalProperties: false,
   };
   return {

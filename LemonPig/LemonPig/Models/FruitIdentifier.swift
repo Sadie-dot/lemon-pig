@@ -286,11 +286,20 @@ struct FruitIdentifier {
         guard result.isFruit else {
             return .notAFruit(result.name)
         }
-        if let match = searchCatalogFruit(result.name) {
-            return .catalog(match, confidence: result.confidence)
+        // The model uses the catalog's exact name for in-catalog fruits, so
+        // only an exact match may claim the result here — anything looser
+        // would let "Mango" swallow a generated Mangosteen profile.
+        if let exact = allCatalogFruits.first(where: {
+            $0.name.compare(result.name, options: [.caseInsensitive, .diacriticInsensitive]) == .orderedSame
+        }) {
+            return .catalog(exact, confidence: result.confidence)
         }
         guard let profile = result.profile else {
-            // Model judged it in-catalog but the name didn't resolve — treat as a miss.
+            // Model judged it in-catalog but under a non-exact name — try the
+            // loose catalog search before treating it as a miss.
+            if let match = searchCatalogFruit(result.name) {
+                return .catalog(match, confidence: result.confidence)
+            }
             return .notAFruit(result.name)
         }
         let capturedKey = capturedImage.map { CapturedImageStore.shared.store($0) }
@@ -353,6 +362,7 @@ struct FruitIdentifier {
         - If the fruit is in the catalog list, use the catalog's exact name, set in_catalog true, and set profile to null.
         - Otherwise set in_catalog false and generate a complete profile in the app's voice: warm, sensory, a little cheeky, food-writer energy. Facts must be accurate; never invent safety claims. Include 4 realistic recipes at the quality of a good food blog.
         - pull_quote_highlight must be an exact substring of pull_quote.
+        - skin_hex and flesh_hex are the fruit's naturalistic ripe skin and flesh colors.
         - confidence is 0-100.
         """
         return anthropicBody(content: [
@@ -375,6 +385,7 @@ struct FruitIdentifier {
         - If it names a catalog fruit — including misspellings, synonyms, or non-English names — use the catalog's exact name, set in_catalog true, and set profile to null.
         - Otherwise set in_catalog false, put the fruit's common English name in name, and generate a complete profile in the app's voice: warm, sensory, a little cheeky, food-writer energy. Facts must be accurate; never invent safety claims. Include 4 realistic recipes at the quality of a good food blog.
         - pull_quote_highlight must be an exact substring of pull_quote.
+        - skin_hex and flesh_hex are the fruit's naturalistic ripe skin and flesh colors.
         - confidence is 0-100: how sure you are the text names a real fruit and the profile matches it.
         """
         return anthropicBody(content: [["type": "text", "text": prompt]])
@@ -438,10 +449,13 @@ struct FruitIdentifier {
                     "properties": ["eat": str, "look_for": str, "store": str],
                     "required": ["eat", "look_for", "store"], "additionalProperties": false
                 ],
-                "recipes": ["type": "array", "items": recipe]
+                "recipes": ["type": "array", "items": recipe],
+                "skin_hex": ["type": "string", "description": "typical ripe skin color as a 6-digit CSS hex like \"#C0392B\""],
+                "flesh_hex": ["type": "string", "description": "typical flesh color as a 6-digit CSS hex"]
             ],
             "required": ["latin_name", "pull_quote", "pull_quote_highlight", "flavors",
-                         "snapshot", "love_body", "love_bullets", "how_to_enjoy", "recipes"],
+                         "snapshot", "love_body", "love_bullets", "how_to_enjoy", "recipes",
+                         "skin_hex", "flesh_hex"],
             "additionalProperties": false
         ]
         return [
@@ -466,6 +480,8 @@ struct FruitIdentifier {
             return FlavorTag(label: label, color: color)
         }
         let accent = tags.first?.color ?? .lpTropical
+        let skin = heroColor(profile.skinHex)
+        let flesh = heroColor(profile.fleshHex)
         let recipes = profile.recipes.prefix(4).map { r -> RecipeCard in
             let recipe = Recipe(
                 name: r.name,
@@ -479,7 +495,9 @@ struct FruitIdentifier {
                 baseYieldValue: r.baseYieldValue,
                 baseYieldUnit: r.baseYieldUnit,
                 baseServings: r.baseServings,
-                accentColor: accent
+                accentColor: accent,
+                heroSkin: skin,
+                heroFlesh: flesh
             )
             return RecipeCard(name: r.name, imageName: heroKey,
                               meta: "\(r.time) · \(r.level)", recipe: recipe)
@@ -499,8 +517,17 @@ struct FruitIdentifier {
             howToEnjoy: HowToEnjoy(eat: profile.howToEnjoy.eat,
                                    lookFor: profile.howToEnjoy.lookFor,
                                    store: profile.howToEnjoy.store),
-            recipes: Array(recipes)
+            recipes: Array(recipes),
+            heroSkin: skin,
+            heroFlesh: flesh
         )
+    }
+
+    /// Parses a model-supplied "#RRGGBB" string, rejecting anything else.
+    private static func heroColor(_ hex: String?) -> Color? {
+        guard let hex,
+              hex.range(of: "^#[0-9A-Fa-f]{6}$", options: .regularExpression) != nil else { return nil }
+        return Color(hex: hex)
     }
 
     private static let flavorColors: [String: Color] = [
@@ -584,4 +611,7 @@ private struct GeneratedProfile: Codable {
     let loveBullets: [String]
     let howToEnjoy: Enjoy
     let recipes: [WireRecipe]
+    // Optional: absent in discoveries persisted before hero colors existed.
+    let skinHex: String?
+    let fleshHex: String?
 }

@@ -165,6 +165,10 @@ private struct ResultHero: View {
                         .frame(width: geo.size.width, height: 272)
                         .clipped()
                         .accessibilityHidden(true)
+                } else if let skin = fruit.heroSkin, let flesh = fruit.heroFlesh {
+                    // Photo-less generated fruit: paint the hero in the
+                    // fruit's own colors (the scrims below keep text legible).
+                    LinearGradient(colors: [skin, flesh], startPoint: .top, endPoint: .bottom)
                 } else {
                     Color.lpNavy
                 }
