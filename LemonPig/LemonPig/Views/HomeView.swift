@@ -134,17 +134,23 @@ struct HomeView: View {
 
         // An exact flavor name ("sweet") opens the taste page; otherwise the
         // catalog wins, so "sweet grape" lands on the fruit, not the flavor.
+        // Landing somewhere clears the field; a search that dead-ends (no
+        // match, error, cancel) keeps its text so it can be edited.
         if let flavor = allFlavors.first(where: { $0.key.lowercased() == q }) {
+            searchText = ""
             router.push(.taste(flavor.key))
         } else if let fruit = searchCatalogFruit(q) {
+            searchText = ""
             router.push(.result(fruit))
         } else if let fruit = fuzzyCatalogFruit(q) {
             // Near-miss typo of a catalog name — resolve locally rather than
             // spending a live identification on it.
+            searchText = ""
             router.push(.result(fruit))
         } else if let flavor = allFlavors.first(where: { $0.key.lowercased().contains(q) }) {
             // A partial flavor word ("swee") still opens the taste page, but a
             // fruit name that merely contains one ("sweetsop") goes live.
+            searchText = ""
             router.push(.taste(flavor.key))
         } else {
             identifyLive(searchText.trimmingCharacters(in: .whitespacesAndNewlines))
@@ -188,8 +194,10 @@ struct HomeView: View {
         switch result {
         case .catalog(let fruit, _), .generated(let fruit, _):
             UIAccessibility.post(notification: .announcement, argument: "Identified: \(fruit.name)")
+            searchText = ""
             router.push(.result(fruit))
         case .notAFruit:
+            // Not a success — keep the text visible for editing.
             router.push(.noMatch(.search))
         }
     }
