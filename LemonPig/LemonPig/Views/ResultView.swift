@@ -447,7 +447,9 @@ private struct RecipeCardTile: View {
                                     .resizable()
                                     .scaledToFit()
                                     .frame(width: 54, height: 54)
-                                    .foregroundColor(LP.divider)
+                                    // 3.43:1 on the #2a1066 card — WCAG 1.4.11
+                                    // needs ≥3:1 for graphical objects.
+                                    .foregroundColor(Color.lpCream.opacity(0.40))
                             }
                         }
                     }
