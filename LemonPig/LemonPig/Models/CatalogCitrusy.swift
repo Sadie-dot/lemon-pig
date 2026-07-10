@@ -328,15 +328,21 @@ let allCatalogFruits: [Fruit] = [
 ]
 
 /// Case-insensitive catalog lookup for the home search field.
-/// Exact name match wins; otherwise partial queries may match ("passion"
-/// finds Passion Fruit) — but not the reverse: a query that merely contains
-/// a catalog name ("mangosteen" ⊃ "mango") names a different fruit and must
+/// Exact name match wins; then a name with a word starting with the query
+/// ("apple" → Green Apple, not pineapple; "drago" → Dragon Fruit); then a
+/// plain substring match. Not the reverse: a query that merely contains a
+/// catalog name ("mangosteen" ⊃ "mango") names a different fruit and must
 /// fall through to live identification.
 func searchCatalogFruit(_ query: String) -> Fruit? {
     let q = query.trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
     guard !q.isEmpty else { return nil }
     if let exact = allCatalogFruits.first(where: { $0.name.lowercased() == q }) {
         return exact
+    }
+    if let wordStart = allCatalogFruits.first(where: { fruit in
+        fruit.name.lowercased().split(separator: " ").contains { $0.hasPrefix(q) }
+    }) {
+        return wordStart
     }
     return allCatalogFruits.first { $0.name.lowercased().contains(q) }
 }
