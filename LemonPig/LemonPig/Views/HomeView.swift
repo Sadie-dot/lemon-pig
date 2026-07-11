@@ -774,9 +774,9 @@ private struct AIDisclosureOverlay: View {
 
                     Text("Claude Code was also used to audit and improve the app's accessibility, including VoiceOver support, text scaling, and tap target sizing.")
 
-                    Text("I directed the concept, design, and feature set, and reviewed the app's design and code before shipping. Recipe details have not been independently fact-checked — please double-check ingredient amounts, substitutions, and allergen info before cooking.")
+                    Text("The developer directed the concept, design, and feature set, and reviewed the app's design and code before shipping. Recipe details have not been independently fact-checked — please double-check ingredient amounts, substitutions, and allergen info before cooking.")
 
-                    Text("I'm responsible for what's in this app, AI-assisted or not.")
+                    Text("The developer is responsible for what's in this app, AI-assisted or not.")
                 }
                 .font(.geist(14))
                 .foregroundColor(Color.lpCream.opacity(0.85))
