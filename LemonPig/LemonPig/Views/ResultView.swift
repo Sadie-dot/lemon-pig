@@ -348,6 +348,9 @@ private struct SectionBlock<Content: View>: View {
 
             content()
         }
+        // Fill the row even when the content's longest line is narrower
+        // than the screen — otherwise the parent VStack centers the block.
+        .frame(maxWidth: .infinity, alignment: .leading)
         .padding(.top, isFirst ? 20 : 0)
         .padding(.bottom, isLast ? 0 : 10)
     }
