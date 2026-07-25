@@ -56,10 +56,22 @@ the per-IP daily cap plus a spend limit set in the Anthropic Console.
 
 ## Local test
 
+Create `.dev.vars` **in an editor** (it's git-ignored) with these two lines:
+
+```
+ANTHROPIC_API_KEY = "sk-ant-..."
+APP_TOKEN = "test-token"
+```
+
+Don't `echo` the key into the file — that writes it to your shell history in
+plaintext, where it outlives the throwaway `.dev.vars` by months. Then:
+
 ```sh
-echo 'ANTHROPIC_API_KEY = "sk-ant-..."' > .dev.vars
-echo 'APP_TOKEN = "test-token"' >> .dev.vars
 npx wrangler dev
 # then POST { "image": "<base64 jpeg>", "catalog": ["Lemon","Mango"] }
 #   to http://localhost:8787/identify with header x-lp-app-token: test-token
 ```
+
+Same rule for `wrangler secret put`: let it prompt, or pipe from a variable
+(`printf '%s' "$TOKEN" | npx wrangler secret put APP_TOKEN`) so the value never
+appears as a command argument.
